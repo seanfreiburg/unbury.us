@@ -219,6 +219,11 @@ $(function()    {
             calculate(1);
     });
 
+    $('.export').click(function ()   {
+
+        alert("holy cow!");
+    });
+
     $('.link').click(function ()    {
 
         if($(this).attr('id')=='link_help') {

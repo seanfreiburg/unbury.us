@@ -1,495 +1,507 @@
-body	{
+body {
     background-color: #e1e1e1;
-	margin: 0px;
-	padding: 0px;
-	font-family: 'Droid Sans', arial, serif;
-	color: #c8c8c8;
-	font-size:100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Droid Sans', arial, serif;
+    font-size: 100%;
     text-align: center;
 }
 
-#enclosure	{
-	background: #fff;
-	width:800px;
-	margin: 0 auto;
-	min-height: 400px;
-	height: auto !important;
-	height: 400px;
-	border: 2px #d4d4d4 solid;
+#enclosure {
+    background: #fff;
+    width: 800px;
+    margin: 0 auto;
+    min-height: 400px;
+    height: auto !important;
+    height: 400px;
+    border: 2px #d4d4d4 solid;
     text-align: left;
-	-webkit-box-shadow:0px 0px 50px  #ccc;
-	-moz-box-shadow:0px 0px 50px #ccc;
-	box-shadow:0px 0px 50px #ccc;
+    -webkit-box-shadow: 0px 0px 50px #ccc;
+    -moz-box-shadow: 0px 0px 50px #ccc;
+    box-shadow: 0px 0px 50px #ccc;
 }
 
-#header	{
-	width: 800px;
-	height: 120px;
-	margin: 0px;
-	padding: 0px;
-	text-align: left;
+#header {
+    width: 800px;
+    height: 120px;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
 }
 
-#footer	{
-	width: 800px;
-	height: 100px;
-	margin: 0px;
-	padding: 0px;
-	text-align: left;
+#footer {
+    width: 800px;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
 }
 
-
-
-#controlBar	{
-	position: relative;
-	left: 48px;
-	width: 704px;
-	height: 74px;
-	background-color: #000000;
+#controlBar {
+    position: relative;
+    left: 48px;
+    width: 704px;
+    height: 74px;
+    background-color: #000000;
 }
 
 h1 {
-	font-family: 'Droid Sans', arial, serif;
-	font-weight:bold;
-	font-size:80px;
-	color: #06272d;
-	letter-spacing: -0.1em;
-	position: relative;
-	left: 48px;
-	margin: 0px;
-	display: inline;
+    font-family: 'Droid Sans', arial, serif;
+    font-weight: bold;
+    font-size: 80px;
+    color: #06272d;
+    letter-spacing: -0.1em;
+    position: relative;
+    left: 48px;
+    margin: 0px;
+    display: inline;
 }
 
-h2	{
-	font-weight:bold;
-	font-size:30px;
-	letter-spacing: -0.1em;
-	top: 0px;
-	left: 60px;
-	margin: 0px;
-	color: #06272d;
-	position: relative;
-	display: inline;
+h2 {
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: -0.1em;
+    top: 0px;
+    left: 60px;
+    margin: 0px;
+    color: #06272d;
+    position: relative;
+    display: inline;
 }
 
-.help	{
-	position: absolute;
-	display: block;
-	width: 17px;
-	height: 17px;
-	top: 7px;
-	background-image: url('../img/help.png');
-	cursor: pointer;
+.help {
+    position: absolute;
+    display: block;
+    width: 17px;
+    height: 17px;
+    top: 7px;
+    background-image: url('../img/help.png');
+    cursor: pointer;
 }
 
-#totalMonthlyPaymentHelp	{
-	left:225px;
+#totalMonthlyPaymentHelp {
+    left: 225px;
 }
 
-#paymentTypeHelp	{
-	left:145px;
+#paymentTypeHelp {
+    left: 145px;
 }
 
-.totalMonthlyPayment	{
-	width: 300px;
-	position: absolute;
-	left: 0px;
+.totalMonthlyPayment {
+    width: 300px;
+    position: absolute;
+    left: 0px;
 }
 
-.fieldTitle
-	{
-	font-size: 1.1em;
-	position: absolute;
-	top: 5px;
-	left: 10px;
-	color: #fff;
-	font-weight: bold;
+.fieldTitle {
+    font-size: 1.1em;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: #fff;
 }
 
 .totalMonthlyPayment .fieldInput,
-.loanBarInput .fieldInput	{
-	font-size: 1.20em;
-	position: absolute;
-	color: #fff;
-	top: 27px;
-	left: 10px;
-	font-weight: bold;
+.loanBarInput .fieldInput {
+    font-size: 1.20em;
+    position: absolute;
+    color: #fff;
+    top: 27px;
+    left: 10px;
 }
 
-.totalMonthlyPayment .fieldInput input	{
-	position: relative;
-	left: 5px;
-	top: 3px;
-	height: 35px;
-	width: 100px;
-	font-size: 1.20em;
-	color: #444;
+.totalMonthlyPayment .fieldInput input {
+    position: relative;
+    left: 5px;
+    top: 3px;
+    height: 35px;
+    width: 100px;
+    font-size: 1.20em;
+    color: #444;
 }
 
-.paymentType	{
-	position: absolute;
-	width:400px;
-	left: 300px;
+.paymentType {
+    position: absolute;
+    width: 400px;
+    left: 300px;
 }
 
-.paymentTypeSelect	{
-	position: absolute;
-	left: 10px;
-	top: 29px;
-	height: 50px;
+.paymentTypeSelect {
+    position: absolute;
+    left: 10px;
+    top: 29px;
+    height: 50px;
 }
 
-.paymentTypeSelect a	{
-	text-decoration:none;
+.paymentTypeSelect a {
+    text-decoration: none;
 }
 
-.paymentTypeButton	{
-	width: 120px;
-	display: block;
-	padding-top: 3px;
-	height: 30px;
-	font-size: 1.2em;
-	border: 1px solid #d4d4d4;
-	font-weight: bold;
-	position: absolute;
-	vertical-align: middle;
+.paymentTypeButton {
+    width: 120px;
+    display: block;
+    padding-top: 3px;
+    height: 30px;
+    font-size: 1.2em;
+    border: 1px solid #d4d4d4;
+    font-weight: bold;
+    position: absolute;
+    vertical-align: middle;
     text-align: center;
-	cursor: pointer;
+    cursor: pointer;
 }
 
-#snowball	{
-	left: 120px;
+#snowball {
+    left: 120px;
 }
 
-.selectedPaymentType	{
-	color: #fff;
-	background-color: #2d3dac;
+.selectedPaymentType {
+    color: #fff;
+    background-color: #2d3dac;
 }
 
-.unselectedPaymentType	{
-	color: #a4a4a4;
-	background-color: #badbe0;
+.unselectedPaymentType {
+    color: #a4a4a4;
+    background-color: #badbe0;
 }
 
-#paymentSlider	{
-	z-index: 2;
-	display: block;
-	width: 120px;
-	height: 5px;
-	left: 140px;
-	top: 45px;
+#paymentSlider {
+    z-index: 2;
+    display: block;
+    width: 120px;
+    height: 5px;
+    left: 140px;
+    top: 45px;
 }
 
 /*
  * Loan Bar Input
  */
 
-#loanBarInputContainer	{
-	width: 800px;
+#loanBarInputContainer {
+    width: 800px;
 }
 
-.createLoanPlus	{
-	position: relative;
-	width: 90px;
-	height: 18px;
-	left: 48px;
-	background-color: #41a03f;
-	color: #fff;
-	font-weight: bold;
-	text-decoration: none;	
-	text-align: left;
+.createLoanPlus {
+    position: relative;
+    width: 90px;
+    height: 18px;
+    left: 48px;
+    background-color: #41a03f;
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
 
-	margin: 0px;
-	cursor: pointer;
+    margin: 0px;
+    cursor: pointer;
 }
 
-.loanBarInput	{
-	position: relative;
-	left: 48px;
-	width: 723px;
-	height: 72px;
+.loanBarInput {
+    position: relative;
+    left: 48px;
+    width: 723px;
+    height: 72px;
     background-color: #242424;
-	background-repeat: no-repeat;
-}
-.loanBarInput .destroyLoanX	{
-	position: absolute;
-	left: 704px;
-	width:19px;
-	height:22px;
-	background-image: url('../img/redX.png');
-	cursor: pointer;
-}
-.loanBarInput .input	{
-	position: relative;
-        left: 10px;
-        top: 5px;
-        height: 30px;
-        font-size: 1.20em;
-        color: #444;
+    background-repeat: no-repeat;
 }
 
-.loanBarInput .fieldInput input  {
-        position: relative;
-        top: 3px;
-        height: 35px;
-        font-size: 1.20em;
-        color: #444;
+.loanBarInput .destroyLoanX {
+    position: absolute;
+    left: 704px;
+    width: 19px;
+    height: 22px;
+    background-image: url('../img/redX.png');
+    cursor: pointer;
 }
 
-.invalidField	{
-	background-color:#ffc1c1;
+.loanBarInput .input {
+    position: relative;
+    left: 10px;
+    top: 5px;
+    height: 30px;
+    font-size: 1.20em;
+    color: #444;
 }
 
-.loanBarInput .loanName	{
-	position: absolute;
-	left: 0px;
-	width: 225px;
-}
-.loanBarInput .currentBalance	{
-	position: absolute;
-	left: 225px;
-	width: 175px;
-}
-.loanBarInput .minMonthlyPayment	{
-	position: absolute;
-	left: 405px;
-	width: 175px;
-}
-.loanBarInput .interest	{
-	position: absolute;
-	left: 580px;
-	width: 115px;
+.loanBarInput .fieldInput input {
+    position: relative;
+    top: 3px;
+    height: 35px;
+    font-size: 1.20em;
+    color: #444;
 }
 
-.loanBarInput .loanName input	{
-	width: 215px;
+.invalidField {
+    background-color: #ffc1c1;
 }
 
-.loanBarInput .currentBalance input	{
-	width: 150px;
-	left: 5px;
+.loanBarInput .loanName {
+    position: absolute;
+    left: 0px;
+    width: 225px;
 }
 
-.loanBarInput .minMonthlyPayment input	{
-	width: 140px;
-	left: 5px;
+.loanBarInput .currentBalance {
+    position: absolute;
+    left: 225px;
+    width: 175px;
 }
 
-.loanBarInput .interest	input	{
-	width: 80px;
-	left: 5px;
+.loanBarInput .minMonthlyPayment {
+    position: absolute;
+    left: 405px;
+    width: 175px;
 }
 
-#loanBarInputContainer	{
-	width: 800px;
+.loanBarInput .interest {
+    position: absolute;
+    left: 580px;
+    width: 115px;
 }
 
+.loanBarInput .loanName input {
+    width: 215px;
+}
+
+.loanBarInput .currentBalance input {
+    width: 150px;
+    left: 5px;
+}
+
+.loanBarInput .minMonthlyPayment input {
+    width: 140px;
+    left: 5px;
+}
+
+.loanBarInput .interest input {
+    width: 80px;
+    left: 5px;
+}
+
+#loanBarInputContainer {
+    width: 800px;
+}
 
 /*
  * Calculate
  */
-
-a.calculate	{
-	font-weight:bold;
-	font-size:25px;
-	color: #121313;
-	letter-spacing: -0.1em;
-	margin: 0 auto;
-	text-decoration: none;
-	cursor: pointer;
+a.commands {
+    font-weight: bold;
+    font-size: 25px;
+    color: #121313;
+    letter-spacing: -0.1em;
+    margin: 0 auto;
+    text-decoration: none;
+    cursor: pointer;
     position: relative;
     left: 350px;
-}	
+}
+
+a.calculate {
+
+}
+
+a.export {
+
+}
 
 /*
  * Result Bar
  */
 
-#allResultsContainer	{
-	width: 800px;
-	text-align: left;
+#allResultsContainer {
+    width: 800px;
+    text-align: left;
 }
 
-.resultBarLink	{
-	text-decoration: none;
+.resultBarLink {
+    text-decoration: none;
 }
 
-.resultBar	{
-	position: relative;
-	left: 48px;
-	width: 723px;
-	height: 72px;
+.resultBar {
+    position: relative;
+    left: 48px;
+    width: 723px;
+    height: 72px;
     background-color: #3db53e;
-	background-repeat: no-repeat;
-	cursor: pointer;
-	
+    background-repeat: no-repeat;
+    cursor: pointer;
+
 }
 
 .resultBar .loanName, .resultBar .payoffDate, .resultBar .totalInterest,
-.resultBar .payoffDateText, .resultBar .totalInterestText	{
-	color: #fff;
-	text-decoration: none;
-	font-weight:bold;
+.resultBar .payoffDateText, .resultBar .totalInterestText {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.resultBar .loanName	{
-	position: absolute;
-	left: 20px;
-	top: 7px;
-	width: 450px;
-	font-size:40px;
+.resultBar .loanName {
+    position: absolute;
+    left: 20px;
+    top: 7px;
+    width: 450px;
+    font-size: 40px;
 }
 
 .resultBar .payoffDate, .resultBar .payoffDateText,
-.resultBar .totalInterest, .resultBar .totalInterestText	{
-	position: absolute;
+.resultBar .totalInterest, .resultBar .totalInterestText {
+    position: absolute;
 }
 
-.resultBar .payoffDate	{
-	top: 24px;
-	font-size:22px;
-	left: 400px;
+.resultBar .payoffDate {
+    top: 24px;
+    font-size: 22px;
+    left: 400px;
 }
 
-.resultBar .payoffDateText	{
-	top: 5px;
-	font-size:16px;
-	left: 400px;
+.resultBar .payoffDateText {
+    top: 5px;
+    font-size: 16px;
+    left: 400px;
 }
 
-.resultBar .totalInterest	{
-	top: 24px;
-	font-size:22px;
-	left: 530px;
-}
-.resultBar .totalInterestText	{
-	top: 5px;
-	left: 530px;
-	font-size:16px;
+.resultBar .totalInterest {
+    top: 24px;
+    font-size: 22px;
+    left: 530px;
 }
 
-.resultBar .resultBarDetailsClick	{
-	position: absolute;
-	left: 22px;
-	top: 54px;
-	font-size:13px;
-	color: #d6ffe0;
+.resultBar .totalInterestText {
+    top: 5px;
+    left: 530px;
+    font-size: 16px;
+}
+
+.resultBar .resultBarDetailsClick {
+    position: absolute;
+    left: 22px;
+    top: 54px;
+    font-size: 13px;
+    color: #d6ffe0;
 }
 
 /*
  * Monthly Results
  */
 
-.monthlyResults	{
-	position: relative;
-	left: 48px;
-	width:704px;
-	background-color:#eeeeee;
-	cursor: pointer;
-	text-align: right;
-}
-.monthlyResults	td{
-	text-align: right;
+.monthlyResults {
+    position: relative;
+    left: 48px;
+    width: 704px;
+    background-color: #eeeeee;
+    cursor: pointer;
+    text-align: right;
 }
 
-.monthlyResults	td.month	{
-	width:100px;
-}
-.monthlyResults	td.principle	{
-	width:130px;
-}
-.monthlyResults	td.totalInterest	{
-	width:100px;
-}
-.monthlyResults	td.monthlyPayment	{
-	width:100px;
-}
-.monthlyResults	td.princPaid	{
-	width:100px;
-}
-.monthlyResults	td.interestPaid	{
-	width:100px;
+.monthlyResults td {
+    text-align: right;
 }
 
-tr.alternateRows0	{
-	/*background-color:#;*/
-}
-tr.alternateRows1	{
-	background-color:#dddddd;
+.monthlyResults td.month {
+    width: 100px;
 }
 
-.tHead	{
-	font-weight:bold;
+.monthlyResults td.principle {
+    width: 130px;
+}
+
+.monthlyResults td.totalInterest {
+    width: 100px;
+}
+
+.monthlyResults td.monthlyPayment {
+    width: 100px;
+}
+
+.monthlyResults td.princPaid {
+    width: 100px;
+}
+
+.monthlyResults td.interestPaid {
+    width: 100px;
+}
+
+tr.alternateRows0 {
+    /*background-color:#;*/
+}
+
+tr.alternateRows1 {
+    background-color: #dddddd;
+}
+
+.tHead {
+    font-weight: bold;
 }
 
 /*
  * Total Results
  */
 
-#totalResults	{
-	width: 800px;
-	text-align: left;
-	display: none;
+#totalResults {
+    width: 800px;
+    text-align: left;
+    display: none;
 }
 
-#totalResultsBar	{
-	position: relative;
-	left: 48px;
-	width: 723px;
-	height: 74px;
-	background-image: url('../img/lightGreenTab.png');
-	background-repeat: no-repeat;
+#totalResultsBar {
+    position: relative;
+    left: 48px;
+    width: 723px;
+    height: 74px;
+    background-image: url('../img/lightGreenTab.png');
+    background-repeat: no-repeat;
 }
 
 #totalResultsBar .name, #totalResultsBar .payoffDate, #totalResultsBar .totalInterest,
-#totalResultsBar .payoffDateText, #totalResultsBar .totalInterestText	{
-	color: #fff;
-	font-weight:bold;
+#totalResultsBar .payoffDateText, #totalResultsBar .totalInterestText {
+    color: #fff;
+    font-weight: bold;
 }
 
-#totalResultsBar .name	{
-	position: absolute;
-	text-align: left;
-	left: 20px;
-	top: 7px;
-	width: 450px;
-	font-size:40px;
+#totalResultsBar .name {
+    position: absolute;
+    text-align: left;
+    left: 20px;
+    top: 7px;
+    width: 450px;
+    font-size: 40px;
 }
 
 #totalResultsBar .payoffDate, #totalResultsBar .payoffDateText,
-#totalResultsBar .totalInterest, #totalResultsBar .totalInterestText	{
-	position: absolute;
+#totalResultsBar .totalInterest, #totalResultsBar .totalInterestText {
+    position: absolute;
 }
 
-#totalResultsBar .payoffDate	{
-	top: 24px;
-	font-size:22px;
-	left: 400px;
+#totalResultsBar .payoffDate {
+    top: 24px;
+    font-size: 22px;
+    left: 400px;
 }
 
-#totalResultsBar .payoffDateText	{
-	top: 5px;
-	font-size:16px;
-	left: 400px;
+#totalResultsBar .payoffDateText {
+    top: 5px;
+    font-size: 16px;
+    left: 400px;
 }
 
-#totalResultsBar .totalInterest	{
-	top: 24px;
-	font-size:22px;
-	left: 530px;
-}
-#totalResultsBar .totalInterestText	{
-	top: 5px;
-	left: 530px;
-	font-size:16px;
+#totalResultsBar .totalInterest {
+    top: 24px;
+    font-size: 22px;
+    left: 530px;
 }
 
+#totalResultsBar .totalInterestText {
+    top: 5px;
+    left: 530px;
+    font-size: 16px;
+}
 
 /*
  * Info/Tooltips
- */ 
+ */
 
-#error  {
+#error {
     background-color: #e35a5a;
     position: fixed;
     display: block;
@@ -501,19 +513,19 @@ tr.alternateRows1	{
     height: 50px;
 }
 
-#error p    {
+#error p {
     margin: 0px 5px 5px 0px;
     color: #fff;
 }
 
-#info, #footerInfo	{
-	float: right;
-	left: 600px;
-	font-size: 11px;
-	color: #19d7f5;
+#info, #footerInfo {
+    float: right;
+    left: 600px;
+    font-size: 11px;
+    color: #19d7f5;
 }
 
-#info   {
+#info {
     top: 5px;
     margin: 5px;
 }
@@ -522,122 +534,119 @@ tr.alternateRows1	{
     margin: 75px 5px 5px 5px;
 }
 
-#info a, .link, .linkClose, .moreInfo a, .helpContent a, #footerInfo a	{
-	text-decoration: underline;
-	color: #138198;
-	cursor: pointer;
+#info a, .link, .linkClose, .moreInfo a, .helpContent a, #footerInfo a {
+    text-decoration: underline;
+    color: #138198;
+    cursor: pointer;
 }
 
-#moreInfo	{
-	position: relative;
-	left: 0px;
-	top: 0px;
+#moreInfo {
+    position: relative;
+    left: 0px;
+    top: 0px;
     z-index: 5;
 }
 
-
-.moreInfo a  {
+.moreInfo a {
     color: #fff;
 }
 
-.moreInfo	{
+.moreInfo {
     text-align: left;
-	position: absolute;
-	display: none;
-	z-index: 5;
-	top: 0px;
-	left: 600px;
-	width: 250px;
-	border: 2px solid #fff;
-	-webkit-box-shadow:0px 0px 5px  #ccc;
-	-moz-box-shadow:0px 0px 5px #ccc;
-	box-shadow:0px 0px 5px #ccc;
-	font-size: 11px;
-	background-color: #23d8f6;
-	color: #fff;
+    position: absolute;
+    display: none;
+    z-index: 5;
+    top: 0px;
+    left: 600px;
+    width: 250px;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0px 0px 5px #ccc;
+    -moz-box-shadow: 0px 0px 5px #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+    font-size: 11px;
+    background-color: #000000;
+    color: #fff;
 }
 
 .moreInfo p {
     margin: 10px;
 }
 
-#helpPopup	{
-	position: absolute;
-	top:0px;
-	left:0px;
+#helpPopup {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     z-index: 5;
 }
 
-.helpContent a  {
+.helpContent a {
     color: #000000;
 }
 
-.helpContent	{
+.helpContent {
     text-align: left;
-	position: absolute;
-	display: none;
-	z-index: 10;
-	width: 200px;
-	border: 2px solid #fff;
-	-webkit-box-shadow:0px 0px 5px  #ccc;
-	-moz-box-shadow:0px 0px 5px #ccc;
-	box-shadow:0px 0px 5px #ccc;
-	font-size: 11px;
-	background-color: #010203;
-	color: #fff;
+    position: absolute;
+    display: none;
+    z-index: 10;
+    width: 200px;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0px 0px 5px #ccc;
+    -moz-box-shadow: 0px 0px 5px #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+    font-size: 11px;
+    background-color: #010203;
+    color: #fff;
 }
 
-.helpContent p  {
+.helpContent p {
     margin: 5px;
 }
 
-.smallHelpContent	{
-	position: absolute;
-	display: none;
-	z-index: 10;
-	width: 40px;
-	height: 10px;
-	border: 2px solid #fff;
-	-webkit-box-shadow:0px 0px 5px  #ccc;
-	-moz-box-shadow:0px 0px 5px #ccc;
-	box-shadow:0px 0px 5px #ccc;
-	font-size: 11px;
-	background-color: #93f0ff;
-	color: #fff;
+.smallHelpContent {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    width: 40px;
+    height: 10px;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0px 0px 5px #ccc;
+    -moz-box-shadow: 0px 0px 5px #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+    font-size: 11px;
+    background-color: #93f0ff;
+    color: #fff;
 }
-
 
 /*
  * Graph
  */
 
-
-#graph, #graphTitle, #graphViewOptions	{
-	display: none;
+#graph, #graphTitle, #graphViewOptions {
+    display: none;
 }
 
-#graph	{
-	width: 600px;
-	height: 300px;
-	left: 100px;
+#graph {
+    width: 600px;
+    height: 300px;
+    left: 100px;
 }
 
-#graphTitle	{
-	font-size: 16px;
-	color: #19d7f5;
-	font-weight:bold;
-	margin: 20px auto;
+#graphTitle {
+    font-size: 16px;
+    color: #19d7f5;
+    font-weight: bold;
+    margin: 20px auto;
     text-align: center;
 }
 
-#graphViewOptions	{
-	margin: 10px auto;
-	font-size: 11px;
-	color: #19d7f5;
+#graphViewOptions {
+    margin: 10px auto;
+    font-size: 11px;
+    color: #19d7f5;
     text-align: center;
 }
 
-.graphView	{
-	cursor: pointer;
-	text-decoration: underline;
+.graphView {
+    cursor: pointer;
+    text-decoration: underline;
 }
