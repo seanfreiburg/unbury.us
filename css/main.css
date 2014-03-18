@@ -1,8 +1,8 @@
 body {
-    background-color: #e1e1e1;
+    background-color: #f5f5f5;
     margin: 0px;
     padding: 0px;
-    font-family: 'Droid Sans', arial, serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 100%;
     text-align: center;
 }
@@ -16,9 +16,7 @@ body {
     height: 400px;
     border: 2px #d4d4d4 solid;
     text-align: left;
-    -webkit-box-shadow: 0px 0px 50px #ccc;
-    -moz-box-shadow: 0px 0px 50px #ccc;
-    box-shadow: 0px 0px 50px #ccc;
+
 }
 
 #header {
@@ -144,7 +142,6 @@ h2 {
     height: 30px;
     font-size: 1.2em;
     border: 1px solid #d4d4d4;
-    font-weight: bold;
     position: absolute;
     vertical-align: middle;
     text-align: center;
@@ -297,11 +294,11 @@ a.commands {
     left: 350px;
 }
 
-a.calculate {
+a #calculate {
 
 }
 
-a.export {
+a #export {
 
 }
 
@@ -323,7 +320,7 @@ a.export {
     left: 48px;
     width: 723px;
     height: 72px;
-    background-color: #3db53e;
+    background-color: #273159;
     background-repeat: no-repeat;
     cursor: pointer;
 
@@ -333,7 +330,7 @@ a.export {
 .resultBar .payoffDateText, .resultBar .totalInterestText {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+
 }
 
 .resultBar .loanName {
@@ -378,7 +375,7 @@ a.export {
     left: 22px;
     top: 54px;
     font-size: 13px;
-    color: #d6ffe0;
+    color: #ffffff;
 }
 
 /*
@@ -415,7 +412,7 @@ a.export {
 }
 
 .monthlyResults td.princPaid {
-    width: 100px;
+    width: 120px;
 }
 
 .monthlyResults td.interestPaid {
@@ -431,7 +428,6 @@ tr.alternateRows1 {
 }
 
 .tHead {
-    font-weight: bold;
 }
 
 /*
@@ -449,14 +445,14 @@ tr.alternateRows1 {
     left: 48px;
     width: 723px;
     height: 74px;
-    background-image: url('../img/lightGreenTab.png');
+    background-color: #41a03f;
     background-repeat: no-repeat;
 }
 
 #totalResultsBar .name, #totalResultsBar .payoffDate, #totalResultsBar .totalInterest,
 #totalResultsBar .payoffDateText, #totalResultsBar .totalInterestText {
     color: #fff;
-    font-weight: bold;
+
 }
 
 #totalResultsBar .name {
@@ -633,8 +629,7 @@ tr.alternateRows1 {
 
 #graphTitle {
     font-size: 16px;
-    color: #19d7f5;
-    font-weight: bold;
+    color: #0d0d0d;
     margin: 20px auto;
     text-align: center;
 }
@@ -642,7 +637,7 @@ tr.alternateRows1 {
 #graphViewOptions {
     margin: 10px auto;
     font-size: 11px;
-    color: #19d7f5;
+    color: #123b4e;
     text-align: center;
 }
 
