@@ -46,9 +46,9 @@ Unburyme.ResultBar.prototype.drawStart = function () {
     this.htmlMonthly += '<table><tr>';
     this.htmlMonthly += '<td class=\'tHead month\'>Month</td>\n';
     this.htmlMonthly += '<td class=\'tHead monthlyPayment\'>Payment</td>\n';
-    this.htmlMonthly += '<td class=\'tHead princPaid\'>Principle Paid</td>\n';
+    this.htmlMonthly += '<td class=\'tHead princPaid\'>Principal Paid</td>\n';
     this.htmlMonthly += '<td class=\'tHead interestPaid\'>Interest Paid</td>\n';
-    this.htmlMonthly += '<td class=\'tHead principle\'>Principle</td>\n';
+    this.htmlMonthly += '<td class=\'tHead principle\'>Principal</td>\n';
     this.htmlMonthly += '<td class=\'tHead totalInterest\'>Total Interest</td>\n';
     this.htmlMonthly += '</tr>\n';
 

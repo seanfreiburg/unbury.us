@@ -55,10 +55,10 @@ Unburyme.Graph.prototype.drawTitle = function (field) {
     $('#graphTitle').fadeIn(this.loanApp.config.fadeSpeed);
     switch (field) {
         case 'princRemaining':
-            title = 'Principle Remaining';
+            title = 'Principal Remaining';
             break;
         case 'princPaid':
-            title = 'Principle Paid';
+            title = 'Principal Paid';
             break;
         case 'totalInterestPaid':
             title = 'Total Interest Paid';
