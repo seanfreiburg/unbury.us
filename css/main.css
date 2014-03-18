@@ -1,9 +1,9 @@
 body	{
-	background-image: url('../img/bg.png');
+    background-color: #e1e1e1;
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Droid Sans', arial, serif;
-	color: #444;
+	color: #c8c8c8;
 	font-size:100%;
     text-align: center;
 }
@@ -45,18 +45,17 @@ body	{
 	left: 48px;
 	width: 704px;
 	height: 74px;
-	background-image: url('../img/blueTab.png');
+	background-color: #000000;
 }
 
 h1 {
 	font-family: 'Droid Sans', arial, serif;
 	font-weight:bold;
 	font-size:80px;
-	color:#23d8f6;
+	color: #06272d;
 	letter-spacing: -0.1em;
 	position: relative;
 	left: 48px;
-	text-shadow: 3px 3px 3px #93f0ff;
 	margin: 0px;
 	display: inline;
 }
@@ -68,8 +67,7 @@ h2	{
 	top: 0px;
 	left: 60px;
 	margin: 0px;
-	color: #93f0ff;
-	text-shadow: 1px 1px 1px #23d8f6;
+	color: #06272d;
 	position: relative;
 	display: inline;
 }
@@ -165,7 +163,7 @@ h2	{
 
 .selectedPaymentType	{
 	color: #fff;
-	background-color: #99f1ff;
+	background-color: #2d3dac;
 }
 
 .unselectedPaymentType	{
@@ -195,14 +193,12 @@ h2	{
 	width: 90px;
 	height: 18px;
 	left: 48px;
-	background-color: #89eafa;
+	background-color: #41a03f;
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none;	
 	text-align: left;
-	border-left: 2px solid #5ae8ff;
-	border-right: 2px solid #5ae8ff;
-	border-bottom: 2px solid #5ae8ff;
+
 	margin: 0px;
 	cursor: pointer;
 }
@@ -212,7 +208,7 @@ h2	{
 	left: 48px;
 	width: 723px;
 	height: 72px;
-	background-image: url('../img/lightBlueTab.png');
+    background-color: #242424;
 	background-repeat: no-repeat;
 }
 .loanBarInput .destroyLoanX	{
@@ -220,7 +216,7 @@ h2	{
 	left: 704px;
 	width:19px;
 	height:22px;
-	background-image: url('../img/blueX.png');
+	background-image: url('../img/redX.png');
 	cursor: pointer;
 }
 .loanBarInput .input	{
@@ -296,10 +292,9 @@ h2	{
 a.calculate	{
 	font-weight:bold;
 	font-size:25px;
-	color:#23d8f6;
+	color: #121313;
 	letter-spacing: -0.1em;
 	margin: 0 auto;
-	text-shadow: 1px 1px 1px #93f0ff;
 	text-decoration: none;
 	cursor: pointer;
     position: relative;
@@ -324,7 +319,7 @@ a.calculate	{
 	left: 48px;
 	width: 723px;
 	height: 72px;
-	background-image: url('../img/greenTab.png');
+    background-color: #3db53e;
 	background-repeat: no-repeat;
 	cursor: pointer;
 	
@@ -529,7 +524,7 @@ tr.alternateRows1	{
 
 #info a, .link, .linkClose, .moreInfo a, .helpContent a, #footerInfo a	{
 	text-decoration: underline;
-	color: #19d7f5;
+	color: #138198;
 	cursor: pointer;
 }
 
@@ -574,7 +569,7 @@ tr.alternateRows1	{
 }
 
 .helpContent a  {
-    color: #23d8f6;
+    color: #000000;
 }
 
 .helpContent	{
@@ -588,7 +583,7 @@ tr.alternateRows1	{
 	-moz-box-shadow:0px 0px 5px #ccc;
 	box-shadow:0px 0px 5px #ccc;
 	font-size: 11px;
-	background-color: #23d8f6;
+	background-color: #010203;
 	color: #fff;
 }
 
