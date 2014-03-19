@@ -38,16 +38,16 @@ body {
 #controlBar {
     position: relative;
     left: 48px;
-    width: 704px;
+    width: 723px;
     height: 74px;
-    background-color: #000000;
+    background-color: #dddddd;
 }
 
 h1 {
     font-family: 'Droid Sans', arial, serif;
     font-weight: bold;
     font-size: 80px;
-    color: #06272d;
+    color: #1d1e1e;
     letter-spacing: -0.1em;
     position: relative;
     left: 48px;
@@ -96,14 +96,14 @@ h2 {
     position: absolute;
     top: 5px;
     left: 10px;
-    color: #fff;
+    color: #000000;
 }
 
 .totalMonthlyPayment .fieldInput,
 .loanBarInput .fieldInput {
     font-size: 1.20em;
     position: absolute;
-    color: #fff;
+    color: #dddddd;
     top: 27px;
     left: 10px;
 }
@@ -191,6 +191,8 @@ h2 {
 
     margin: 0px;
     cursor: pointer;
+    padding-bottom: 5px;
+    padding-left: 5px;
 }
 
 .loanBarInput {
@@ -198,7 +200,7 @@ h2 {
     left: 48px;
     width: 723px;
     height: 72px;
-    background-color: #242424;
+    background-color: #dddddd;
     background-repeat: no-repeat;
 }
 
@@ -385,7 +387,7 @@ a #export {
 .monthlyResults {
     position: relative;
     left: 48px;
-    width: 704px;
+    width: 723px;
     background-color: #eeeeee;
     cursor: pointer;
     text-align: right;
