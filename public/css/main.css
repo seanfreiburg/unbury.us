@@ -207,8 +207,8 @@ h2 {
 .loanBarInput .destroyLoanX {
     position: absolute;
     left: 704px;
-    width: 19px;
-    height: 22px;
+    width: 17px;
+    height: 17px;
     background-image: url('../img/redX.png');
     cursor: pointer;
 }
