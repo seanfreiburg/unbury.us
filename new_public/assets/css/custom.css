@@ -1,0 +1,16 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: lighter;
+}
+
+.header {
+
+}
+
+.header h1 {
+    font-size: 500%;
+}
+
+.info-links {
+    padding-top: 10px;
+}
