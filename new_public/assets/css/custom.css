@@ -1,6 +1,5 @@
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: lighter;
 }
 
 .header {
@@ -13,4 +12,14 @@ body {
 
 .info-links {
     padding-top: 10px;
+}
+
+.field-header {
+    font-weight: 400;
+
+}
+
+.add-loan {
+    background-color: #00a300;
+    color: #ffffff;
 }
