@@ -26,14 +26,13 @@
 
 </head>
 <body>
-<script type="text/x-handlebars" data-template-name="unburyus">
 <div class="header">
     <div class="container">
         <div class="row">
             <div class="col-md-4"><h1>unbury.us</h1></div>
             <div class="col-md-4"><h3>get unburied from debt</h3></div>
             <div class="col-md-2 text-right info-links">
-                <a href="help.html">help</a>  /
+                <a href="help.html">help</a> /
                 <a href="about.html">about</a>
             </div>
 
@@ -78,44 +77,38 @@
             </div>
             <hr>
 
-            {{#each}}
             <div class="row ">
                 <div class="col-md-3">
                     <p>loan name</p>
 
-                    <form>{{input name="monthlyPayment" type="text" value=name focus-out="acceptChanges" }}</form>
+                    <form><input name="monthlyPayment" type="text" placeholder=" "></form>
 
                 </div>
                 <div class="col-md-3">
                     <p>current balance</p>
 
-                    <form>{{input name="currentBalance" type="number" value=currentBalance focus-out="acceptChanges"}}</form>
+                    <form><input name="currentBalance" type="text" placeholder="0"></form>
 
                 </div>
                 <div class="col-md-3">
                     <p>minimum payment</p>
 
-                    <form>{{input name="minimumPayment" type="number" value=minimumPayment focus-out="acceptChanges"}}</form>
+                    <form><input name="minimumPayment" type="text" placeholder="0"></form>
 
                 </div>
                 <div class="col-md-3">
                     <p>interest rate</p>
 
-                    <form>{{input name="interestRate" type="number" value=interestRate focus-out="acceptChanges"}}</form>
+                    <form><input name="interestRate" type="text" placeholder="0"></form>
 
                 </div>
             </div>
             <hr>
-            {{/each}}
-
-
-            {{partial "new-loan"}}
-
 
 
             <div class="row">
                 <div class="col-md-2">
-                    <button type="button" id="new-loan" class="btn btn-success btn-block" action="createLoan">+ add loan</button>
+                    <button type="button" id="new-loan" class="btn btn-success btn-block">+ add loan</button>
                 </div>
             </div>
 
@@ -143,34 +136,6 @@
     </div>
 </div>
 
-</script>
-
-<script type="text/x-handlebars" data-template-name='_new-loan'>
-<div class="row ">
-    <div class="col-md-3">
-        <p>loan name</p>
-        <form>{{input type="text" name="loanName" placeholder=" " value=name}}</form>
-
-    </div>
-    <div class="col-md-3">
-        <p>current balance</p>
-        <form>{{input type="number" name="currentBalance" placeholder="0" value=currentBalance}}</form>
-
-    </div>
-    <div class="col-md-3">
-        <p>minimum payment</p>
-        <form>{{input type="number" name="minimumPayment" placeholder="0" value=minimumPayment}}</form>
-
-    </div>
-    <div class="col-md-3">
-        <p>interest rate</p>
-        <form>{{input type="number" name="interestRate" placeholder="0" value=interestRate}}</form>
-
-    </div>
-</div>
-<hr>
-
-</script>
 
 <!-- JavaScript
  ================================================== -->
@@ -185,22 +150,6 @@
 
 <!-- Boostrap  -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-<!-- Ember Libs  -->
-<script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-1.0.0.js"></script>
-<script src="http://builds.emberjs.com/tags/v1.3.0/ember.js"></script>
-<script src="http://builds.emberjs.com/tags/v1.0.0-beta.5/ember-data.js"></script>
-<script src="assets/js/libs/localstorage_adapter.js"></script>
-
-
-<!-- Ember Includes  -->
-<script src="assets/js/ember/application.js"></script>
-<script src="assets/js/ember/router.js"></script>
-<script src="assets/js/ember/models/loan.js"></script>
-<script src="assets/js/ember/controllers/loans_controller.js"></script>
-<script src="assets/js/ember/controllers/loan_controller.js"></script>
-<script src="assets/js/ember/views/edit_loan_view.js"></script>
-
 
 
 </body>
