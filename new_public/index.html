@@ -26,14 +26,14 @@
 
 </head>
 <body>
-
+<script type="text/x-handlebars" data-template-name="unburyus">
 <div class="header">
     <div class="container">
         <div class="row">
             <div class="col-md-4"><h1>unbury.us</h1></div>
             <div class="col-md-4"><h3>get unburied from debt</h3></div>
             <div class="col-md-2 text-right info-links">
-                <a href="help.html">help</a>  |
+                <a href="help.html">help</a>  /
                 <a href="about.html">about</a>
             </div>
 
@@ -44,6 +44,7 @@
     </div>
     <hr>
 </div>
+
 
 <div class="container">
     <div class="row">
@@ -76,37 +77,45 @@
                 </div>
             </div>
             <hr>
+
+            {{#each}}
             <div class="row ">
                 <div class="col-md-3">
                     <p>loan name</p>
 
-                    <form><input name="monthlyPayment" type="number" placeholder=""> </input></form>
+                    <form>{{input name="monthlyPayment" type="text" value=name focus-out="acceptChanges" }}</form>
 
                 </div>
                 <div class="col-md-3">
                     <p>current balance</p>
 
-                    <form><input name="monthlyPayment" type="number" placeholder="0"> </input></form>
+                    <form>{{input name="currentBalance" type="number" value=currentBalance focus-out="acceptChanges"}}</form>
 
                 </div>
                 <div class="col-md-3">
                     <p>minimum payment</p>
 
-                    <form><input name="monthlyPayment" type="number" placeholder="0"> </input></form>
+                    <form>{{input name="minimumPayment" type="number" value=minimumPayment focus-out="acceptChanges"}}</form>
 
                 </div>
                 <div class="col-md-3">
                     <p>interest rate</p>
 
-                    <form><input name="monthlyPayment" type="number" placeholder="0%"> </input></form>
+                    <form>{{input name="interestRate" type="number" value=interestRate focus-out="acceptChanges"}}</form>
 
                 </div>
             </div>
             <hr>
+            {{/each}}
+
+
+            {{partial "new-loan"}}
+
+
 
             <div class="row">
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-success btn-block">+ add loan</button>
+                    <button type="button" id="new-loan" class="btn btn-success btn-block" action="createLoan">+ add loan</button>
                 </div>
             </div>
 
@@ -126,7 +135,7 @@
         <div class="col-md-3">
             <div class="row">
                 <div class="col-md-12">
-                    <p>github | sean freiburg | license | credit</p>
+                    <p>github / sean freiburg / license / credit</p>
                 </div>
             </div>
         </div>
@@ -134,20 +143,63 @@
     </div>
 </div>
 
+</script>
+
+<script type="text/x-handlebars" data-template-name='_new-loan'>
+<div class="row ">
+    <div class="col-md-3">
+        <p>loan name</p>
+        <form>{{input type="text" name="loanName" placeholder=" " value=name}}</form>
+
+    </div>
+    <div class="col-md-3">
+        <p>current balance</p>
+        <form>{{input type="number" name="currentBalance" placeholder="0" value=currentBalance}}</form>
+
+    </div>
+    <div class="col-md-3">
+        <p>minimum payment</p>
+        <form>{{input type="number" name="minimumPayment" placeholder="0" value=minimumPayment}}</form>
+
+    </div>
+    <div class="col-md-3">
+        <p>interest rate</p>
+        <form>{{input type="number" name="interestRate" placeholder="0" value=interestRate}}</form>
+
+    </div>
+</div>
+<hr>
+
+</script>
 
 <!-- JavaScript
  ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type='text/javascript' src='assets/js/libs/google_analytics.js'></script>
+
+
+<!-- JQuery  -->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+<!-- Boostrap  -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.4.0/ember.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.6/ember-data.min.js"></script>
+
+<!-- Ember Libs  -->
+<script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-1.0.0.js"></script>
+<script src="http://builds.emberjs.com/tags/v1.3.0/ember.js"></script>
+<script src="http://builds.emberjs.com/tags/v1.0.0-beta.5/ember-data.js"></script>
+<script src="assets/js/libs/localstorage_adapter.js"></script>
 
 
-
+<!-- Ember Includes  -->
+<script src="assets/js/ember/application.js"></script>
+<script src="assets/js/ember/router.js"></script>
+<script src="assets/js/ember/models/loan.js"></script>
+<script src="assets/js/ember/controllers/loans_controller.js"></script>
+<script src="assets/js/ember/controllers/loan_controller.js"></script>
+<script src="assets/js/ember/views/edit_loan_view.js"></script>
 
 
 
