@@ -112,9 +112,9 @@ body {
 
 }
 
-.loanBarInput .destroyLoanX {
+.loanBarInput .destroyLoan {
 
-    background-image: url('../img/redX.png');
+    color: #ff0000;
     cursor: pointer;
 }
 

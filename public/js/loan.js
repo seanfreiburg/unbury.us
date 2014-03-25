@@ -41,7 +41,7 @@ Unburyme.Loan.prototype.create = function () {
 
 
     var html = '<div id=\'loanbar' + this.uid + '\' class=\'loanBarInput uninitialized row\'>\n';
-    html += '   <a href=\'#\' class=\'destroyLoan\' id=\'delete' + this.uid + '\'><div class=\'destroyLoanX\'></div></a>\n';
+
     html += '   <div class=\'loanName col-md-3\'>\n';
     html += '                   <div class=\'fieldTitle\'><p>Loan Name</p></div>\n'
     html += '                   <div class=\'fieldInput\'><input id=\'loanname' + this.uid + '\' class=\'name\' /></div>\n';
@@ -54,12 +54,17 @@ Unburyme.Loan.prototype.create = function () {
     html += '                   <div class=\'fieldTitle\'>Min. Payment</div>\n';
     html += '                   <div class=\'fieldInput\'><input id=\'loanminPayment' + this.uid + '\' class=\'minPayment  uninitialized\' /></div>\n';
     html += '           </div>\n';
-    html += '           <div class=\'interest col-md-3 \'>\n';
+    html += '           <div class=\'interest col-md-2 \'>\n';
     html += '                   <div class=\'fieldTitle\'>Interest</div>\n';
     html += '                   <div class=\'fieldInput\'><input id=\'loaninterest' + this.uid + '\' class=\'interest  uninitialized\' /></div>\n';
     html += '        </div>\n';
-    html += '       </div>\n';
+    html += '<div class=\'col-md-1\'></div>'
+    html += '   <a href=\'#\' class=\'destroyLoan\' id=\'delete' + this.uid + '\'>✖</a>\n';
     html += '<hr><br>';
+
+    html += '       </div>\n';
+    html += '    </div>\n';
+
 
     $('#loanBarInputContainer').append(html);
     $('#loanbar' + this.uid).css('display', 'none').slideDown(this.loanApp.config.slideSpeed);
