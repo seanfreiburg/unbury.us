@@ -143,20 +143,8 @@ body {
     width: 800px;
 }
 
-.createLoanPlus {
-    position: relative;
-    width: 90px;
-    height: 18px;
-    left: 48px;
-    background-color: #41a03f;
-    color: #fff;
-    text-decoration: none;
-    text-align: left;
+#createLoan {
 
-    margin: 0px;
-    cursor: pointer;
-    padding-bottom: 5px;
-    padding-left: 5px;
 }
 
 .loanBarInput {
@@ -484,7 +472,6 @@ tr.alternateRows1 {
     float: right;
     left: 600px;
     font-size: 11px;
-    color: #19d7f5;
 }
 
 #info {

@@ -12,14 +12,14 @@ $(function () {
 
     $(".paymentTypeButtonLink").click(function () {
 
-        if ($(this).is('.avaLink')) {
-            $('#avalanche').removeClass('unselectedPaymentType').addClass('selectedPaymentType');
-            $('#snowball').removeClass('selectedPaymentType').addClass('unselectedPaymentType');
+        if ($(this).is('#avalanche')) {
+            $('#avalanche').removeClass('btn-default').addClass('btn-primary');
+            $('#snowball').removeClass('btn-primary').addClass('btn-default');
             loanApp.paymentType = 'avalanche';
         }
         else {
-            $('#snowball').removeClass('unselectedPaymentType').addClass('selectedPaymentType');
-            $('#avalanche').removeClass('selectedPaymentType').addClass('unselectedPaymentType');
+            $('#snowball').removeClass('btn-default').addClass('btn-primary');
+            $('#avalanche').removeClass('btn-primary').addClass('btn-default');
             loanApp.paymentType = 'snowball';
         }
         calculate();
@@ -27,7 +27,7 @@ $(function () {
     });
 
 
-    $('.createLoanPlus').live('click', function () {
+    $('#createLoan').live('click', function () {
 
         loanApp.createLoan();
     });

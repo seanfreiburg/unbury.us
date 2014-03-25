@@ -82,36 +82,74 @@
         </div>
     </div>
 
-    <div id='controlBar'>
-        <div class='totalMonthlyPayment'>
-            <div class='fieldTitle'>Total Monthly Payment</div>
-            <div class='help' id='totalMonthlyPaymentHelp'></div>
-            <div class='fieldInput'>$<input id='totalMonthlyPayment' name='totalMonthlyPayment'/></div>
-            <div id='paymentSlider'></div>
-        </div>
-        <div class='paymentType'>
-            <div class='fieldTitle'>Payment Type</div>
-            <div class='help' id='paymentTypeHelp'></div>
-            <div class='paymentTypeSelect'>
-                <a class='paymentTypeButtonLink avaLink'>
-                    <div id='avalanche' class='selectedPaymentType paymentTypeButton'>Avalanche</div>
-                </a>
-                <a class='paymentTypeButtonLink sbLink'>
-                    <div id='snowball' class='unselectedPaymentType paymentTypeButton'>Snowball</div>
-                </a>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="field-header"> monthly payment </h4>
+
+                    <form><input id='totalMonthlyPayment' name='totalMonthlyPayment' type="number" placeholder="0"> </input></form>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="field-header"> payment type </h4>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <button id="avalanche" type="button" class="btn btn-primary btn-block  paymentTypeButtonLink">avalanche</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="snowball"type="button" class="btn btn-default btn-block  paymentTypeButtonLink">snowball</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+
+            <div id='loanBarInputContainer'>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-2">
+                    <button type="button" id="createLoan" class="btn btn-success btn-block">+ add loan</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a id="calculate"><h1>calculate</h1></a>
+
+                </div>
             </div>
         </div>
     </div>
-    <div id='loanBarInputContainer'>
-    </div>
-    <!-- loanBarInputContainer -->
-    <a class='createLoan'>
-        <div class='createLoanPlus'> + add loan</div>
-    </a>
 
-    <p>
-        <a class='commands' id="calculate">.calculate</a>
-    </p>
+
+
+
+
+
+
+
+
+    <!-- loanBarInputContainer -->
+
+
 
 
     <div id='graphTitle'></div>
@@ -125,17 +163,29 @@
     <div id='allResultsContainer'></div>
 
 
-    <div id='footer'>
-        <div id='footerInfo'><a href='http://www.seanfreiburg.com' title='seanfreiburg.com'>sean freiburg</a> | <a
-                href='http://github.com/seanfreiburg/unburyme' title='Unbury.me on GitHub'>GitHub</a> | <a
-                href='https://github.com/seanfreiburg/unburyme/blob/master/LICENSE' title='License'>MIT License</a>| <a
-                href='http://unbury.me' title='unbury.me'>credit</a>
-        </div>
-    </div>
+
 
 
 </div>
-<!--enclosure-->
+
+
+<div class="row">
+    <div class="col-md-9">
+        <p></p>
+    </div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <a href='http://www.seanfreiburg.com' title='seanfreiburg.com'>sean freiburg</a> | <a
+                    href='http://github.com/seanfreiburg/unburyme' title='Unbury.me on GitHub'>GitHub</a> | <a
+                    href='https://github.com/seanfreiburg/unburyme/blob/master/LICENSE' title='License'>MIT License</a> | <a
+                    href='http://unbury.me' title='unbury.me'>credit</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--container-->
 </div>
 
 <script type='text/javascript' src='lib/jquery-1.5.2.min.js'></script>
