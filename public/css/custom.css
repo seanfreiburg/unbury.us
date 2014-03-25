@@ -1,35 +1,22 @@
 body {
     background-color: #ffffff;
-    margin: 0px;
-    padding: 0px;
+
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 100%;
-    text-align: center;
+
 }
-
-
 
 .header h1 {
     font-size: 500%;
 }
 
 #footer {
-    width: 800px;
-    height: 100px;
-    margin: 0px;
-    padding: 0px;
-    text-align: left;
+
 }
 
 #controlBar {
-    position: relative;
-    left: 48px;
-    width: 723px;
-    height: 74px;
+
     background-color: #dddddd;
 }
-
-
 
 .help {
     position: absolute;
@@ -56,30 +43,16 @@ body {
 }
 
 .fieldTitle {
-    font-size: 1.1em;
-    position: absolute;
-    top: 5px;
-    left: 10px;
-    color: #000000;
+
 }
 
 .totalMonthlyPayment .fieldInput,
 .loanBarInput .fieldInput {
-    font-size: 1.20em;
-    position: absolute;
-    color: #dddddd;
-    top: 27px;
-    left: 10px;
+
 }
 
 .totalMonthlyPayment .fieldInput input {
-    position: relative;
-    left: 5px;
-    top: 3px;
-    height: 35px;
-    width: 100px;
-    font-size: 1.20em;
-    color: #444;
+
 }
 
 .paymentType {
@@ -89,10 +62,7 @@ body {
 }
 
 .paymentTypeSelect {
-    position: absolute;
-    left: 10px;
-    top: 29px;
-    height: 50px;
+
 }
 
 .paymentTypeSelect a {
@@ -100,20 +70,11 @@ body {
 }
 
 .paymentTypeButton {
-    width: 120px;
-    display: block;
-    padding-top: 3px;
-    height: 30px;
-    font-size: 1.2em;
-    border: 1px solid #d4d4d4;
-    position: absolute;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
+
 }
 
 #snowball {
-    left: 120px;
+
 }
 
 .selectedPaymentType {
@@ -140,7 +101,7 @@ body {
  */
 
 #loanBarInputContainer {
-    width: 800px;
+
 }
 
 #createLoan {
@@ -148,38 +109,21 @@ body {
 }
 
 .loanBarInput {
-    position: relative;
-    left: 48px;
-    width: 723px;
-    height: 72px;
-    background-color: #dddddd;
-    background-repeat: no-repeat;
+
 }
 
 .loanBarInput .destroyLoanX {
-    position: absolute;
-    left: 704px;
-    width: 17px;
-    height: 17px;
+
     background-image: url('../img/redX.png');
     cursor: pointer;
 }
 
 .loanBarInput .input {
-    position: relative;
-    left: 10px;
-    top: 5px;
-    height: 30px;
-    font-size: 1.20em;
-    color: #444;
+
 }
 
 .loanBarInput .fieldInput input {
-    position: relative;
-    top: 3px;
-    height: 35px;
-    font-size: 1.20em;
-    color: #444;
+
 }
 
 .invalidField {
@@ -187,65 +131,53 @@ body {
 }
 
 .loanBarInput .loanName {
-    position: absolute;
-    left: 0px;
-    width: 225px;
+
 }
 
 .loanBarInput .currentBalance {
-    position: absolute;
-    left: 225px;
-    width: 175px;
+
 }
 
 .loanBarInput .minMonthlyPayment {
-    position: absolute;
-    left: 405px;
-    width: 175px;
+
 }
 
 .loanBarInput .interest {
-    position: absolute;
-    left: 580px;
-    width: 115px;
+
 }
 
 .loanBarInput .loanName input {
-    width: 215px;
+
 }
 
 .loanBarInput .currentBalance input {
-    width: 150px;
-    left: 5px;
+
 }
 
 .loanBarInput .minMonthlyPayment input {
-    width: 140px;
-    left: 5px;
+
 }
 
 .loanBarInput .interest input {
-    width: 80px;
-    left: 5px;
+
 }
 
 #loanBarInputContainer {
-    width: 800px;
+
 }
 
 /*
  * Calculate
  */
 a.commands {
-    font-weight: bold;
-    font-size: 25px;
+
     color: #121313;
-    letter-spacing: -0.1em;
+
     margin: 0 auto;
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    left: 350px;
+
 }
 
 a #calculate {
@@ -261,8 +193,7 @@ a #export {
  */
 
 #allResultsContainer {
-    width: 800px;
-    text-align: left;
+
 }
 
 .resultBarLink {
@@ -270,10 +201,7 @@ a #export {
 }
 
 .resultBar {
-    position: relative;
-    left: 48px;
-    width: 723px;
-    height: 72px;
+
     background-color: #273159;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -288,47 +216,33 @@ a #export {
 }
 
 .resultBar .loanName {
-    position: absolute;
-    left: 20px;
-    top: 7px;
-    width: 450px;
+
     font-size: 40px;
 }
 
 .resultBar .payoffDate, .resultBar .payoffDateText,
 .resultBar .totalInterest, .resultBar .totalInterestText {
-    position: absolute;
+
 }
 
 .resultBar .payoffDate {
-    top: 24px;
-    font-size: 22px;
-    left: 400px;
+
 }
 
 .resultBar .payoffDateText {
-    top: 5px;
-    font-size: 16px;
-    left: 400px;
+
 }
 
 .resultBar .totalInterest {
-    top: 24px;
-    font-size: 22px;
-    left: 530px;
+
 }
 
 .resultBar .totalInterestText {
-    top: 5px;
-    left: 530px;
-    font-size: 16px;
+
 }
 
 .resultBar .resultBarDetailsClick {
-    position: absolute;
-    left: 22px;
-    top: 54px;
-    font-size: 13px;
+
     color: #ffffff;
 }
 
@@ -337,40 +251,35 @@ a #export {
  */
 
 .monthlyResults {
-    position: relative;
-    left: 48px;
-    width: 723px;
-    background-color: #eeeeee;
-    cursor: pointer;
-    text-align: right;
+
 }
 
 .monthlyResults td {
-    text-align: right;
+
 }
 
 .monthlyResults td.month {
-    width: 100px;
+
 }
 
 .monthlyResults td.principle {
-    width: 130px;
+
 }
 
 .monthlyResults td.totalInterest {
-    width: 100px;
+
 }
 
 .monthlyResults td.monthlyPayment {
-    width: 100px;
+
 }
 
 .monthlyResults td.princPaid {
-    width: 120px;
+
 }
 
 .monthlyResults td.interestPaid {
-    width: 100px;
+
 }
 
 tr.alternateRows0 {
@@ -378,7 +287,7 @@ tr.alternateRows0 {
 }
 
 tr.alternateRows1 {
-    background-color: #dddddd;
+
 }
 
 .tHead {
@@ -389,16 +298,11 @@ tr.alternateRows1 {
  */
 
 #totalResults {
-    width: 800px;
-    text-align: left;
-    display: none;
+
 }
 
 #totalResultsBar {
-    position: relative;
-    left: 48px;
-    width: 723px;
-    height: 74px;
+
     background-color: #41a03f;
     background-repeat: no-repeat;
 }
@@ -410,40 +314,34 @@ tr.alternateRows1 {
 }
 
 #totalResultsBar .name {
-    position: absolute;
-    text-align: left;
-    left: 20px;
-    top: 7px;
-    width: 450px;
+
     font-size: 40px;
 }
 
 #totalResultsBar .payoffDate, #totalResultsBar .payoffDateText,
 #totalResultsBar .totalInterest, #totalResultsBar .totalInterestText {
-    position: absolute;
 }
 
 #totalResultsBar .payoffDate {
-    top: 24px;
+
     font-size: 22px;
-    left: 400px;
+
 }
 
 #totalResultsBar .payoffDateText {
-    top: 5px;
+
     font-size: 16px;
-    left: 400px;
+
 }
 
 #totalResultsBar .totalInterest {
-    top: 24px;
+
     font-size: 22px;
-    left: 530px;
+
 }
 
 #totalResultsBar .totalInterestText {
-    top: 5px;
-    left: 530px;
+
     font-size: 16px;
 }
 
@@ -471,7 +369,6 @@ tr.alternateRows1 {
 #info, #footerInfo {
     float: right;
     left: 600px;
-    font-size: 11px;
 }
 
 #info {
@@ -597,4 +494,10 @@ tr.alternateRows1 {
 .graphView {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.center {
+    float: none;
+    margin-left: 15%;
+    margin-right: auto;
 }

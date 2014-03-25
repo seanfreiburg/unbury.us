@@ -27,9 +27,9 @@ Unburyme.TotalResults.prototype.calculate = function () {
 Unburyme.TotalResults.prototype.draw = function () {
 
     var html = '<div id="totalResultsBar">';
-    html += '   <div class="name">Loan Total</div>\n';
-    html += '   <div class="payoffDateText">debt free by</div><div class="payoffDate">' + this.finalPayOffDate.print() + '</div>\n';
-    html += '   <div class="totalInterestText">total interest paid</div><div class="totalInterest">$' + this.totalInterest.toFixed(2) + '</div>\n';
+    html += '   <div class="name col-md-4">Loan Total</div>\n';
+    html += '   <div class="payoffDateText col-md-4">debt free by</div><div class="payoffDate">' + this.finalPayOffDate.print() + '</div>\n';
+    html += '   <div class="totalInterestText col-md-4">total interest paid</div><div class="totalInterest">$' + this.totalInterest.toFixed(2) + '</div>\n';
     html += '</div>\n';
     $('#totalResultsContainer').fadeIn(this.loanApp.config.fadeSpeed);
     $('#totalResultsContainer').html(html);
