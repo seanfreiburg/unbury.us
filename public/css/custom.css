@@ -1,5 +1,5 @@
 body {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     margin: 0px;
     padding: 0px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -7,24 +7,10 @@ body {
     text-align: center;
 }
 
-#enclosure {
-    background: #fff;
-    width: 800px;
-    margin: 0 auto;
-    min-height: 400px;
-    height: auto !important;
-    height: 400px;
-    border: 2px #d4d4d4 solid;
-    text-align: left;
 
-}
 
-#header {
-    width: 800px;
-    height: 120px;
-    margin: 0px;
-    padding: 0px;
-    text-align: left;
+.header h1 {
+    font-size: 500%;
 }
 
 #footer {
@@ -43,29 +29,7 @@ body {
     background-color: #dddddd;
 }
 
-h1 {
-    font-family: 'Droid Sans', arial, serif;
-    font-weight: bold;
-    font-size: 80px;
-    color: #1d1e1e;
-    letter-spacing: -0.1em;
-    position: relative;
-    left: 48px;
-    margin: 0px;
-    display: inline;
-}
 
-h2 {
-    font-weight: bold;
-    font-size: 30px;
-    letter-spacing: -0.1em;
-    top: 0px;
-    left: 60px;
-    margin: 0px;
-    color: #06272d;
-    position: relative;
-    display: inline;
-}
 
 .help {
     position: absolute;

@@ -6,32 +6,18 @@
           content='unbury.us is an application that calculates payment plans based off of loan information to become debt free.'/>
     <meta name='keywords'
           content='loan, loan calculator, debt free, web application, personal finance, sean freiburg, jquery'/>
-    <link rel='stylesheet' type='text/css' href='css/main.css' media='screen'/>
+
     <link rel='stylesheet' type='text/css' href='css/jquery-ui-1.8.11.custom.css' media='screen'/>
-    <script type='text/javascript' src='lib/jquery-1.5.2.min.js'></script>
-    <script type='text/javascript' src='lib/jquery-ui-1.8.11.custom.min.js'></script>
-    <script type='text/javascript' src='js/unburyme.js'></script>
-    <script type='text/javascript' src='js/config.js'></script>
-    <script type='text/javascript' src='js/date.js'></script>
-    <script type='text/javascript' src='js/graph.js'></script>
-    <script type='text/javascript' src='js/interface.js'></script>
-    <script type='text/javascript' src='js/loan.js'></script>
-    <script type='text/javascript' src='js/loan_app.js'></script>
-    <script type='text/javascript' src='js/result_bar.js'></script>
-    <script type='text/javascript' src='js/total_results.js'></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
+    <link rel='stylesheet' type='text/css' href='css/custom.css' media='screen'/>
 
-    <script type='text/javascript' src='lib/flot/jquery.flot.js'></script>
-    <!--[if lte IE 8]>
-    <script language="javascript" type="text/javascript" src="lib/flot/excanvas.min.js"></script><![endif]-->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <script type='text/javascript' src='js/google_analytics.js'></script>
 </head>
 
 <body>
 
-<div id='enclosure'>
+<div class="container">
     <div id='moreInfo'>
         <div id='help' class='moreInfo'>
             <p><strong>unbury.us</strong> is a loan calculator designed to help you get debt-free as fast as possible.
@@ -62,12 +48,19 @@
 
         </div>
     </div>
-    <div id='info'><a class='link' id='link_help'>help</a> | <a class='link' id='link_about'>about</a><!-- | <a class='link' id='link_feedback'>feedback</a>-->
+
+
+
+
+    <div class="row header">
+        <div class="col-md-4"><h1>unbury.us</h1></div>
+        <div class="col-md-4"><h3>get unburied from debt</h3></div>
+        <div class="col-md-2">
+            <div id='info'>
+                <a class='link' id='link_help'>help</a> | <a class='link' id='link_about'>about</a>
+            </div>
+        </div>
     </div>
-
-    <div id='header'><h1>unbury.us</h1>
-
-        <h2>get unburied from debt</h2></div>
 
 
     <div id='helpPopup'>
@@ -144,5 +137,24 @@
 </div>
 <!--enclosure-->
 </div>
+
+<script type='text/javascript' src='lib/jquery-1.5.2.min.js'></script>
+<script type='text/javascript' src='lib/jquery-ui-1.8.11.custom.min.js'></script>
+<script type='text/javascript' src='js/unburyme.js'></script>
+<script type='text/javascript' src='js/config.js'></script>
+<script type='text/javascript' src='js/date.js'></script>
+<script type='text/javascript' src='js/graph.js'></script>
+<script type='text/javascript' src='js/interface.js'></script>
+<script type='text/javascript' src='js/loan.js'></script>
+<script type='text/javascript' src='js/loan_app.js'></script>
+<script type='text/javascript' src='js/result_bar.js'></script>
+<script type='text/javascript' src='js/total_results.js'></script>
+
+
+<script type='text/javascript' src='lib/flot/jquery.flot.js'></script>
+<!--[if lte IE 8]>
+<script language="javascript" type="text/javascript" src="lib/flot/excanvas.min.js"></script><![endif]-->
+
+<script type='text/javascript' src='js/google_analytics.js'></script>
 </body>
 </html>
