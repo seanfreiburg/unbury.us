@@ -1,0 +1,25 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+@-moz-document url-prefix() {
+    body, h1, h2, h3, h4, h5 {
+        font-weight: 300;
+    }
+    p {
+        font-weight: 400;
+    }
+}
+
+
+
+.destroy-button {
+
+    font-size: 30px;
+
+}
+
+a.destroy-button:hover{
+    text-decoration: none;
+}
+
