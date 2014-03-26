@@ -110,11 +110,12 @@ body {
 
 .loanBarInput {
 
+    padding-bottom: 8px;
 }
 
 .loanBarInput .destroyLoan {
 
-    color: #ff0000;
+    color: #ffffff;
     cursor: pointer;
 }
 
@@ -193,22 +194,17 @@ a #export {
  */
 
 #allResultsContainer {
-
 }
 
-.resultBarLink {
-    text-decoration: none;
-}
+
 
 .resultBar {
 
-    background-color: #273159;
-    background-repeat: no-repeat;
-    cursor: pointer;
+    background-color: #123b4e;
 
 }
 
-.resultBar .loanName, .resultBar .payoffDate, .resultBar .totalInterest,
+.resultBar .loanName, .resultBar .payoffDate,
 .resultBar .payoffDateText, .resultBar .totalInterestText {
     color: #fff;
     text-decoration: none;
@@ -220,6 +216,17 @@ a #export {
     font-size: 40px;
 }
 
+
+#totalResultsContainer{
+    background-color: #007a00;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.totalResultsTitle{
+    font-size: 30px;
+}
+
 .resultBar .payoffDate, .resultBar .payoffDateText,
 .resultBar .totalInterest, .resultBar .totalInterestText {
 
@@ -228,17 +235,16 @@ a #export {
 .resultBar .payoffDate {
 
 }
-
-.resultBar .payoffDateText {
-
+.payoffDateText {
+ font-size: 22px;
 }
 
 .resultBar .totalInterest {
 
 }
 
-.resultBar .totalInterestText {
-
+ .totalInterestText {
+     font-size: 22px;
 }
 
 .resultBar .resultBarDetailsClick {
@@ -318,9 +324,7 @@ tr.alternateRows1 {
     font-size: 40px;
 }
 
-#totalResultsBar .payoffDate, #totalResultsBar .payoffDateText,
-#totalResultsBar .totalInterest, #totalResultsBar .totalInterestText {
-}
+
 
 #totalResultsBar .payoffDate {
 

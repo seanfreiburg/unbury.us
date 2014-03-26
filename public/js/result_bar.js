@@ -83,15 +83,16 @@ Unburyme.ResultBar.prototype.drawMain = function (iterator, currentMonth, paymen
  */
 Unburyme.ResultBar.prototype.drawFinal = function () {
 
-    this.htmlMonthly += '</table  ></div>';
-    this.htmlMain = '       <a class=\'resultBarLink\' ><div class=\'resultBar\' id=\'resultBar' + this.uid + '\'>\n';
-    this.htmlMain += '      <div class=\'loanName col-md-4\'>' + this.loan.getName() + '</div>\n';
-    this.htmlMain += '      <div class=\'payoffDateText col-md-4\'>paid off by</div><div class=\'payoffDate\'>' + this.payOffDate.print() + '</div>\n';
-    this.htmlMain += '      <div class=\'totalInterestText col-md-4\'>total interest paid</div><div class=\'totalInterest\'>$' + this.totalInterestPaid.toFixed(2) + '</div>\n';
-    this.htmlMain += '      <div class=\'resultBarDetailsClick\'>click for details</div>';
-    this.htmlMain += '  </div>\n';
+    this.htmlMonthly += '</table></div>';
+    this.htmlMonthly = '<div class=\'row\'><div class=\'col-md-12\'>'  + this.htmlMonthly + '</div></div>';
+    this.htmlMain = '<a class=\'resultBarLink\' >' ;
+    this.htmlMain += '<div class=\'resultBar row blue\' id=\'resultBar' + this.uid + '\'>' ;
+    this.htmlMain += '<div class=\'loanName col-md-4 \'>' + this.loan.getName() + '</div>\n';
+    this.htmlMain += '<div class=\'payoffDateText col-md-4 \'>paid off by ' + this.payOffDate.print() + '</div>\n';
+    this.htmlMain += '<div class=\'totalInterestText col-md-4 \'>total interest paid $' + this.totalInterestPaid.toFixed(2) + '</div>';
+    this.htmlMain += '</div>\n';
     this.htmlMain += this.htmlMonthly;
-    this.htmlMain += '</a>\n';
+    this.htmlMain += '</a>';
 
     //Create #resultBar if it doesn't exist
     if ($('#resultBar' + this.uid).length) {

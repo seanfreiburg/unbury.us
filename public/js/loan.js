@@ -47,22 +47,21 @@ Unburyme.Loan.prototype.create = function () {
     html += '                   <div class=\'fieldInput\'><input id=\'loanname' + this.uid + '\' class=\'name\' /></div>\n';
     html += '           </div>\n';
     html += '   <div class=\'currentBalance col-md-3 \'>\n';
-    html += '                   <div class=\'fieldTitle\'>Current Balance</div>\n';
+    html += '                   <div class=\'fieldTitle\'><p>Current Balance</p></div>\n';
     html += '                   <div class=\'fieldInput\'><input id=\'loanbalance' + this.uid + '\' class=\'balance  uninitialized\' /></div>\n';
     html += '           </div>\n';
     html += '           <div class=\'minMonthlyPayment col-md-3 \'>\n';
-    html += '                   <div class=\'fieldTitle\'>Min. Payment</div>\n';
+    html += '                   <div class=\'fieldTitle\'><p>Min. Payment</p></div>\n';
     html += '                   <div class=\'fieldInput\'><input id=\'loanminPayment' + this.uid + '\' class=\'minPayment  uninitialized\' /></div>\n';
     html += '           </div>\n';
     html += '           <div class=\'interest col-md-2 \'>\n';
-    html += '                   <div class=\'fieldTitle\'>Interest</div>\n';
+    html += '                   <div class=\'fieldTitle\'><p>Interest</p></div>\n';
     html += '                   <div class=\'fieldInput\'><input id=\'loaninterest' + this.uid + '\' class=\'interest  uninitialized\' /></div>\n';
     html += '        </div>\n';
-    html += '<div class=\'col-md-1\'></div>'
-    html += '   <a href=\'#\' class=\'destroyLoan\' id=\'delete' + this.uid + '\'>✖</a>\n';
-    html += '<hr><br>';
-
-    html += '       </div>\n';
+    html += '<div class=\'col-md-1\'>'
+    html += '<button class=\'destroyLoan btn btn-danger btn-xs\' id=\'delete'+ this.uid + '\'>✖</button>'
+    html += '</div>';
+    html += '      <br> </div>';
     html += '    </div>\n';
 
 
