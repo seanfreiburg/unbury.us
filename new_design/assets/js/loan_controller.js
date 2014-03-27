@@ -24,6 +24,7 @@ var remove_loan = function (id) {
     var loan_div = $("#loan" + id);
     loan_div.next().remove();
     loan_div.remove();
+    delete window.loans[id];
 
 };
 
