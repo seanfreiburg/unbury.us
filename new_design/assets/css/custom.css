@@ -21,5 +21,12 @@ body {
 
 a.destroy-button:hover{
     text-decoration: none;
+    cursor: pointer;
+    color: #ff0000;
 }
+
+.title {
+    font-size: 40px;
+}
+
 

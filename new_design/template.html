@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+            <h1 class="title">unbury.us</h1>
+        </div>
+        <div class="col-md-4">
+            <h3>get unburied from debt</h3>
+        </div>
+        <div class="col-md-2">
+            <a data-toggle="modal" data-target="#helpModal" href="#">help</a> \
+                <a data-toggle="modal" data-target="#aboutModal" href="#">about</a>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>monthly payment</h4>
+            <input type="number" placeholder="0">
+        </div>
+        <div class="col-md-6">
+            <h4>payment type</h4>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-primary  btn-block">avalanche</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-default btn-block">snowball</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="loan0" class="loan row">
+        <div class="col-md-3">
+            <p>loan name</p>
+            <input type="text" placeholder="">
+        </div>
+        <div class="col-md-3">
+            <p>current balance</p>
+            <input type="number" placeholder="0">
+        </div>
+        <div class="col-md-3">
+            <p>minimum payment</p>
+            <input type="number" placeholder="0">
+        </div>
+        <div class="col-md-2">
+            <p>interest rate</p>
+            <input type="number" placeholder="0%">
+
+        </div>
+        <div class="col-md-1">
+            <a class="destroy-button">&times;</a>
+        </div>
+    </div>
+
+
+    <hr>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <button class="btn btn-success btn-block">+ add loan</button>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <button class="btn btn-default btn-block">calculate</button>
+
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div id="graph" class="col-md-6 col-md-offset-3">
+            <h4 class="text-center">Principal Remaining</h4>
+            <img src="assets/img/graph.png" class="img-responsive" alt="Responsive image">
+
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <p>placeholder</p>
+                </div>
+                <div class="col-md-3">
+                    <p>placeholder</p>
+                </div>
+                <div class="col-md-3">
+                    <p>placeholder</p>
+                </div>
+                <div class="col-md-3">
+                    <p>placeholder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+
+
+    <div id="loan-results">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>loan total</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>debt free by 2016</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>total interest paid: $5.16</h4>
+
+            </div>
+        </div>
+
+        <hr>
+        <div id="loan-results-0">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h3>loan name</h3>
+                </div>
+                <div class="col-md-4">
+                    <h4>paid off by 2015</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>total interest paid: $5.16</h4>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class=" table table-striped text-center">
+                            <tbody>
+                            <tr>
+                                <td>Month</td>
+                                <td>Payment</td>
+                                <td>Principal Paid</td>
+                                <td>Interest Paid</td>
+                                <td>Principal</td>
+                                <td>Total Interest</td>
+                            </tr>
+                            <tr>
+                                <td>Mar 2014</td>
+                                <td>$40.00</td>
+                                <td>$38.75</td>
+                                <td>$1.25</td>
+                                <td>$461.25</td>
+                                <td>$1.25</td>
+                            </tr>
+                            <tr>
+                                <td>Mar 2014</td>
+                                <td>$40.00</td>
+                                <td>$38.75</td>
+                                <td>$1.25</td>
+                                <td>$461.25</td>
+                                <td>$1.25</td>
+                            </tr>
+                            <tr>
+                                <td>Mar 2014</td>
+                                <td>$40.00</td>
+                                <td>$38.75</td>
+                                <td>$1.25</td>
+                                <td>$461.25</td>
+                                <td>$1.25</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p><a href="http://seanfreiburg.com">seanfreiburg.com </a></p>
+        </div>
+        <div class="col-md-6 text-right">
+            <a href='http://github.com/seanfreiburg/unburyme' title='Unbury.me on GitHub'>GitHub</a> \
+            <a href='https://github.com/seanfreiburg/unburyme/blob/master/LICENSE' title='License'>MIT License</a>
+            \ <a href='http://unbury.me' title='unbury.me'>credit</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Modals -->
+
+<div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+                <p>Put some help text here</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="aboutModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">About</h4>
+            </div>
+            <div class="modal-body">
+                <p>Put some about text here</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Libraries -->
+<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
+
+<!-- My Javascript -->
+
+
+</body>
+</html>
+
+
