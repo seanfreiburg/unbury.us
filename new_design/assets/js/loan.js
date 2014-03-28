@@ -27,3 +27,15 @@ Loan.prototype.setMinimumPayment = function(new_value){
 Loan.prototype.setInterestRate = function(new_value){
     this.interestRate = new_value;
 };
+
+
+Loan.prototype.validateField = function(field_name, new_value){
+    switch (field_name) {
+        case "loan-name":
+            return true;
+        case "current-balance":
+        case "minimum-payment":
+        case "interest-rate":
+            return $.isNumeric(new_value);
+    }
+};

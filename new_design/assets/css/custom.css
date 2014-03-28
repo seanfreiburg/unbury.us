@@ -29,4 +29,12 @@ a.destroy-button:hover{
     font-size: 40px;
 }
 
+.input-error {
+    border-color: #c70000;
+}
+
+.input-success {
+    border-color: #00a100;
+}
+
 
