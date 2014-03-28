@@ -23,7 +23,11 @@ LoanController.prototype.add_loan = function () {
 var remove_loan = function (id) {
     var loan_div = $("#loan" + id);
     loan_div.next().remove();
-    loan_div.remove();
+    loan_div.animate({ height: 0, opacity: 0 }, 'slow', function () {
+        $(this).remove();
+
+    });
+
     delete window.loans[id];
 
 };
