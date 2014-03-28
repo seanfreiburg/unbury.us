@@ -2,3 +2,4 @@ _archive
 _sourceAssets
 .idea
 .DS_Store
+deploy.sh
