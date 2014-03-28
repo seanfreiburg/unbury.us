@@ -11,7 +11,7 @@ LoanController.prototype.add_loan = function () {
     var context = {id: id};
     var html = template(context);
     $("#loan-inputs").append(html);
-    $("#loan" + id).hide().fadeIn();
+    $("#loan" + id).hide().fadeIn('500');
     window.loans[id] = new Loan(id, 0, 0, 0, 0);
     add_loan_destroy_listener(id);
     add_loan_input_listeners(id);
