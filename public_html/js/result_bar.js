@@ -42,7 +42,7 @@ Unburyme.ResultBar.prototype.drawStart = function () {
     this.clearGraphData();
     this.totalInterestPaid = 0;
 
-    this.htmlMonthly = '<div class=\'monthlyResults\' id=\'monthlyResults' + this.uid + '\'>\n';
+    this.htmlMonthly = '<div class=\'monthlyResults table-responsive\' id=\'monthlyResults' + this.uid + '\'>\n';
     this.htmlMonthly += '<table class=\' table table-striped\'><tr>';
     this.htmlMonthly += '<td class=\'tHead month\'>Month</td>\n';
     this.htmlMonthly += '<td class=\'tHead monthlyPayment\'>Payment</td>\n';
