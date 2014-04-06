@@ -25,8 +25,8 @@ a.destroy-button:hover{
     color: #ff0000;
 }
 
-.title {
-    font-size: 40px;
+#title {
+    font-size: 50px;
 }
 
 .input-error {
@@ -37,4 +37,10 @@ a.destroy-button:hover{
     border-color: #00a100;
 }
 
+
+canvas{
+    width: 100% !important;
+    height: 300px;
+    max-height: 800px;
+}
 

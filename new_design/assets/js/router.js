@@ -42,8 +42,8 @@ Router.add_loan_input_listener = function (id, field_name) {
 
 Router.add_calculate_listener = function() {
     $("#calculate").click(function(){
-        ResultsController.draw_results();
-        GraphController.draw_graph();
+        ResultsController.results();
+        GraphController.graph();
 
     });
 };

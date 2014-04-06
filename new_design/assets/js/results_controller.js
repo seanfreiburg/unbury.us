@@ -1,7 +1,8 @@
-var ResultsController = function(){
+var ResultsController = function() {
 
 };
 
-var ResultsController.draw_results = function () {
+
+ResultsController.results = function() {
 
 };

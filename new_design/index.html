@@ -19,7 +19,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3 col-md-offset-3">
-            <h1 class="title">unbury.us</h1>
+            <h1 id="title">unbury.us</h1>
         </div>
         <div class="col-md-4">
             <h3>get unburied from debt</h3>
@@ -63,12 +63,27 @@
         </div>
     </div>
 
+    <br><br>
+
+    <div class="row">
+        <div id="graph" class="col-md-12">
+
+        </div>
+    </div>
+
+
+    <br><br>
+
+    <div id="all-loan-results">
+        <div id="total-results"></div>
+        <div id="loan-results"></div>
+    </div>
 
     <br><br>
 
     <div class="row">
         <div class="col-md-6">
-            <p><a href="http://seanfreiburg.com">seanfreiburg.com </a></p>
+            <a href="http://seanfreiburg.com">seanfreiburg.com </a>
         </div>
         <div class="col-md-6 text-right">
             <a href='http://github.com/seanfreiburg/unburyme' title='Unbury.me on GitHub'>GitHub</a> \
@@ -138,12 +153,94 @@
     <hr>
 </script>
 
+<script id="total-results-template" type="text/x-handlebars-template">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h3>loan total</h3>
+        </div>
+        <div class="col-md-4">
+            <h4>debt free by 2016</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>total interest paid: $5.16</h4>
+
+        </div>
+    </div>
+
+    <hr>
+</script>
+
+<script id="loan-results-template" type="text/x-handlebars-template">
+    <div id="loan-results-0">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>loan name</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>paid off by 2015</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>total interest paid: $5.16</h4>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class=" table table-striped text-center">
+                        <tbody>
+                        <tr>
+                            <td>Month</td>
+                            <td>Payment</td>
+                            <td>Principal Paid</td>
+                            <td>Interest Paid</td>
+                            <td>Principal</td>
+                            <td>Total Interest</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 2014</td>
+                            <td>$40.00</td>
+                            <td>$38.75</td>
+                            <td>$1.25</td>
+                            <td>$461.25</td>
+                            <td>$1.25</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 2014</td>
+                            <td>$40.00</td>
+                            <td>$38.75</td>
+                            <td>$1.25</td>
+                            <td>$461.25</td>
+                            <td>$1.25</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 2014</td>
+                            <td>$40.00</td>
+                            <td>$38.75</td>
+                            <td>$1.25</td>
+                            <td>$461.25</td>
+                            <td>$1.25</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <hr>
+</script>
+
 
 <!-- Libraries -->
 <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/amplifyjs/1.1.0/amplify.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
 
 <!-- My Javascript -->
 <script src="assets/js/init.js"></script>
@@ -152,7 +249,7 @@
 <script src="assets/js/loan.js"></script>
 <script src="assets/js/results_controller.js"></script>
 <script src="assets/js/graph_controller.js"></script>
-<script src="assets/js/graph.js"></script>
+<script src="assets/js/respChart.js"></script>
 
 
 </body>
