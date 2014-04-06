@@ -478,9 +478,8 @@ tr.alternateRows1 {
 }
 
 #graph {
-    width: 600px;
-    height: 300px;
-    left: 100px;
+    width: 70%;
+    height: 70%;
 }
 
 #graphTitle {
