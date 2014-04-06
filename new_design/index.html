@@ -72,7 +72,7 @@
     </div>
 
 
-    <br><br>
+    <br>
 
     <div id="all-loan-results">
         <div id="total-results"></div>
@@ -154,15 +154,16 @@
 </script>
 
 <script id="total-results-template" type="text/x-handlebars-template">
+    <hr>
     <div class="row text-center">
         <div class="col-md-4">
             <h3>loan total</h3>
         </div>
         <div class="col-md-4">
-            <h4>debt free by 2016</h4>
+            <h4>debt free by {{year}}</h4>
         </div>
         <div class="col-md-4">
-            <h4>total interest paid: $5.16</h4>
+            <h4>total interest paid: ${{total_interest}}</h4>
 
         </div>
     </div>
@@ -171,24 +172,26 @@
 </script>
 
 <script id="loan-results-template" type="text/x-handlebars-template">
+    {{#each loans}}
     <div id="loan-results-0">
-        <div class="row text-center">
+        <div class="row text-center" id="loan-head-{{id}}">
             <div class="col-md-4">
-                <h3>loan name</h3>
+                <h3>{{loan_name}}</h3>
             </div>
             <div class="col-md-4">
-                <h4>paid off by 2015</h4>
+                <h4>paid off by {{year}}</h4>
             </div>
             <div class="col-md-4">
-                <h4>total interest paid: $5.16</h4>
+                <h4>total interest paid: ${{total_interest}}</h4>
             </div>
         </div>
         <br>
 
-        <div class="row">
+        <div class="row" style="display: none;" >
+
             <div class="col-md-12">
                 <div class="table-responsive">
-                    <table class=" table table-striped text-center">
+                    <table class="table table-striped text-center">
                         <tbody>
                         <tr>
                             <td>Month</td>
@@ -228,10 +231,12 @@
                 </div>
             </div>
         </div>
+
     </div>
     </div>
 
     <hr>
+    {{/each}}
 </script>
 
 

@@ -47,3 +47,9 @@ Router.add_calculate_listener = function() {
 
     });
 };
+
+Router.add_loan_table_result_listener = function(id){
+    $("#loan-head-" + id).click(function(){
+        $(this).next().next().toggle();
+    });
+};
