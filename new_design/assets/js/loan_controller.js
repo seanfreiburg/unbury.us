@@ -1,6 +1,6 @@
-function LoanController() {
+var LoanController = function() {
 
-}
+};
 
 
 LoanController.add_loan = function () {
@@ -33,16 +33,29 @@ LoanController.remove_loan = function (id) {
 };
 
 
-LoanController.input_change = function(id,field_name,context){
+LoanController.loan_input_change = function (id, field_name, context) {
     var value = $(context).val();
     var loan = window.loans[id];
 
-    if (Loan.validateField(field_name, value)) {
+    if (Loan.prototype.validate_field(field_name, value)) {
         $(context).removeClass("input-error").addClass("input-success");
+        loan.set_loan_field(field_name, value);
     }
     else {
         $(context).removeClass("input-success").addClass("input-error");
 
+    }
+};
+
+LoanController.monthly_payment_input_change = function (context) {
+    var value = parseFloat($(context).val());
+    // @todo, add check to make sure it's larger than the sum of the min payments
+    if ($.isNumeric(value) && Number(value) > 0) {
+        $(context).removeClass("input-error").addClass("input-success");
+        window.monthly_payment = value;
+    }
+    else {
+        $(context).removeClass("input-success").addClass("input-error");
     }
 };
 

@@ -15,7 +15,7 @@ Router.init = function () {
 
 Router.add_monthy_payment_listener = function () {
     $("#monthly-payment").focusout(function () {
-        console.log($(this).val());
+        LoanController.monthly_payment_input_change(this);
     });
 };
 
@@ -35,6 +35,15 @@ Router.add_loan_input_listeners = function (id) {
 
 Router.add_loan_input_listener = function (id, field_name) {
     $("#loan" + id).find("input[name=" + field_name + "]").focusout(function () {
-        LoanController.input_change(id, field_name,this);
+        LoanController.loan_input_change(id, field_name,this);
+    });
+};
+
+
+Router.add_calculate_listener = function() {
+    $("#calculate").click(function(){
+        ResultsController.draw_results();
+        GraphController.draw_graph();
+
     });
 };
