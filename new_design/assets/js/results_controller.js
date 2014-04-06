@@ -12,7 +12,8 @@ ResultsController.results = function() {
 ResultsController.compute_results = function(){
    return {year: 2016, total_interest: 20.23, loans: [{id: 1, loan_name: "fg",year: 2016, total_interest: 20.23 },
        {id: 2, loan_name: "fg",year: 2016, total_interest: 20.23 },
-       {id: 3, loan_name: "fg",year: 2016, total_interest: 20.23 }]}
+       {id: 3, loan_name: "fg",year: 2016, total_interest: 20.23 }]};
+
 };
 
 
@@ -32,7 +33,7 @@ ResultsController.draw_loan_results= function(results){
     var html = template(context);
     $("#loan-results").append(html);
     $("#loan-results").hide().fadeIn('500');
-    Router.add_loan_table_result_listener(1);
-    Router.add_loan_table_result_listener(2);
-    Router.add_loan_table_result_listener(3);
+    for(var i = 0; i < context.loans.length; i++){
+        Router.add_loan_table_result_listener(context.loans[i].id);
+    }
 };
