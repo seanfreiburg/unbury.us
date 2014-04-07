@@ -10,6 +10,17 @@ Router.init = function () {
         LoanController.add_loan();
     });
 
+    $("#avalanche-btn").click(function () {
+        ApplicationController.changePaymentType(this);
+    });
+
+    $("#snowball-btn").click(function () {
+        ApplicationController.changePaymentType(this);
+    });
+
+
+
+
 };
 
 
@@ -35,21 +46,21 @@ Router.add_loan_input_listeners = function (id) {
 
 Router.add_loan_input_listener = function (id, field_name) {
     $("#loan" + id).find("input[name=" + field_name + "]").focusout(function () {
-        LoanController.loan_input_change(id, field_name,this);
+        LoanController.loan_input_change(id, field_name, this);
     });
 };
 
 
-Router.add_calculate_listener = function() {
-    $("#calculate").click(function(){
+Router.add_calculate_listener = function () {
+    $("#calculate").click(function () {
         ResultsController.results();
         GraphController.graph();
 
     });
 };
 
-Router.add_loan_table_result_listener = function(id){
-    $("#loan-head-" + id).click(function(){
+Router.add_loan_table_result_listener = function (id) {
+    $("#loan-head-" + id).click(function () {
         $(this).next().next().toggle();
     });
 };

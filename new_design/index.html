@@ -40,10 +40,10 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <button class="btn btn-primary  btn-block">avalanche</button>
+                    <button id="avalanche-btn" class="btn btn-primary  btn-block">avalanche</button>
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-default btn-block">snowball</button>
+                    <button id="snowball-btn" class="btn btn-default btn-block">snowball</button>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <br><br>
+    <hr><br>
 
     <div class="row">
         <div id="graph" class="col-md-12">
@@ -173,7 +173,7 @@
 
 <script id="loan-results-template" type="text/x-handlebars-template">
     {{#each loans}}
-    <div id="loan-results-0">
+    <div id="loan-results-{{id}}">
         <div class="row text-center" id="loan-head-{{id}}">
             <div class="col-md-4">
                 <h3>{{loan_name}}</h3>
@@ -192,7 +192,7 @@
             <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table table-striped text-center">
-                        <tbody>
+                        <tbody id="tbody-{{id}}" >
                         <tr>
                             <td>Month</td>
                             <td>Payment</td>
@@ -201,31 +201,9 @@
                             <td>Principal</td>
                             <td>Total Interest</td>
                         </tr>
-                        <tr>
-                            <td>Mar 2014</td>
-                            <td>$40.00</td>
-                            <td>$38.75</td>
-                            <td>$1.25</td>
-                            <td>$461.25</td>
-                            <td>$1.25</td>
-                        </tr>
-                        <tr>
-                            <td>Mar 2014</td>
-                            <td>$40.00</td>
-                            <td>$38.75</td>
-                            <td>$1.25</td>
-                            <td>$461.25</td>
-                            <td>$1.25</td>
-                        </tr>
-                        <tr>
-                            <td>Mar 2014</td>
-                            <td>$40.00</td>
-                            <td>$38.75</td>
-                            <td>$1.25</td>
-                            <td>$461.25</td>
-                            <td>$1.25</td>
-                        </tr>
-
+                        {{#each rows}}
+                            {{> row }}
+                        {{/each}}
                         </tbody>
                     </table>
                 </div>
@@ -239,6 +217,18 @@
     {{/each}}
 </script>
 
+<script id="loan-table-row-partial" type="text/x-handlebars-template">
+
+    <tr>
+        <td>{{month}} {{year}}</td>
+        <td>${{payment}}</td>
+        <td>${{pricipal_paid}}</td>
+        <td>${{interest_paid}}</td>
+        <td>${{principal}}</td>
+        <td>${{total_interest}}</td>
+    </tr>
+</script>
+
 
 <!-- Libraries -->
 <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
@@ -250,6 +240,7 @@
 <!-- My Javascript -->
 <script src="assets/js/init.js"></script>
 <script src="assets/js/router.js"></script>
+<script src="assets/js/application_controller.js"></script>
 <script src="assets/js/loan_controller.js"></script>
 <script src="assets/js/loan.js"></script>
 <script src="assets/js/results_controller.js"></script>

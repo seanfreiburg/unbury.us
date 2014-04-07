@@ -76,7 +76,7 @@ Unburyme.LoanApp.prototype.createLoan = function () {
  */
 Unburyme.LoanApp.prototype.destroyLoan = function (uid) {
 
-    this.getLoan(uid).destroy()
+    this.getLoan(uid).destroy();
     this.loanArray.splice(this.getLoanIndex(uid), 1);
     this.loanCount--;
     this.refreshInitLoanArray();

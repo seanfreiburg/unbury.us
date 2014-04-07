@@ -8,8 +8,9 @@ GraphController.graph = function () {
     var data = GraphController.get_data();
     var graph_div = $("#graph");
     if (!$("#myChart").length) {
+        var title = "<h4 class='text-center'>Principal Remaining</h4>";
         var canvas_html = "<canvas id=\"myChart\"  height=\"400\"></canvas>";
-        graph_div.append(canvas_html);
+        graph_div.append(title+canvas_html);
     }
 
     respChart($("#myChart"), data);
