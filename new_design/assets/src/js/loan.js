@@ -26,6 +26,7 @@ Loan.prototype.set_loan_field = function(field_name, new_value){
 
 };
 
+
 Loan.prototype.get_loan_name = function(new_value){
     return this.loanName;
 };

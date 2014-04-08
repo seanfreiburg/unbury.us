@@ -29,11 +29,11 @@ function respChart(selector, data, options){
         animationSteps : 60,
         animationEasing : "easeOutQuart",
         onAnimationComplete : null
-    }
+    };
 
     // check if the option is override to exact options
     // (bar, pie and other)
-    if (options == false || options == null){
+    if (options === false || options === null){
         options = option;
     }
 
@@ -49,10 +49,10 @@ function respChart(selector, data, options){
     function generateChart(){
         // make chart width fit with its container
         var ww = selector.attr('width', $(container).width() );
-        var ww = selector.attr('height', 400);
+        ww = selector.attr('height', 400);
         // Initiate new chart or Redraw
         new Chart(ctx).Line(data, options);
-    };
+    }
 
     // run function - render chart at first load
     generateChart();

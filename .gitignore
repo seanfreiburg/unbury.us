@@ -3,3 +3,6 @@ _sourceAssets
 .idea
 .DS_Store
 deploy.sh
+node_modules/
+.sass-cache
+dist

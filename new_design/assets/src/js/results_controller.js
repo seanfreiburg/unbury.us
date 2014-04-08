@@ -37,7 +37,7 @@ ResultsController.compute_results = function () {
 
     var loans_dict = window.loans;
     var loans = [];
-    for (index in loans_dict) {
+    for (var index in loans_dict) {
         loans.push(loans_dict[index]);
     }
     if (window.payment_type == "avalanche") {
