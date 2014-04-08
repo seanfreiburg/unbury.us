@@ -8,10 +8,11 @@
     "grunt-contrib-jshint": "latest",
     "jshint-stylish": "latest",
     "grunt-contrib-uglify": "latest",
-    "grunt-contrib-sass": "latest",
+    "grunt-contrib-stylus": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-contrib-clean": "latest"
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-imagemin": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

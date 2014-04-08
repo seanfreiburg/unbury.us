@@ -35,10 +35,10 @@ module.exports = function (grunt) {
         },
 
         // compile less stylesheets to css -----------------------------------------
-        sass: {
+        stylus: {
             build: {
                 files: {
-                    'assets/src/css/style.css': 'assets/src/css/*.scss'
+                    'assets/src/css/style.css': 'assets/src/css/*.styl'
                 }
             }
         },
@@ -55,8 +55,21 @@ module.exports = function (grunt) {
             }
         },
 
-        clean:  {
+        clean: {
             build: ["assets/src/css/*.css"]
+        },
+
+        imagemin: {
+            dynamic: {                         // Another target
+                files: [
+                    {
+                        expand: true,                  // Enable dynamic expansion
+                        cwd: 'assets/src/',                   // Src matches are relative to this path
+                        src: ['img/*.{png,jpg,gif,ico}'],   // Actual patterns to match
+                        dest: 'assets/dist/'                  // Destination path prefix
+                    }
+                ]
+            }
         },
 
         // configure watch to auto update ------------------------------------------
@@ -65,14 +78,14 @@ module.exports = function (grunt) {
             // for stylesheets, watch css and less files
             // only run less and cssmin
             stylesheets: {
-                files: ['assets/dist/css/style.css', 'assets/src/css/*.scss'],
-                tasks: ['sass', 'cssmin','clean']
+                files: ['assets/dist/css/style.css', 'assets/src/css/*.styl'],
+                tasks: ['stylus', 'cssmin', 'clean']
             },
 
             // for scripts, run jshint and uglify
             scripts: {
                 files: 'assets/src/js/*.js',
-                tasks: ['jshint', 'uglify']
+                tasks: [ 'uglify']
             }
         }
 
@@ -85,13 +98,14 @@ module.exports = function (grunt) {
     // make sure you have run npm install so our app can find these
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin','clean']);
+    grunt.registerTask('default', [ 'uglify', 'stylus', 'cssmin', 'clean', 'imagemin']);
 
 };
 
