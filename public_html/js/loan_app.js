@@ -123,7 +123,7 @@ Unburyme.LoanApp.prototype.updateTotalMinPayment = function () {
 
     var totalMin = 0;
     for (var i = 0; i < this.loanCount; i++) {
-        totalMin += this.loanArray[i].getMinPayment();
+        totalMin += this.loanArray[i].get_minimum_payment();
     }
     this.totalMinPayment = totalMin;
     if (this.totalMinPayment > this.totalPayment) {
@@ -215,10 +215,10 @@ Unburyme.LoanApp.prototype.getInfo = function (uid, field) {
             return this.getLoan(uid).getBalance();
             break;
         case 'minPayment':
-            return this.getLoan(uid).getMinPayment();
+            return this.getLoan(uid).get_minimum_payment();
             break;
         case 'interest':
-            return this.getLoan(uid).getInterest();
+            return this.getLoan(uid).get_interest_rate();
             break;
     }
 
@@ -281,8 +281,8 @@ Unburyme.LoanApp.prototype.calculate = function (sortedLoans) {
         sortedLoans[i].results.drawStart();
         calcName[i] = sortedLoans[i].getName();
         calcBalance[i] = sortedLoans[i].getBalance();
-        calcInterest[i] = sortedLoans[i].getInterest() * 0.01;
-        calcMinPayment[i] = sortedLoans[i].getMinPayment();
+        calcInterest[i] = sortedLoans[i].get_interest_rate() * 0.01;
+        calcMinPayment[i] = sortedLoans[i].get_minimum_payment();
         finishedCalculating[i] = 0;
     }
 

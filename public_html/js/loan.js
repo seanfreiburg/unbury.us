@@ -141,14 +141,14 @@ Unburyme.Loan.prototype.getBalance = function () {
 };
 
 
-Unburyme.Loan.prototype.getMinPayment = function () {
+Unburyme.Loan.prototype.get_minimum_payment = function () {
 
     return this.minPayment;
 
 };
 
 
-Unburyme.Loan.prototype.getInterest = function () {
+Unburyme.Loan.prototype.get_interest_rate = function () {
 
     return this.interest;
 
@@ -166,10 +166,10 @@ Unburyme.Loan.prototype.getValue = function (field) {
             value = this.getBalance();
             break;
         case 'minPayment':
-            value = this.getMinPayment();
+            value = this.get_minimum_payment();
             break;
         case 'interest':
-            value = this.getInterest();
+            value = this.get_interest_rate();
             break;
     }
     return value;
