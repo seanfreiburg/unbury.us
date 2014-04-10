@@ -95,7 +95,7 @@ UDate.prototype.decrement = function () {
 
     if (this.month == 0) {
         this.year--; //Happy new year!
-        this.month = 12;
+        this.month = 11;
     }
     else
         this.month--; //New month

@@ -63,7 +63,8 @@
         </div>
     </div>
 
-    <hr><br>
+    <hr>
+    <br>
 
     <div class="row">
         <div id="graph" class="col-md-12">
@@ -82,10 +83,10 @@
     <br><br>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <a href="http://seanfreiburg.com">seanfreiburg.com </a>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-2 col-md-offset-7">
             <a href='http://github.com/seanfreiburg/unburyme' title='Unbury.me on GitHub'>GitHub</a> \
             <a href='https://github.com/seanfreiburg/unburyme/blob/master/LICENSE' title='License'>MIT License</a>
             \ <a href='http://unbury.me' title='unbury.me'>credit</a>
@@ -106,7 +107,23 @@
                 <h4 class="modal-title">Help</h4>
             </div>
             <div class="modal-body">
-                <p>Put some help text here</p>
+                <p>
+
+                    unbury.us is a loan calculator designed to help you get debt-free as fast as possible. Once your
+                    loan information is entered, you may set the total amount you're able to put towards loans in a
+                    month. If this amount is greater than the minimum you're able to pay on loans, the extra money is
+                    put towards one loan every month to eliminate it. Once a loan is paid off, the money that was
+                    previously going towards that loan is now put towards the next loan, and so forth.
+                </p>
+
+                <p>
+                    The order of which loans are paid off first is either highest-to-lowest interest rate (Avalanche),
+                    or lowest-to-highest remaining principal (Snowball), depending on which you choose.
+                </p>
+
+                <p>
+                    Put just an extra $100 a month towards your loans and see how much time and interest paid you save!
+                </p>
             </div>
         </div>
     </div>
@@ -120,7 +137,20 @@
                 <h4 class="modal-title">About</h4>
             </div>
             <div class="modal-body">
-                <p>Put some about text here</p>
+
+                <p>
+                    <strong>unbury.us</strong> is a loan calculator created by <a href='http://www.seanfreiburg.com'
+                                                                                  target='_new' title='seanfreiburg.com'>Sean
+                    Freiburg</a>.</p>
+
+                <p>Source code for the project may be obtained at <a
+                        href="https://github.com/seanfreiburg/unbury.us">github</a>
+                    and is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
+                </p>
+
+                <p>If you have any comments, questions or feedback, let me know on Twitter <a
+                        href='http://www.twitter.com/sfreiburg' title='Sean Freiburg on Twitter'>@sfreiburg</a></p>
+
             </div>
         </div>
     </div>
@@ -177,7 +207,6 @@
         <div class="row text-center" id="loan-head-{{id}}">
             <div class="col-md-4">
                 <h4>{{loanName}}</h4>
-                <p>click for details</p>
             </div>
             <div class="col-md-4">
                 <h4>paid off by {{date}}</h4>
@@ -188,12 +217,12 @@
         </div>
         <br>
 
-        <div class="row" style="display: none;" >
+        <div class="row" style="display: none;">
 
             <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table table-striped text-center">
-                        <tbody id="tbody-{{id}}" >
+                        <tbody id="tbody-{{id}}">
                         <tr>
                             <td>Month</td>
                             <td>Payment</td>
@@ -202,7 +231,7 @@
                             <td>Principal Remaining</td>
                         </tr>
                         {{#each rows}}
-                            {{> row }}
+                        {{> row }}
                         {{/each}}
                         </tbody>
                     </table>
@@ -247,7 +276,6 @@
 <script src="assets/src/js/results_controller.js"></script>
 <script src="assets/src/js/router.js"></script>
 <script src="assets/src/js/init.js"></script>
-
 
 
 </body>
