@@ -91,12 +91,23 @@ UDate.prototype.increment = function () {
 
 };
 
+UDate.prototype.decrement = function () {
+
+    if (this.month == 0) {
+        this.year--; //Happy new year!
+        this.month = 12;
+    }
+    else
+        this.month--; //New month
+
+};
+
 /**
  * @return {string} Formatted current date
  */
 UDate.prototype.print = function () {
 
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return months[this.month] + " " + this.year;
 
 };

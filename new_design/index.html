@@ -157,7 +157,7 @@
     <hr>
     <div class="row text-center">
         <div class="col-md-4">
-            <h3>loan total</h3>
+            <h4>loan total</h4>
         </div>
         <div class="col-md-4">
             <h4>debt free by {{year}}</h4>
@@ -176,13 +176,13 @@
     <div id="loan-results-{{id}}">
         <div class="row text-center" id="loan-head-{{id}}">
             <div class="col-md-4">
-                <h3>{{loan_name}}</h3>
+                <h4>{{loanName}}</h4>
             </div>
             <div class="col-md-4">
-                <h4>paid off by {{year}}</h4>
+                <h4>paid off by {{date}}</h4>
             </div>
             <div class="col-md-4">
-                <h4>total interest paid: ${{total_interest}}</h4>
+                <h4>interest paid: ${{total_interest_paid}}</h4>
             </div>
         </div>
         <br>
@@ -198,8 +198,7 @@
                             <td>Payment</td>
                             <td>Principal Paid</td>
                             <td>Interest Paid</td>
-                            <td>Principal</td>
-                            <td>Total Interest</td>
+                            <td>Principal Remaining</td>
                         </tr>
                         {{#each rows}}
                             {{> row }}
@@ -220,12 +219,11 @@
 <script id="loan-table-row-partial" type="text/x-handlebars-template">
 
     <tr>
-        <td>{{month}} {{year}}</td>
+        <td>{{date}}</td>
         <td>${{payment}}</td>
-        <td>${{pricipal_paid}}</td>
+        <td>${{principal_paid}}</td>
         <td>${{interest_paid}}</td>
-        <td>${{principal}}</td>
-        <td>${{total_interest}}</td>
+        <td>${{principal_remaining}}</td>
     </tr>
 </script>
 
@@ -238,7 +236,16 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
 
 <!-- My Javascript -->
-<script src="assets/dist/js/unburyus.min.js"></script>
+<!-- <script src="assets/dist/js/unburyus.min.js"></script>  -->
+<script src="assets/src/js/application_controller.js"></script>
+<script src="assets/src/js/date.js"></script>
+<script src="assets/src/js/graph_controller.js"></script>
+<script src="assets/src/js/loan.js"></script>
+<script src="assets/src/js/loan_controller.js"></script>
+<script src="assets/src/js/respChart.js"></script>
+<script src="assets/src/js/results_controller.js"></script>
+<script src="assets/src/js/router.js"></script>
+<script src="assets/src/js/init.js"></script>
 
 
 
