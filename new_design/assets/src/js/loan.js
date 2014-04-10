@@ -36,7 +36,7 @@ Loan.prototype.set_loan_name = function(new_value){
     this.loanName = new_value;
 };
 
-Loan.prototype.get_current_balance= function(new_value){
+Loan.get_current_balance= function(new_value){
     return this.loanName;
 };
 
