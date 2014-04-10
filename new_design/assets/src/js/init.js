@@ -2,9 +2,8 @@ $().ready(function () {
 
     window.auto_increment = -1;
     window.monthly_payment = 0;
-    if ($("#monthly-payment").val()) {
-        window.monthly_payment = $("#monthly-payment").val();
-    }
+    LoanController.monthly_payment_input_change($("#monthly-payment"));
+
     window.loans = {};
     window.payment_type = "avalanche";
 

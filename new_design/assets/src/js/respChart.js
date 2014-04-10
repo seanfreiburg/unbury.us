@@ -1,12 +1,14 @@
-function respChart(selector, data, options){
+function respChart(selector, data, options,steps,step_width){
 
+    console.log(steps);
+    console.log(step_width);
     // Define default option for line chart
     var option = {
         scaleOverlay : false,
-        scaleOverride : false,
-        scaleSteps : null,
-        scaleStepWidth : null,
-        scaleStartValue : null,
+        scaleOverride : true,
+        scaleSteps : steps,
+        scaleStepWidth : step_width,
+        scaleStartValue : 0,
         scaleLineColor : "rgba(0,0,0,.1)",
         scaleLineWidth : 1,
         scaleShowLabels : true,
@@ -18,7 +20,7 @@ function respChart(selector, data, options){
         scaleShowGridLines : true,
         scaleGridLineColor : "rgba(0,0,0,.05)",
         scaleGridLineWidth : 1,
-        bezierCurve : true,
+        bezierCurve : false,
         pointDot : true,
         pointDotRadius : 3,
         pointDotStrokeWidth : 1,
