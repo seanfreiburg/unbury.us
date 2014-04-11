@@ -1,211 +1,286 @@
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+<!DOCTYPE html>
+<html>
 <head>
-    <title>unbury.us : a loan calculator to become debt free</title>
-    <meta http-equiv='content-type' content='application/xhtml+xml; charset=utf-8'/>
+    <title>unbury.us</title>
     <meta name='description'
           content='unbury.us is an application that calculates payment plans based off of loan information to become debt free.'/>
     <meta name='keywords'
           content='loan, loan calculator, debt free, web application, personal finance, sean freiburg, jquery'/>
 
-    <link rel='stylesheet' type='text/css' href='css/jquery-ui-1.8.11.custom.css' media='screen'/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-    <link rel='stylesheet' type='text/css' href='css/custom.css' media='screen'/>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/dist/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/dist/img/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/dist/css/style.min.css" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="container">
-    <div id='moreInfo'>
-        <div id='help' class='moreInfo'>
-            <p><strong>unbury.us</strong> is a loan calculator designed to help you get debt-free as fast as possible.
-                Once your loan information is entered, you may set the total amount you're able to put towards loans in
-                a month. If this amount is greater than the minimum you're able to pay on loans, the extra money is put
-                towards one loan every month to eliminate it. Once a loan is paid off, the money that was previously
-                going towards that loan is now put towards the next loan, and so forth.</p>
-
-            <p>The order of which loans are paid off first is either highest-to-lowest interest rate
-                (<strong>Avalanche</strong>), or lowest-to-highest remaining principal (<strong>Snowball</strong>),
-                depending on which you choose.</p>
-
-            <p>Put just an extra $100 a month towards your loans and see how much time and interest paid you save!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+            <h1 id="title">unbury.us</h1>
         </div>
-        <div id='about' class='moreInfo'>
-            <p>
-                <strong>unbury.us</strong> is a loan calculator created by <a href='http://www.seanfreiburg.com'
-                                                                              target='_new' title='seanfreiburg.com'>Sean
-                Freiburg</a>.</p>
-
-            <p>Source code for the project may be obtained at <a
-                    href="https://github.com/seanfreiburg/unburyme">github</a>
-                and is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
-            </p>
-
-            <p>If you have any comments, questions or feedback, let me know on Twitter <a
-                    href='http://www.twitter.com/sfreiburg' title='Sean Freiburg on Twitter'>@sfreiburg</a></p>
-
+        <div class="col-md-4">
+            <h3>get unburied from debt</h3>
         </div>
-    </div>
-
-
-    <div class="row header">
-        <div class="col-md-4"><h1>unbury.us</h1></div>
-        <div class="col-md-4"><h3>get unburied from debt</h3></div>
         <div class="col-md-2">
-            <div id='info'>
-                <a class='link' id='link_help'>help</a> | <a class='link' id='link_about'>about</a>
-            </div>
+            <a data-toggle="modal" data-target="#helpModal" href="#">help</a> \
+            <a data-toggle="modal" data-target="#aboutModal" href="#">about</a>
         </div>
     </div>
-
-
-    <div id='helpPopup'>
-        <div class='helpContent' id='help_tmp'>
-            <p>The <strong>total monthly payment</strong> is the amount you're able to put into paying off all of your
-                loans every month.</p>
-
-            <p>See what difference in adding $100 more than the total of your loans' minimum payments makes!</p>
-        </div>
-        <div class='helpContent' id='help_pt'>
-            <p><strong>Avalanche</strong>: Paying off loans with the <strong>highest interest</strong> rate first.</p>
-
-            <p><strong>Snowball</strong>:Paying off loans with the <strong>lowest balance</strong> first.</p>
-
-            <p>While <strong>avalanche</strong> results in paying less interest, as well as being debt free sooner,
-                <strong>snowball</strong> pays off individual loans faster, which can be motivating!</p>
-
-            <p>Depending on your loans, the outcome may be the same regardless of the method used.</p>
-        </div>
-    </div>
-
-
+    <hr>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-2 col-md-offset-0">
+            <h4>monthly payment</h4>
+            <input class="form-control" id="monthly-payment" type="number" placeholder="0">
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <h4>payment type</h4>
 
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class="field-header"> monthly payment </h4>
-
-                    <form>$<input id='totalMonthlyPayment' name='totalMonthlyPayment' type="number"
-                                 placeholder="0"> </input></form>
-
+                    <button id="avalanche-btn" class="btn btn-primary  btn-block">avalanche</button>
                 </div>
                 <div class="col-md-6">
-                    <div class="row">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4 class="field-header"> payment type </h4>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <button id="avalanche" type="button"
-                                        class="btn btn-primary btn-block  paymentTypeButtonLink">avalanche
-                                </button>
-                            </div>
-                            <div class="col-md-6">
-                                <button id="snowball" type="button"
-                                        class="btn btn-default btn-block  paymentTypeButtonLink">snowball
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-
-
-            <div id='loanBarInputContainer'>
-            </div>
-
-            <br>
-            <div class="row">
-                <div class="col-md-2">
-                    <button type="button" id="createLoan" class="btn btn-success btn-block">+ add loan</button>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <button id="calculate" class="btn btn-default btn-lg">calculate</button>
-
+                    <button id="snowball-btn" class="btn btn-default btn-block">snowball</button>
                 </div>
             </div>
         </div>
     </div>
+    <hr>
 
-
-    <!-- loanBarInputContainer -->
+    <div id="loan-inputs"></div>
 
 
     <div class="row">
-        <div id='graphTitle'></div>
-    </div>
-    <div class="row">
-        <div id='graph' class="col-md-12 col-md-offset-1"></div>
-    </div>
-    <div class="row">
-        <div id='graphViewOptions'><a class='graphView' id='graph_princRemaining'>Principal Remaining</a> | <a
-                class='graphView' id='graph_princPaid'>Principal Paid</a> |
-            <a class='graphView' id='graph_totalInterestPaid'>Total Interest Paid</a> | <a class='graphView'
-                                                                                           id='graph_monthlyPayment'>Monthly
-                Payment</a></div>
-    </div>
-    <div class="row" id='totalResultsContainer'>
+        <div class="col-md-3 col-md-offset-2">
+            <button class="btn btn-success btn-block" id="add-loan">+ add loan</button>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <button id="calculate" class="btn btn-default btn-block">calculate</button>
+
+        </div>
     </div>
 
-        <div id='allResultsContainer'></div>
+    <hr>
+    <br>
+
+    <div class="row">
+        <div id="graph" class="col-md-12">
+
+        </div>
+    </div>
+
+
+    <br>
+
+    <div id="all-loan-results">
+        <div id="total-results"></div>
+        <div id="loan-results"></div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-3">
+            <a href="http://seanfreiburg.com">seanfreiburg.com </a>
+        </div>
+        <div class="col-md-2 col-md-offset-7">
+            <a href='https://github.com/seanfreiburg/unbury.us/issues' title='Report bugs'>Report a Bug</a> \
+            <a href='http://github.com/seanfreiburg/unbury.us' title='Unbury.me on GitHub'>GitHub</a> \
+            <a href='https://github.com/seanfreiburg/unbury.us/blob/master/LICENSE' title='License'>MIT License</a>
+            \ <a href='http://unbury.me' title='unbury.me'>credit</a>
+        </div>
+    </div>
 
 
 </div>
 
 
-<div class="row">
-    <div class="col-md-9">
-        <p></p>
+<!-- Modals -->
+
+<div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+
+                    unbury.us is a loan calculator designed to help you get debt-free as fast as possible. Once your
+                    loan information is entered, you may set the total amount you're able to put towards loans in a
+                    month. If this amount is greater than the minimum you're able to pay on loans, the extra money is
+                    put towards one loan every month to eliminate it. Once a loan is paid off, the money that was
+                    previously going towards that loan is now put towards the next loan, and so forth.
+                </p>
+
+                <p>
+                    The order of which loans are paid off first is either highest-to-lowest interest rate (Avalanche),
+                    or lowest-to-highest remaining principal (Snowball), depending on which you choose.
+                </p>
+
+                <p>
+                    Put just an extra $100 a month towards your loans and see how much time and interest paid you save!
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">
-        <div class="row">
+</div>
+
+<div class="modal fade" id="aboutModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">About</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>
+                    <strong>unbury.us</strong> is a loan calculator created by <a href='http://www.seanfreiburg.com'
+                                                                                  target='_new' title='seanfreiburg.com'>Sean
+                    Freiburg</a>.</p>
+
+                <p>Source code for the project may be obtained at <a
+                        href="https://github.com/seanfreiburg/unbury.us">github</a>
+                    and is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
+                </p>
+
+                <p>If you have any comments, questions or feedback, let me know on Twitter <a
+                        href='http://www.twitter.com/sfreiburg' title='Sean Freiburg on Twitter'>@sfreiburg</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Templates -->
+<script id="loan-input-template" type="text/x-handlebars-template">
+    <div id="loan{{id}}" class="loan row">
+        <div class="col-md-3">
+            <p>loan name</p>
+            <input class="form-control input-error" name="loan-name" type="text" placeholder="">
+        </div>
+        <div class="col-md-3">
+            <p>current balance</p>
+            <input class="form-control input-error" name="current-balance" type="number" placeholder="0">
+        </div>
+        <div class="col-md-3">
+            <p>minimum payment</p>
+            <input class="form-control input-error" name="minimum-payment" type="number" placeholder="0">
+        </div>
+        <div class="col-md-2">
+            <p>interest rate</p>
+            <input class="form-control input-error" name="interest-rate" type="number" placeholder="0%">
+
+        </div>
+        <div class="col-md-1">
+            <a id="destroy-button-{{id}}" class="destroy-button">&times;</a>
+        </div>
+    </div>
+    <hr>
+</script>
+
+<script id="total-results-template" type="text/x-handlebars-template">
+    <hr>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>loan total</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>debt free by {{year}}</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>total interest paid: ${{total_interest}}</h4>
+
+        </div>
+    </div>
+
+    <hr>
+</script>
+
+<script id="loan-results-template" type="text/x-handlebars-template">
+    {{#each loans}}
+    <div id="loan-results-{{id}}">
+        <div class="row text-center" id="loan-head-{{id}}">
+            <div class="col-md-4">
+                <h4>{{loanName}}</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>paid off by {{date}}</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>interest paid: ${{total_interest_paid}}</h4>
+            </div>
+        </div>
+        <br>
+
+        <div class="row" style="display: none;">
+
             <div class="col-md-12">
-                <a href='http://www.seanfreiburg.com' title='seanfreiburg.com'>sean freiburg</a> | <a
-                    href='http://github.com/seanfreiburg/unburyme' title='Unbury.me on GitHub'>GitHub</a> | <a
-                    href='https://github.com/seanfreiburg/unburyme/blob/master/LICENSE' title='License'>MIT License</a>
-                | <a
-                    href='http://unbury.me' title='unbury.me'>credit</a>
+                <div class="table-responsive">
+                    <table class="table table-striped text-center">
+                        <tbody id="tbody-{{id}}">
+                        <tr>
+                            <td>Month</td>
+                            <td>Payment</td>
+                            <td>Principal Paid</td>
+                            <td>Interest Paid</td>
+                            <td>Principal Remaining</td>
+                        </tr>
+                        {{#each rows}}
+                        {{> row }}
+                        {{/each}}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
+    </div>
     </div>
 
-</div>
-<!--container-->
-</div>
+    <hr>
+    {{/each}}
+</script>
 
-<script type='text/javascript' src='lib/jquery-1.5.2.min.js'></script>
-<script type='text/javascript' src='lib/jquery-ui-1.8.11.custom.min.js'></script>
-<script type='text/javascript' src='js/unburyme.js'></script>
-<script type='text/javascript' src='js/config.js'></script>
-<script type='text/javascript' src='js/date.js'></script>
-<script type='text/javascript' src='js/graph.js'></script>
-<script type='text/javascript' src='js/interface.js'></script>
-<script type='text/javascript' src='js/loan.js'></script>
-<script type='text/javascript' src='js/loan_app.js'></script>
-<script type='text/javascript' src='js/result_bar.js'></script>
-<script type='text/javascript' src='js/total_results.js'></script>
+<script id="loan-table-row-partial" type="text/x-handlebars-template">
+
+    <tr>
+        <td>{{date}}</td>
+        <td>${{payment}}</td>
+        <td>${{principal_paid}}</td>
+        <td>${{interest_paid}}</td>
+        <td>${{principal_remaining}}</td>
+    </tr>
+</script>
 
 
-<script type='text/javascript' src='lib/flot/jquery.flot.js'></script>
-<!--[if lte IE 8]>
-<script language="javascript" type="text/javascript" src="lib/flot/excanvas.min.js"></script><![endif]-->
+<!-- Libraries -->
+<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/amplifyjs/1.1.0/amplify.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
 
-<script type='text/javascript' src='js/google_analytics.js'></script>
+<!-- My Javascript -->
+<script src="assets/dist/js/unburyus.min.js"></script>
+<!--
+<script src="assets/src/js/application_controller.js"></script>
+<script src="assets/src/js/date.js"></script>
+<script src="assets/src/js/graph_controller.js"></script>
+<script src="assets/src/js/loan.js"></script>
+<script src="assets/src/js/loan_controller.js"></script>
+<script src="assets/src/js/respChart.js"></script>
+<script src="assets/src/js/results_controller.js"></script>
+<script src="assets/src/js/router.js"></script>
+<script src="assets/src/js/init.js"></script>   -->
+
+
 </body>
 </html>
+
+
