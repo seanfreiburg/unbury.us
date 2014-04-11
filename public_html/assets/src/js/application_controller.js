@@ -29,6 +29,7 @@ ApplicationController.monthly_payment_input_change = function () {
     for (key in window.loans){
         min_monthly_payment += window.loans[key].minimumPayment;
     }
+    value = value.replace(/[$,]+/g,"");
     if ($.isNumeric(value) && Number(value) >= min_monthly_payment) {
         window.monthly_payment = Number(value);
     }
