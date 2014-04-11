@@ -51,7 +51,7 @@ ApplicationController.calculate = function (){
     }
 
     else {
-        alert("One of your loans are invalid!");
+        alert("At least one of your loans is invalid!");
 
     }
 };

@@ -37,7 +37,8 @@ Loan.prototype.validate_field = function(field_name, new_value){
             return new_value.length;
         case "current-balance":
         case "minimum-payment":
-        case "interest-rate":
             return $.isNumeric(new_value) && Number(new_value) > 0;
+        case "interest-rate":
+            return $.isNumeric(new_value);
     }
 };
