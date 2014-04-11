@@ -94,11 +94,11 @@ UDate.prototype.increment = function () {
 UDate.prototype.decrement = function () {
 
     if (this.month == 0) {
-        this.year--; //Happy new year!
+        this.year--;
         this.month = 11;
     }
     else
-        this.month--; //New month
+        this.month--;
 
 };
 
@@ -109,5 +109,15 @@ UDate.prototype.print = function () {
 
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return months[this.month] + " " + this.year;
+
+};
+
+UDate.prototype.print_previous = function () {
+
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    this.decrement();
+    var str =  months[this.month] + " " + this.year;
+    this.increment();
+    return str;
 
 };
