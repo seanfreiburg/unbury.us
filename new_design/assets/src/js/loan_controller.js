@@ -47,17 +47,11 @@ LoanController.loan_input_change = function (id, field_name, context) {
     }
 };
 
-LoanController.monthly_payment_input_change = function (context) {
-    var value = parseFloat($(context).val());
-    // @todo, add check to make sure it's larger than the sum of the min payments
-    if ($.isNumeric(value) && Number(value) > 0) {
-        $(context).removeClass("input-error").addClass("input-success");
-        window.monthly_payment = value;
-    }
-    else {
-        $(context).removeClass("input-success").addClass("input-error");
-    }
+LoanController.valid = function() {
+    return $(".input-error").length;
 };
+
+
 
 
 

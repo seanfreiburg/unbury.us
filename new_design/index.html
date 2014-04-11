@@ -31,7 +31,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-2 ">
+        <div class="col-md-2 col-md-offset-0">
             <h4>monthly payment</h4>
             <input class="form-control" id="monthly-payment" type="number" placeholder="0">
         </div>
@@ -87,8 +87,9 @@
             <a href="http://seanfreiburg.com">seanfreiburg.com </a>
         </div>
         <div class="col-md-2 col-md-offset-7">
-            <a href='http://github.com/seanfreiburg/unburyme' title='Unbury.me on GitHub'>GitHub</a> \
-            <a href='https://github.com/seanfreiburg/unburyme/blob/master/LICENSE' title='License'>MIT License</a>
+            <a href='https://github.com/seanfreiburg/unbury.us/issues' title='Report bugs'>Report a Bug</a> \
+            <a href='http://github.com/seanfreiburg/unbury.us' title='Unbury.me on GitHub'>GitHub</a> \
+            <a href='https://github.com/seanfreiburg/unbury.us/blob/master/LICENSE' title='License'>MIT License</a>
             \ <a href='http://unbury.me' title='unbury.me'>credit</a>
         </div>
     </div>
@@ -161,19 +162,19 @@
     <div id="loan{{id}}" class="loan row">
         <div class="col-md-3">
             <p>loan name</p>
-            <input class="form-control" name="loan-name" type="text" placeholder="">
+            <input class="form-control input-error" name="loan-name" type="text" placeholder="">
         </div>
         <div class="col-md-3">
             <p>current balance</p>
-            <input class="form-control" name="current-balance" type="number" placeholder="0">
+            <input class="form-control input-error" name="current-balance" type="number" placeholder="0">
         </div>
         <div class="col-md-3">
             <p>minimum payment</p>
-            <input class="form-control" name="minimum-payment" type="number" placeholder="0">
+            <input class="form-control input-error" name="minimum-payment" type="number" placeholder="0">
         </div>
         <div class="col-md-2">
             <p>interest rate</p>
-            <input class="form-control" name="interest-rate" type="number" placeholder="0%">
+            <input class="form-control input-error" name="interest-rate" type="number" placeholder="0%">
 
         </div>
         <div class="col-md-1">
@@ -266,7 +267,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
 
 <!-- My Javascript -->
-<!-- <script src="assets/dist/js/unburyus.min.js"></script>  -->
+<script src="assets/dist/js/unburyus.min.js"></script>
+<!--
 <script src="assets/src/js/application_controller.js"></script>
 <script src="assets/src/js/date.js"></script>
 <script src="assets/src/js/graph_controller.js"></script>
@@ -275,7 +277,7 @@
 <script src="assets/src/js/respChart.js"></script>
 <script src="assets/src/js/results_controller.js"></script>
 <script src="assets/src/js/router.js"></script>
-<script src="assets/src/js/init.js"></script>
+<script src="assets/src/js/init.js"></script>   -->
 
 
 </body>

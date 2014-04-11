@@ -40,6 +40,9 @@ GraphController.get_data = function (results) {
     var max_row_length = 0;
     var max_row_index = 0;
     var datasets = [];
+    results.loans.sort( function(a,b){
+        return b.currentBalance - a.currentBalance;
+    });
     for (var i = 0; i < results.loans.length; i++) {
         if (results.loans[i].rows.length > max_row_length) {
             max_row_length = results.loans[i].rows.length;

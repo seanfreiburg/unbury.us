@@ -21,3 +21,41 @@ ApplicationController.changePaymentType = function (context) {
 
     }
 };
+
+ApplicationController.monthly_payment_input_change = function () {
+    var selector = $("#monthly-payment");
+    var value = selector.val();
+    var min_monthly_payment = 0;
+    for (key in window.loans){
+        min_monthly_payment += window.loans[key].minimumPayment;
+    }
+    if ($.isNumeric(value) && Number(value) >= min_monthly_payment) {
+        window.monthly_payment = Number(value);
+    }
+    else {
+        window.monthly_payment = min_monthly_payment;
+        selector.val(min_monthly_payment);
+    }
+};
+
+
+ApplicationController.calculate = function (){
+    if (!LoanController.valid()) {
+        var results = ResultsController.results();
+        GraphController.graph(results);
+
+    }
+    else {
+        alert("One of your loans are invalid!");
+
+    }
+};
+
+
+Object.size = function (obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};

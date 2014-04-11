@@ -19,14 +19,12 @@ Router.init = function () {
     });
 
 
-
-
 };
 
 
-Router.add_monthy_payment_listener = function () {
+Router.add_monthly_payment_listener = function () {
     $("#monthly-payment").focusout(function () {
-        LoanController.monthly_payment_input_change(this);
+        ApplicationController.monthly_payment_input_change();
     });
 };
 
@@ -47,15 +45,14 @@ Router.add_loan_input_listeners = function (id) {
 Router.add_loan_input_listener = function (id, field_name) {
     $("#loan" + id).find("input[name=" + field_name + "]").focusout(function () {
         LoanController.loan_input_change(id, field_name, this);
+        ApplicationController.monthly_payment_input_change()
     });
 };
 
 
 Router.add_calculate_listener = function () {
     $("#calculate").click(function () {
-        var results = ResultsController.results();
-        GraphController.graph(results);
-
+        ApplicationController.calculate();
     });
 };
 
