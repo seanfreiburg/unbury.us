@@ -40,11 +40,16 @@ ApplicationController.monthly_payment_input_change = function () {
 
 
 ApplicationController.calculate = function (){
-    if (!LoanController.valid()) {
+    console.log(Object.size(window.loans));
+    if (Object.size(window.loans) == 0){
+        alert("Add a loan!");
+    }
+    else if (!LoanController.valid() ) {
         var results = ResultsController.results();
         GraphController.graph(results);
 
     }
+
     else {
         alert("One of your loans are invalid!");
 
