@@ -1,17 +1,11 @@
-/**
- * Unburyme.Date
- * Date object used for Unburyme
- * @constructor
- */
+
 UDate = function () {
     this.year = 0;
     this.month = 0;
     this.setCurrent();
 };
 
-/**
- * Sets this to the current date
- */
+
 UDate.prototype.setCurrent = function () {
 
     var current = new Date();
@@ -21,11 +15,6 @@ UDate.prototype.setCurrent = function () {
 };
 
 
-/**
- * Set Unburyme.Date to year and month
- * @param {number} year
- * @param {number} month
- */
 UDate.prototype.setDate = function (year, month) {
 
     this.year = year;
@@ -55,11 +44,7 @@ UDate.prototype.getFloat = function () {
 };
 
 
-/**
- * Return latest Unburyme.Date object
- * @param {Unburyme.Date} otherDate Other Unburyme.Date object to compare
- * @return {Unburyme.Date} The latest Unburyme.Date object
- */
+
 UDate.prototype.getLatest = function (otherDate) {
 
     var latestDate = new Unburyme.Date();
@@ -77,9 +62,6 @@ UDate.prototype.getLatest = function (otherDate) {
 };
 
 
-/**
- * Add a month to this
- */
 UDate.prototype.increment = function () {
 
     if (this.month == 11) {
@@ -102,9 +84,7 @@ UDate.prototype.decrement = function () {
 
 };
 
-/**
- * @return {string} Formatted current date
- */
+
 UDate.prototype.print = function () {
 
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -112,12 +92,4 @@ UDate.prototype.print = function () {
 
 };
 
-UDate.prototype.print_previous = function () {
 
-    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    this.decrement();
-    var str =  months[this.month] + " " + this.year;
-    this.increment();
-    return str;
-
-};

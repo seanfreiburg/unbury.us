@@ -101,7 +101,6 @@ ResultsController.calculate = function (sortedLoans) {
         sortedLoans[i].rows.push({principal_remaining: principal_remaining_array[i].toFixed(2), principal_paid: 0, balance: principal_remaining_array[i].toFixed(2), payment: 0, interest_paid: 0, date: current_month.print() });
 
     }
-
     while ((num_remaining_loans != 0) && possible_calculation) {
         current_month.increment();
         var monthlyPayment = window.monthly_payment;
@@ -125,7 +124,6 @@ ResultsController.calculate = function (sortedLoans) {
                     monthlyPayment = 0;
                 }
             }
-
             // Payment pass
             for (var k = 0; k < starting_loan_count; k++) {
                 if (principal_remaining_array[k] > 0) {
@@ -143,18 +141,14 @@ ResultsController.calculate = function (sortedLoans) {
 
                     }
                 }
-
             }
             firstPaymentPass = false;
-
-
         } // while ((focusPayment>0 || firstPaymentPass) && remainingLoans)
 
-
-        for (var k = 0; k < starting_loan_count; k++) {
-            if (principal_remaining_array[k] > 0) {
+        for (var m = 0; m < starting_loan_count; m++) {
+            if (principal_remaining_array[m] > 0) {
                 console.log(current_month.print());
-                sortedLoans[k].rows.push({principal_remaining: principal_remaining_array[k].toFixed(2), principal_paid: principal_paid_array[k].toFixed(2), balance: principal_remaining_array[k].toFixed(2), payment: Number(monthly_payment_array[k]).toFixed(2), interest_paid: interest_paid_array[k].toFixed(2), date: current_month.print() });
+                sortedLoans[m].rows.push({principal_remaining: principal_remaining_array[m].toFixed(2), principal_paid: principal_paid_array[m].toFixed(2), balance: principal_remaining_array[m].toFixed(2), payment: Number(monthly_payment_array[m]).toFixed(2), interest_paid: interest_paid_array[m].toFixed(2), date: current_month.print() });
             }
 
         }
@@ -164,32 +158,21 @@ ResultsController.calculate = function (sortedLoans) {
                     finished_loans_array[g] = 1;
                     sortedLoans[g].date = current_month.print();
                 }
-
             }
-
-
         }
-
-
         // Check to see current date is < year 2200 to prevent ridiculous calls
         if (current_month.getYear() > 2200) {
             console.log("hit");
             possible_calculation = false;
         }
-
     }// while(remainingLoans)
-
-
     if (possible_calculation) {
         var total_interest_paid = 0;
         for (var n = 0; n < starting_loan_count; n++) {
             total_interest_paid += sortedLoans[n].total_interest_paid;
             sortedLoans[n].total_interest_paid = sortedLoans[n].total_interest_paid.toFixed(2);
         }
-
         return {loans: sortedLoans, total_interest: total_interest_paid.toFixed(2), year: current_month.print() };
-
-
     }
     else {
         console.log("impossible");

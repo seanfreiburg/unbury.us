@@ -63,12 +63,10 @@ GraphController.get_data = function (results) {
 
     console.log(datasets);
 
-    var data = {
+    return {
         labels: labels,
         datasets: datasets
     };
-
-    return data;
 };
 
 
