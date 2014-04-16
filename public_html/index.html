@@ -18,13 +18,13 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3 col-md-offset-3">
+        <div class="col-sm-3 col-sm-offset-3">
             <h1 id="title">unbury.us</h1>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <h3>get unburied from debt</h3>
         </div>
-        <div class="col-md-2">
+        <div class="col-sm-2">
             <a data-toggle="modal" data-target="#helpModal" href="#">help</a> \
             <a data-toggle="modal" data-target="#aboutModal" href="#">about</a>
         </div>
@@ -36,7 +36,7 @@
 
 
     <div class="row">
-        <div class="col-md-3 col-md-offset-0">
+        <div class="col-sm-3 col-sm-offset-0">
             <button class="btn btn-success btn-block" id="add-loan">+ add loan</button>
         </div>
 
@@ -44,11 +44,11 @@
 
     <hr>
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-sm-2">
             <h4>monthly payment</h4>
             <input class="form-control" id="monthly-payment" type="number" placeholder="0">
         </div>
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-sm-4 col-sm-offset-1">
             <h4>payment type
                 <a data-toggle="modal" data-target="#paymentTypeHelpModal" href="#">
                     <span class="question">?</span>
@@ -56,16 +56,16 @@
             </h4>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <button id="avalanche-btn" class="btn btn-primary  btn-block">avalanche</button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <button id="snowball-btn" class="btn btn-default btn-block">snowball</button>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3 col-md-offset-1">
+        <div class="col-sm-2 col-sm-offset-1">
             <h4>&nbsp;</h4>
             <button id="calculate" class="btn btn-default btn-block">calculate</button>
 
@@ -75,7 +75,7 @@
     <br>
 
     <div class="row">
-        <div id="graph" class="col-md-12">
+        <div id="graph" class="col-sm-12">
 
         </div>
     </div>
@@ -91,10 +91,10 @@
     <br><br>
 
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <a href="http://seanfreiburg.com">seanfreiburg.com </a>
         </div>
-        <div class="col-md-3 col-md-offset-5">
+        <div class="col-sm-3 col-sm-offset-5">
             <a href='https://github.com/seanfreiburg/unbury.us/issues' title='Report bugs'>Report a Bug</a> \
             <a href='http://github.com/seanfreiburg/unbury.us' title='Unbury.me on GitHub'>GitHub</a> \
             <a href='https://github.com/seanfreiburg/unbury.us/blob/master/LICENSE' title='License'>MIT License</a>
@@ -189,24 +189,24 @@
 <!-- Templates -->
 <script id="loan-input-template" type="text/x-handlebars-template">
     <div id="loan{{id}}" class="loan row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <p>loan name</p>
-            <input class="form-control input-error" name="loan-name" type="text" placeholder="">
+            <input class="form-control input-error" name="loan-name" type="text" placeholder="loan {{id}}">
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <p>current balance</p>
-            <input class="form-control input-error" name="current-balance" type="number" placeholder="0">
+            <input class="form-control input-error" name="current-balance" type="number" placeholder="$0">
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <p>minimum payment</p>
-            <input class="form-control input-error" name="minimum-payment" type="number" placeholder="0">
+            <input class="form-control input-error" name="minimum-payment" type="number" placeholder="$0">
         </div>
-        <div class="col-md-2">
+        <div class="col-sm-2">
             <p>interest rate</p>
             <input class="form-control input-error" name="interest-rate" type="number" placeholder="0%">
 
         </div>
-        <div class="col-md-1">
+        <div class="col-sm-1">
             <a id="destroy-button-{{id}}" class="destroy-button">&times;</a>
         </div>
     </div>
@@ -216,13 +216,13 @@
 <script id="total-results-template" type="text/x-handlebars-template">
     <hr>
     <div class="row text-center">
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <h4>loan total</h4>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <h4>debt free by {{year}}</h4>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <h4>total interest paid: ${{total_interest}}</h4>
 
         </div>
@@ -235,13 +235,13 @@
     {{#each loans}}
     <div id="loan-results-{{id}}" class="loan-results">
         <div class="row text-center" id="loan-head-{{id}}">
-            <div class="col-md-4">
+            <div class="col-sm-4">
                 <h4>{{loanName}}</h4>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-4">
                 <h4>paid off by {{date}}</h4>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-4">
                 <h4>interest paid: ${{total_interest_paid}}</h4>
             </div>
         </div>
@@ -249,7 +249,7 @@
 
         <div class="row" style="display: none;">
 
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <div class="table-responsive">
                     <table class="table table-striped text-center">
                         <tbody id="tbody-{{id}}">
