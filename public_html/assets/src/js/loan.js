@@ -38,7 +38,7 @@ Loan.prototype.validate_field = function(field_name, new_value){
         case "current-balance":
         case "minimum-payment":
             new_value = new_value.replace(/[$,]+/g,"");
-            return $.isNumeric(new_value) && Number(new_value) > 0;
+            return $.isNumeric(new_value) && Number(new_value) >= 0;
         case "interest-rate":
             new_value = new_value.replace(/[$,%]+/g,"");
             return $.isNumeric(new_value);
