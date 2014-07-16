@@ -23,7 +23,7 @@ Router.init = function () {
 
 
 Router.add_monthly_payment_listener = function () {
-    $("#monthly-payment").focusout(function () {
+    $("#monthly-payment").change(function () {
         ApplicationController.monthly_payment_input_change();
     });
 };
@@ -43,7 +43,7 @@ Router.add_loan_input_listeners = function (id) {
 
 
 Router.add_loan_input_listener = function (id, field_name) {
-    $("#loan" + id).find("input[name=" + field_name + "]").focusout(function () {
+    $("#loan" + id).find("input[name=" + field_name + "]").change(function () {
         LoanController.loan_input_change(id, field_name, this);
         ApplicationController.monthly_payment_input_change()
     });

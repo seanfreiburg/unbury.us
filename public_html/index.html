@@ -191,19 +191,20 @@
     <div id="loan{{id}}" class="loan row">
         <div class="col-sm-3">
             <p>loan name</p>
-            <input class="form-control input-error" name="loan-name" type="text" placeholder="loan {{id}}">
+            <input id="loan-name-{{id}}" class="form-control input-error" name="loan-name" type="text"
+                   placeholder="loan {{id}}">
         </div>
         <div class="col-sm-3">
             <p>current balance</p>
-            <input class="form-control input-error" name="current-balance"  placeholder="$0">
+            <input id="current-balance-{{id}}" class="form-control input-error" name="current-balance" placeholder="$0">
         </div>
         <div class="col-sm-3">
             <p>minimum payment</p>
-            <input class="form-control input-error" name="minimum-payment"  placeholder="$0">
+            <input id="minimum-payment-{{id}}" class="form-control input-error" name="minimum-payment" placeholder="$0">
         </div>
         <div class="col-sm-2">
             <p>interest rate</p>
-            <input class="form-control input-error" name="interest-rate" placeholder="0%">
+            <input id="interest-rate-{{id}}" class="form-control input-error" name="interest-rate" placeholder="0%">
 
         </div>
         <div class="col-sm-1">
