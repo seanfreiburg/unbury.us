@@ -132,7 +132,7 @@ var load_empty_loans = function () {
 
 
 var getSearchParameters = function () {
-    var prmstr = window.location.search.substr(1);
+    var prmstr = window.location.hash;
     return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
 };
 

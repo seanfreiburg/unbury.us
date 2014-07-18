@@ -51,6 +51,19 @@ LoanController.valid = function() {
     return $(".input-error").length;
 };
 
+LoanController.hashString = function () {
+    var hashString = '';
+    for (var key in window.loans) {
+        var loan = window.loans[key];
+        console.log(loan);
+        hashString += 'name_' + loan.id + '=' + loan.loanName + '&';
+        hashString += 'balance_' + loan.id + '=' + loan.currentBalance + '&';
+        hashString += 'payment_' + loan.id + '=' + loan.minimumPayment + '&';
+        hashString += 'rate_' + loan.id + '=' + loan.interestRate + '&';
+    }
+    return hashString;
+};
+
 
 
 
