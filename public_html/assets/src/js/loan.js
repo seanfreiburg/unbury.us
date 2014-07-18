@@ -34,6 +34,7 @@ Loan.prototype.set_loan_field = function(field_name, new_value){
 Loan.prototype.validate_field = function(field_name, new_value){
     switch (field_name) {
         case "loan-name":
+            console.log(new_value);
             return new_value.length;
         case "current-balance":
         case "minimum-payment":

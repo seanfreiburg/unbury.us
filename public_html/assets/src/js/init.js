@@ -7,8 +7,12 @@ $().ready(function () {
 
 });
 
+String.prototype.contains = function (it) {
+    return this.indexOf(it) != -1;
+};
 
-// http://localhost:63342/unbury.us/public_html/index.html?name_0=1&balance_0=2&payment_0=4&rate_0=2
+
+// http://localhost:63342/unbury.us/public_html/index.html#name_0=1&balance_0=2&payment_0=4&rate_0=2
 var url_loans_valid = function (params) {
 
     var loan_keys = [];
@@ -76,8 +80,6 @@ var load_url_loans = function (params) {
             window.loans[id] = new Loan(id, 0, 0, 0, 0);
             Router.add_loan_destroy_listener(id);
             Router.add_loan_input_listeners(id);
-
-
             $("#loan-name-" + id).val(params["name_" + loan_id]);
             $("#current-balance-" + id).val(params["balance_" + loan_id]);
             $("#minimum-payment-" + id).val(params["payment_" + loan_id]);
@@ -138,7 +140,7 @@ var getSearchParameters = function () {
 
 var transformToAssocArray = function (prmstr) {
     var params = {};
-    var prmarr = prmstr.split("&");
+    var prmarr = prmstr.substr(1).split("&");
     for (var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
         params[tmparr[0]] = tmparr[1];
