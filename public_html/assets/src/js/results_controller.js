@@ -147,7 +147,7 @@ ResultsController.calculate = function (sortedLoans) {
 
         for (var m = 0; m < starting_loan_count; m++) {
             if (principal_remaining_array[m] > 0) {
-                console.log(current_month.print());
+                //console.log(current_month.print());
                 sortedLoans[m].rows.push({principal_remaining: principal_remaining_array[m].toFixed(2), principal_paid: principal_paid_array[m].toFixed(2), balance: principal_remaining_array[m].toFixed(2), payment: Number(monthly_payment_array[m]).toFixed(2), interest_paid: interest_paid_array[m].toFixed(2), date: current_month.print() });
             }
 
@@ -162,7 +162,7 @@ ResultsController.calculate = function (sortedLoans) {
         }
         // Check to see current date is < year 2200 to prevent ridiculous calls
         if (current_month.getYear() > 2200) {
-            console.log("hit");
+            //console.log("hit");
             possible_calculation = false;
         }
     }// while(remainingLoans)
@@ -175,7 +175,7 @@ ResultsController.calculate = function (sortedLoans) {
         return {loans: sortedLoans, total_interest: total_interest_paid.toFixed(2), year: current_month.print() };
     }
     else {
-        console.log("impossible");
+        //console.log("impossible");
         return null;
     }
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link rel="shortcut icon" type="image/png" href="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine.css">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+
+
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/jasmine-html.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jasmine/2.0.0/boot.js"></script>
+
+
+<!-- Libraries -->
+<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/amplifyjs/1.1.0/amplify.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+
+<!-- My Javascript -->
+
+<script src="../public_html/assets/src/js/application_controller.js"></script>
+<script src="../public_html/assets/src/js/u_date.js"></script>
+<script src="../public_html/assets/src/js/graph_controller.js"></script>
+<script src="../public_html/assets/src/js/loan.js"></script>
+<script src="../public_html/assets/src/js/loan_controller.js"></script>
+<script src="../public_html/assets/src/js/respChart.js"></script>
+<script src="../public_html/assets/src/js/new_resulter.js"></script>
+<script src="../public_html/assets/src/js/router.js"></script>
+
+<script>
+
+    $().ready(function () {
+
+        describe("results_controller", function() {
+
+            beforeEach(function() {
+
+                window.loans = {};
+                window.loans[1] =  new Loan(1,'a',10,25,6);
+                window.monthly_payment = 5;
+            });
+
+            afterEach(function() {
+                window.loans = {}
+            });
+
+            it("expects snowball interest paid and avalanche interest paid to be equal", function() {
+                window.payment_type = "avalanche";
+                var avalanche_results = ResultsController.compute_results();
+                window.payment_type = "snowball";
+                var snowball_results = ResultsController.compute_results();
+                expect(avalanche_results.total_interest).toEqual(snowball_results.total_interest);
+            });
+        });
+    });
+
+
+</script>
+
+
+</body>
+</html>
