@@ -86,7 +86,7 @@ ResultsController.calculate = function (loans, payment_type, monthly_payment) {
 
     for (var loan_key in loans) {
         ResultsController.loan_results.loans[loan_key] = {"rows": [], "loan_name": loans[loan_key].loanName,
-            "total_date": "0", "total_interest_paid": 0, "id": loan_key};
+            "total_date": "0", "total_interest_paid": 0, "id": loan_key, "starting_balance": loans[loan_key].currentBalance};
         current_principal[loan_key] = loans[loan_key].currentBalance;
         current_interest[loan_key] = 0;
         remaining_loans[loan_key] = loans[loan_key];
@@ -302,11 +302,12 @@ ResultsController.log_date_line = function (id, date) {
 
 ResultsController.log_payment_line = function (id, payment) {
     ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["payment"] += ResultsController.precise_round(payment, 2);
+    ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["payment"] =
+        ResultsController.precise_round(ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["payment"], 2);
 };
 
 ResultsController.log_principal_paid_line = function (id, principal_paid) {
     ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["principal_paid"] += ResultsController.precise_round(principal_paid, 2);
-    //console.log(id + " " + principal_paid);
     ResultsController.log_payment_line(id, principal_paid);
 };
 
@@ -332,7 +333,7 @@ ResultsController.log_totals = function (date) {
         ResultsController.loan_results.loans[loan_key].total_date = ResultsController.loan_results.loans[loan_key].rows[ResultsController.loan_results.loans[loan_key].rows.length - 1]["date"];
         total_interest_paid += ResultsController.loan_results.loans[loan_key].total_interest_paid
     }
-    ResultsController.loan_results.totals["total_interest_paid"] = total_interest_paid;
+    ResultsController.loan_results.totals["total_interest_paid"] = ResultsController.precise_round(total_interest_paid,2);
 };
 
 
