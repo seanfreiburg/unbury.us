@@ -230,10 +230,10 @@
             <h4>loan total</h4>
         </div>
         <div class="col-sm-4">
-            <h4>debt free by {{year}}</h4>
+            <h4>debt free by {{total_date}}</h4>
         </div>
         <div class="col-sm-4">
-            <h4>total interest paid: ${{total_interest}}</h4>
+            <h4>total interest paid: ${{total_interest_paid}}</h4>
 
         </div>
     </div>
@@ -246,10 +246,10 @@
     <div id="loan-results-{{id}}" class="loan-results">
         <div class="row text-center" id="loan-head-{{id}}">
             <div class="col-sm-4">
-                <h4>{{loanName}}</h4>
+                <h4>{{loan_name}}</h4>
             </div>
             <div class="col-sm-4">
-                <h4>paid off by {{date}}</h4>
+                <h4>paid off by {{total_date}}</h4>
             </div>
             <div class="col-sm-4">
                 <h4>interest paid: ${{total_interest_paid}}</h4>
@@ -293,7 +293,7 @@
         <td>${{payment}}</td>
         <td>${{principal_paid}}</td>
         <td>${{interest_paid}}</td>
-        <td>${{principal_remaining}}</td>
+        <td>${{balance_remaining}}</td>
     </tr>
 </script>
 
@@ -308,7 +308,8 @@
 <!-- My Javascript -->
 
 <script src="assets/src/js/application_controller.js"></script>
-<script src="assets/src/js/u_date.js"></script>
+
+<script src="assets/src/js/moment.js"></script>
 <script src="assets/src/js/graph_controller.js"></script>
 <script src="assets/src/js/loan.js"></script>
 <script src="assets/src/js/loan_controller.js"></script>
