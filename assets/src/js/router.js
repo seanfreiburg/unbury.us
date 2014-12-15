@@ -31,6 +31,7 @@ Router.add_monthly_payment_listener = function () {
 Router.add_loan_destroy_listener = function (id) {
     $("#destroy-button-" + id).click(function () {
         LoanController.remove_loan(id);
+        location.hash = LoanController.hashString();
     });
 };
 

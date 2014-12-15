@@ -22,14 +22,16 @@ var url_loans_valid = function (params) {
         }
     });
 
-    for (loan_key in loan_keys) {
-        var id = loan_key.split('_')[0];
+    for (var i =0; i < loan_keys.length; i++) {
+        var id = loan_keys[i].split('_')[1];
         if (params["balance_" + id] != null && params["payment_" + id] != null && params["rate_" + id] != null) {
 
         }
         else {
             console.log("invalid");
-            console.log("balance_" + id);
+            console.log(loan_keys);
+            console.log(i);
+            console.log(id);
             return false;
 
         }
@@ -66,11 +68,11 @@ var load_url_loans = function (params) {
         });
 
         console.log(" before loop");
-        for (loan_key in loan_keys) {
+        for (var i =0; i < loan_keys.length; i++) {
+            var loan_id = loan_keys[i].split('_')[1];
             console.log("loop");
-            var loan_id = loan_key.split('_')[0];
-            window.auto_increment += 1;
-            var id = window.auto_increment;
+            window.auto_increment = loan_id;
+            var id = loan_id;
             var source = $("#loan-input-template").html();
             var template = Handlebars.compile(source);
             var context = {id: id};

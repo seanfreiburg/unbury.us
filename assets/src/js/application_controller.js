@@ -30,6 +30,8 @@ ApplicationController.monthly_payment_input_change = function () {
         min_monthly_payment += window.loans[key].minimumPayment;
     }
     value = value.replace(/[$,]+/g,"");
+    value = ResultsController.precise_round(value,2);
+    min_monthly_payment = ResultsController.precise_round(min_monthly_payment,2);
     if ($.isNumeric(value) && Number(value) >= min_monthly_payment) {
         window.monthly_payment = Number(value);
     }
