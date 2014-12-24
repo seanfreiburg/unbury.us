@@ -8,7 +8,15 @@ $().ready(function () {
 });
 
 String.prototype.contains = function (it) {
-    return this.indexOf(it) != -1;
+    return this.indexOf(it) !== -1;
+};
+
+Math.sign = Math.sign || function sign(x) {
+    x = +x; // convert to a number
+    if (x === 0 || isNaN(x)) {
+        return x;
+    }
+    return x > 0 ? 1 : -1;
 };
 
 
