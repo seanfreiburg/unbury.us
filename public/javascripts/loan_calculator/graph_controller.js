@@ -49,6 +49,9 @@ GraphController.get_data = function (results) {
 
     console.log("keys");
     console.log(keys);
+
+
+    var labels = [];
     for (var i = 0; i < keys.length; i++) {
         var loan_key = keys[i];
         console.log("loan key");
@@ -57,21 +60,28 @@ GraphController.get_data = function (results) {
             max_row_length = results.loans[loan_key].rows.length;
             max_row_index = loan_key;
         }
-        if (results.loans[max_row_index].rows.length > num_labels){
-            step_size = Math.floor(results.loans[max_row_index].rows.length/num_labels);
+        if (results.loans[max_row_index].rows.length > num_labels) {
+            step_size = Math.floor(results.loans[max_row_index].rows.length / num_labels);
         }
         else {
             step_size = 1;
         }
-
+    }
+    for (var i = 0; i < keys.length; i++) {
+        var loan_key = keys[i];
         console.log(step_size);
         datasets[i] = GraphController.get_color_hash(loan_key);
         datasets[i].data = [];
-        for (var j = 0; j < results.loans[loan_key].rows.length; j += step_size) {
-            datasets[i].data.push(results.loans[loan_key].rows[j].balance_remaining);
+        for (var j = 0; j < max_row_length; j += step_size) {
+            if (results.loans[loan_key].rows[j]){
+                datasets[i].data.push(results.loans[loan_key].rows[j].balance_remaining);
+            }
+            else {
+                datasets[i].data.push(0);
+            }
         }
     }
-    var labels = [];
+
     for (var i = 0; i < results.loans[max_row_index].rows.length; i += step_size) {
         labels.push(results.loans[max_row_index].rows[i].date);
     }
