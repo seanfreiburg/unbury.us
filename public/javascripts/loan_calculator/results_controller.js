@@ -6,7 +6,7 @@ var ResultsController = function () {
 ResultsController.results = function () {
     var results = ResultsController.compute_results();
     if (results == null) {
-        alert("You will never pay off this loan! Please try again!");
+        alert("The loan payoff is more than 122 years, longer than the oldest person ever. You probably need to pay more on the loan or you will never pay it off.");
     }
     else {
         ResultsController.draw_total_results(results);
@@ -101,7 +101,7 @@ ResultsController.calculate = function (loans, payment_type, monthly_payment) {
     var counter = 0;
     while (Object.keys(remaining_loans).length > 0) {
         counter++;
-        if (counter > 12*50){
+        if (counter > 12*122){
             return null;
         }
         month.add(1, 'months');
