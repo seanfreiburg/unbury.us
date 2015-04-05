@@ -59,6 +59,15 @@ ApplicationController.calculate = function (){
     }
 };
 
+ApplicationController.auto_calculate = function (){
+    console.log(Object.size(window.loans));
+    if (!LoanController.valid() ) {
+        var results = ResultsController.results();
+        GraphController.graph(results);
+
+    }
+};
+
 
 Object.size = function (obj) {
     var size = 0, key;
