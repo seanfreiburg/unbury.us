@@ -312,13 +312,13 @@ ResultsController.log_payment_line = function (id, payment) {
 };
 
 ResultsController.log_principal_paid_line = function (id, principal_paid) {
-    ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["principal_paid"] += ResultsController.precise_round(principal_paid, 2);
+    ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["principal_paid"] = ResultsController.precise_round(ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["principal_paid"]+ principal_paid, 2);
     ResultsController.log_payment_line(id, principal_paid);
 };
 
 ResultsController.log_interest_paid_line = function (id, interest_paid) {
 
-    ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["interest_paid"] += ResultsController.precise_round(interest_paid, 2);
+    ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["interest_paid"] = ResultsController.precise_round(ResultsController.loan_results.loans[id].rows[ResultsController.loan_results.loans[id].rows.length - 1]["interest_paid"]+interest_paid, 2);
     ResultsController.log_payment_line(id, interest_paid);
 };
 
