@@ -12,10 +12,12 @@ Router.init = function () {
 
     $("#avalanche-btn").click(function () {
         ApplicationController.changePaymentType(this);
+        ApplicationController.auto_calculate();
     });
 
     $("#snowball-btn").click(function () {
         ApplicationController.changePaymentType(this);
+        ApplicationController.auto_calculate();
     });
 
 
