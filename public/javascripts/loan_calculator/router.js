@@ -25,6 +25,7 @@ Router.init = function () {
 Router.add_monthly_payment_listener = function () {
     $("#monthly-payment").change(function () {
         ApplicationController.monthly_payment_input_change();
+        location.hash = LoanController.hashString();
     });
 };
 

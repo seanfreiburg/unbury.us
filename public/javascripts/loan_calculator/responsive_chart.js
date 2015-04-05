@@ -1,4 +1,4 @@
-function respChart(selector, data, options,steps,step_width){
+function responsive_chart(selector, data, options,steps,step_width){
 
     console.log(steps);
     console.log(step_width);

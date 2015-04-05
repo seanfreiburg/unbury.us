@@ -68,6 +68,10 @@ var load_url_loans = function (params) {
     if (url_loans_valid(params)) {
         console.log("valid");
 
+        if (params["monthly_payment"]){
+            $("#monthly-payment").val(params["monthly_payment"]);
+        }
+
         var loan_keys = [];
         Object.keys(params).forEach(function (key) {
             if (key.contains("name")) {

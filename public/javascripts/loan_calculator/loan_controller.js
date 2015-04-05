@@ -53,6 +53,7 @@ LoanController.valid = function() {
 
 LoanController.hashString = function () {
     var hashString = '';
+    hashString += 'monthly_payment=' + window.monthly_payment + '&';
     for (var key in window.loans) {
         var loan = window.loans[key];
         console.log(loan);

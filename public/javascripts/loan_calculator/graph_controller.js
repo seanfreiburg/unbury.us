@@ -14,7 +14,7 @@ GraphController.graph = function (results) {
     }
     var steps = GraphController.get_steps();
 
-    respChart($("#myChart"), data, false, steps, GraphController.get_step_width(results, steps));
+    responsive_chart($("#myChart"), data, false, steps, GraphController.get_step_width(results, steps));
 };
 
 GraphController.get_steps = function () {
