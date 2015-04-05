@@ -94,7 +94,7 @@ var load_url_loans = function (params) {
             window.loans[id] = new Loan(id, 0, 0, 0, 0);
             Router.add_loan_destroy_listener(id);
             Router.add_loan_input_listeners(id);
-            $("#loan-name-" + id).val(params["name_" + loan_id].replace(/%/g , " "));
+            $("#loan-name-" + id).val(unescape(params["name_" + loan_id]));
             $("#current-balance-" + id).val(params["balance_" + loan_id]);
             $("#minimum-payment-" + id).val(params["payment_" + loan_id]);
 
