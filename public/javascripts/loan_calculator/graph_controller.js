@@ -39,6 +39,8 @@ GraphController.get_step_width = function (results, steps) {
 GraphController.get_data = function (results) {
     var max_row_length = 0;
     var max_row_index = 0;
+    var num_labels = 20;
+    var step_size;
     var datasets = [];
     var keys = Object.keys(results.loans);
     keys.sort(function (a, b) {
@@ -49,25 +51,30 @@ GraphController.get_data = function (results) {
     console.log(keys);
     for (var i = 0; i < keys.length; i++) {
         var loan_key = keys[i];
-        console.log("loan key")
+        console.log("loan key");
         console.log(loan_key);
         if (results.loans[loan_key].rows.length > max_row_length) {
             max_row_length = results.loans[loan_key].rows.length;
             max_row_index = loan_key;
         }
+        if (results.loans[max_row_index].rows.length > num_labels){
+            step_size = Math.floor(results.loans[max_row_index].rows.length/num_labels);
+        }
+        else {
+            step_size = 1;
+        }
+
+        console.log(step_size);
         datasets[i] = GraphController.get_color_hash(loan_key);
         datasets[i].data = [];
-        for (var j = 0; j < results.loans[loan_key].rows.length; j++) {
+        for (var j = 0; j < results.loans[loan_key].rows.length; j += step_size) {
             datasets[i].data.push(results.loans[loan_key].rows[j].balance_remaining);
         }
     }
     var labels = [];
-
-
-    for (var i = 0; i < results.loans[max_row_index].rows.length; i++) {
+    for (var i = 0; i < results.loans[max_row_index].rows.length; i += step_size) {
         labels.push(results.loans[max_row_index].rows[i].date);
     }
-
 
     return {
         labels: labels,

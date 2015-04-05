@@ -19,6 +19,10 @@ Math.sign = Math.sign || function sign(x) {
     return x > 0 ? 1 : -1;
 };
 
+var deep_copy = function(string) {
+    return JSON.parse(JSON.stringify(string))
+};
+
 
 // http://localhost:63342/unbury.us/public_html/index.html#name_0=1&balance_0=2&payment_0=4&rate_0=2
 var url_loans_valid = function (params) {

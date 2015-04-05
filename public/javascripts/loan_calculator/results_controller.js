@@ -98,7 +98,12 @@ ResultsController.calculate = function (loans, payment_type, monthly_payment) {
 
 
     //loop
+    var counter = 0;
     while (Object.keys(remaining_loans).length > 0) {
+        counter++;
+        if (counter > 12*50){
+            return null;
+        }
         month.add(1, 'months');
         var extra_payment = monthly_payment;
         for (var loan_key in remaining_loans) {
