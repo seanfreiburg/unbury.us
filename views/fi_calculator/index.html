@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>unbury.us</title>
+    <meta name='description'
+          content='unbury.us is an application that calculates payment plans based off of loan information to become debt free.'/>
+    <meta name='keywords'
+          content='loan, loan calculator, debt free, web application, personal finance, sean freiburg, jquery'/>
+
+    <link rel="icon" href="assets/src/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/src/img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-sm-offset-3">
+            <h1 id="title">unbury.us</h1>
+        </div>
+        <div class="col-sm-4">
+            <h3>get unburied from debt</h3>
+        </div>
+        <div class="col-sm-2">
+            <a data-toggle="modal" data-target="#helpModal" href="#">help</a> \
+            <a data-toggle="modal" data-target="#aboutModal" href="#">about</a> \
+            <a  href="/">debt_calculator</a>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>Financial Independence Calculator</h1>
+            <p>Assuming a 7% return on assets, 2% inflation, and 25x spending to be FI.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3>Current Assets</h3>
+            <input class="form-control" id="current_assets" placeholder="0">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3>Current Salary</h3>
+            <input class="form-control" id="current_salary" placeholder="0">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3>Savings Rate</h3>
+            <input class="form-control" id="savings_rate" placeholder="0%">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h4>&nbsp;</h4>
+            <button id="calculate" class="btn btn-primary btn-block">calculate</button>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3 id="years_to_fi"></h3>
+
+
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="http://seanfreiburg.com">seanfreiburg.com </a>
+        </div>
+        <div class="col-sm-3 col-sm-offset-5">
+            <a href='https://github.com/seanfreiburg/unbury.us/issues' title='Report bugs'>Report a Bug</a> \
+            <a href='http://github.com/seanfreiburg/unbury.us' title='Unbury.me on GitHub'>GitHub</a> \
+            <a href='https://github.com/seanfreiburg/unbury.us/blob/master/LICENSE' title='License'>MIT License</a>
+            \ <a href='http://unbury.me' title='unbury.me'>credit</a>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Modals -->
+
+<div class="modal fade" id="paymentTypeHelpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Payment Type</h4>
+            </div>
+            <div class="modal-body">
+
+                <p><strong>Avalanche</strong>: Paying off loans with the <strong>highest interest</strong> rate first.
+                </p>
+
+                <p><strong>Snowball</strong>: Paying off loans with the <strong>lowest balance</strong> first.</p>
+
+                <p>While <strong>avalanche</strong> results in paying less interest, as well as being debt free sooner,
+                    <strong>snowball</strong> pays off individual loans faster, which can be motivating!</p>
+
+                <p>Depending on your loans, the outcome may be the same regardless of the method used.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+
+                    unbury.us is a loan calculator designed to help you get debt-free as fast as possible. Once your
+                    loan information is entered, you may set the total amount you're able to put towards loans in a
+                    month. If this amount is greater than the minimum you're able to pay on loans, the extra money is
+                    put towards one loan every month to eliminate it. Once a loan is paid off, the money that was
+                    previously going towards that loan is now put towards the next loan, and so forth.
+                </p>
+
+                <p>
+                    The order of which loans are paid off first is either highest-to-lowest interest rate (Avalanche),
+                    or lowest-to-highest remaining principal (Snowball), depending on which you choose.
+                </p>
+
+                <p>
+                    Put just an extra $100 a month towards your loans and see how much time and interest paid you save!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="aboutModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">About</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>
+                    <strong>unbury.us</strong> is a loan calculator created by <a href='http://www.seanfreiburg.com'
+                                                                                  target='_new'
+                                                                                  title='seanfreiburg.com'>Sean
+                    Freiburg</a>.</p>
+
+                <p>Source code for the project may be obtained at <a
+                        href="https://github.com/seanfreiburg/unbury.us">github</a>
+                    and is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT
+                        License</a>.
+                </p>
+
+                <p>If you have any comments, questions or feedback, let me know on Twitter <a
+                        href='http://www.twitter.com/sfreiburg' title='Sean Freiburg on Twitter'>@sfreiburg</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Libraries -->
+<script src="javascripts/lib/jquery-2.1.1.min.js"></script>
+<script src="javascripts/lib/bootstrap_3.1.1.js"></script>
+<script src="javascripts/lib/handlebars.js_2.0.0-alpha.2.js"></script>
+<script src="javascripts/lib/amplifyjs_1.1.0.js"></script>
+<script src="javascripts/lib/Chart.js_0.2.0.js"></script>
+<script src="javascripts/lib/google_analytics.js"></script>
+<script src="javascripts/lib/moment.js"></script>
+
+<script src="javascripts/fi_calculator/application_controller.js"></script>
+<script src="javascripts/fi_calculator/router.js"></script>
+<script src="javascripts/fi_calculator/lib.js"></script>
+<script src="javascripts/fi_calculator/init.js"></script>
+
+</body>
+</html>
+
+
