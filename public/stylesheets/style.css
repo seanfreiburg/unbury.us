@@ -49,3 +49,7 @@ span.question {
 .loan-results {
     cursor: pointer;
 }
+
+a.title {
+    color: #000000;
+}
