@@ -1,7 +1,7 @@
 function responsive_chart(selector, data, options,steps,step_width){
 
-    console.log(steps);
-    console.log(step_width);
+    console.log("Steps: " + steps);
+    console.log("Step width: " + step_width);
     // Define default option for line chart
     var option = {
         scaleOverlay : false,

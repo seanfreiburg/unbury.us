@@ -70,7 +70,7 @@ var load_url_loans = function (params) {
     Handlebars.registerPartial("row", $("#loan-table-row-partial").html());
 
     if (url_loans_valid(params)) {
-        console.log("valid");
+        console.log("Valid loan parameter found in URL");
 
         if (params["monthly_payment"]){
             $("#monthly-payment").val(params["monthly_payment"]);
@@ -83,10 +83,10 @@ var load_url_loans = function (params) {
             }
         });
 
-        console.log(" before loop");
+        console.log("Before URL processing loop");
         for (var i =0; i < loan_keys.length; i++) {
             var loan_id = loan_keys[i].split('_')[1];
-            console.log("loop");
+            console.log("Inside URL processing loop");
             window.auto_increment = loan_id;
             var id = loan_id;
             var source = $("#loan-input-template").html();
