@@ -47,15 +47,12 @@ GraphController.get_data = function (results) {
         return results.loans[b].starting_balance - results.loans[a].starting_balance;
     });
 
-    console.log("keys");
-    console.log(keys);
-
+    console.log("keys: " + JSON.stringify(keys));
 
     var labels = [];
     for (var i = 0; i < keys.length; i++) {
         var loan_key = keys[i];
-        console.log("loan key");
-        console.log(loan_key);
+        console.log("loan key: " + loan_key);
         if (results.loans[loan_key].rows.length > max_row_length) {
             max_row_length = results.loans[loan_key].rows.length;
             max_row_index = loan_key;
@@ -69,7 +66,7 @@ GraphController.get_data = function (results) {
     }
     for (var i = 0; i < keys.length; i++) {
         var loan_key = keys[i];
-        console.log(step_size);
+        console.log("Step size: " + step_size);
         datasets[i] = GraphController.get_color_hash(loan_key);
         datasets[i].data = [];
         for (var j = 0; j < max_row_length; j += step_size) {
@@ -95,8 +92,7 @@ GraphController.get_data = function (results) {
 
 GraphController.get_color_hash = function (i) {
     i = parseInt(i);
-    console.log("color");
-    console.log(i);
+    console.log("color: " + i);
     var color_hash = {};
     switch (i % 5) {
         case 0:

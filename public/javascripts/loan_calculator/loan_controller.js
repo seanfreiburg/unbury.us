@@ -56,7 +56,7 @@ LoanController.hashString = function () {
     hashString += 'monthly_payment=' + window.monthly_payment + '&';
     for (var key in window.loans) {
         var loan = window.loans[key];
-        console.log(loan);
+        console.log("loan: " + JSON.stringify(loan));
         hashString += 'name_' + loan.id + '=' + loan.loanName + '&';
         hashString += 'balance_' + loan.id + '=' + loan.currentBalance + '&';
         hashString += 'payment_' + loan.id + '=' + loan.minimumPayment + '&';

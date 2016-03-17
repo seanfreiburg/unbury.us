@@ -31,7 +31,7 @@ ResultsController.draw_loan_results = function (results) {
     $("#loan-results").empty().append(html);
     $("#loan-results").hide().fadeIn('500');
     for (var loan_key in results.loans) {
-        console.log(loan_key);
+        console.log("Loan key: " + loan_key);
         Router.add_loan_table_result_listener(loan_key);
     }
 };

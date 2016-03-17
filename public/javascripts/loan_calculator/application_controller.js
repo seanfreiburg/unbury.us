@@ -43,7 +43,7 @@ ApplicationController.monthly_payment_input_change = function () {
 
 
 ApplicationController.calculate = function (){
-    console.log(Object.size(window.loans));
+    console.log("calculate loan number: " + Object.size(window.loans));
     if (Object.size(window.loans) == 0){
         alert("Add a loan!");
     }
@@ -60,7 +60,7 @@ ApplicationController.calculate = function (){
 };
 
 ApplicationController.auto_calculate = function (){
-    console.log(Object.size(window.loans));
+    console.log("auto_calculate loan number: " + Object.size(window.loans));
     if (!LoanController.valid() ) {
         var results = ResultsController.results();
         GraphController.graph(results);
