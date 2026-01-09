@@ -261,4 +261,4 @@ class Calculator {
   }
 }
 
-module.exports = { Loan, Calculator };
+export { Loan, Calculator };

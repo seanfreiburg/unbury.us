@@ -2,6 +2,7 @@
  * Graph Controller Unit Tests
  * Tests for chart data generation logic - must pass before and after Chart.js migration
  */
+import { describe, test, expect } from 'vitest';
 
 // Mock the GraphController functions for testing
 const GraphController = {

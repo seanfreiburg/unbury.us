@@ -1,4 +1,5 @@
-const { Loan, Calculator } = require('./calculator');
+import { describe, test, expect, beforeEach } from 'vitest';
+import { Loan, Calculator } from './calculator.js';
 
 describe('Loan Class', () => {
   test('creates loan with correct properties', () => {

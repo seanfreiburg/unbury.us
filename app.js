@@ -1,15 +1,21 @@
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const helmet = require('helmet');
-const compression = require('compression');
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import favicon from 'serve-favicon';
+import logger from 'morgan';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import helmet from 'helmet';
+import compression from 'compression';
+import createDebug from 'debug';
 
-const routes = require('./routes/index');
+import routes from './routes/index.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
+const debug = createDebug('unbury.us');
 
 // Security middleware
 app.use(helmet({
@@ -64,7 +70,6 @@ app.use(function(err, req, res, next) {
 });
 
 // Start server
-const debug = require('debug')('unbury.us');
 const port = process.env.PORT || 3000;
 const server = app.listen(port, function() {
   debug('Express server listening on port ' + server.address().port);

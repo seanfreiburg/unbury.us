@@ -1,5 +1,5 @@
-const puppeteer = require('puppeteer');
-const { spawn } = require('child_process');
+import puppeteer from 'puppeteer';
+import { spawn } from 'child_process';
 
 const BASE_URL = 'http://localhost:3000';
 let browser;

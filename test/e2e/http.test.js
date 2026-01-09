@@ -3,8 +3,8 @@
  * These tests verify the server responds correctly without requiring a browser
  */
 
-const http = require('http');
-const { spawn } = require('child_process');
+import http from 'http';
+import { spawn } from 'child_process';
 
 const BASE_URL = 'http://localhost:3000';
 let server;
@@ -95,8 +95,8 @@ describe('HTTP Integration Tests', () => {
 
     test('GET / includes required JavaScript files', async () => {
       const res = await httpGet('/');
-      expect(res.body).toContain('loan_calculator');
-      expect(res.body).toContain('results_controller');
+      // App is now bundled into dist/loan_calculator.js
+      expect(res.body).toContain('dist/loan_calculator.js');
     });
 
     test('GET / includes Chart.js', async () => {
@@ -224,9 +224,9 @@ describe('URL Hash State Tests', () => {
 
   test('Page loads with URL hash parameters', async () => {
     // The server should serve the page regardless of hash
-    // Hash handling is client-side
+    // Hash handling is client-side, now bundled in dist/loan_calculator.js
     const res = await httpGet('/');
     expect(res.status).toBe(200);
-    expect(res.body).toContain('init.js'); // This file handles URL hash parsing
+    expect(res.body).toContain('dist/loan_calculator.js');
   });
 });

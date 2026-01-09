@@ -7,6 +7,7 @@
  * 2. Adding months to calculate payoff dates
  * 3. Formatting as "MMMM YYYY" (e.g., "January 2024")
  */
+import { describe, test, expect } from 'vitest';
 
 // Abstract date operations that mirror what the app does
 // This will be implemented with moment.js first, then day.js
