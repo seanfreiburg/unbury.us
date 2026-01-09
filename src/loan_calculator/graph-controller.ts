@@ -1,8 +1,26 @@
 // Graph Controller - manages chart rendering
-import { responsiveChart } from './responsive-chart.js';
+import { responsiveChart } from './responsive-chart';
+import type { LoanResults } from './results-controller';
+
+
+interface ColorHash {
+  fillColor?: string;
+  strokeColor?: string;
+  pointColor?: string;
+  pointStrokeColor?: string;
+}
+
+interface Dataset extends ColorHash {
+  data: number[];
+}
+
+interface ChartData {
+  labels: string[];
+  datasets: Dataset[];
+}
 
 export const GraphController = {
-  graph(results) {
+  graph(results: LoanResults): void {
     const data = this.getData(results);
     const graphDiv = $('#graph');
     if (!$('#myChart').length) {
@@ -14,34 +32,34 @@ export const GraphController = {
     responsiveChart($('#myChart'), data, false, steps, this.getStepWidth(results, steps));
   },
 
-  getSteps() {
+  getSteps(): number {
     return 20;
   },
 
-  getStepWidth(results, steps) {
+  getStepWidth(results: LoanResults, steps: number): number {
     let maxVal = 0;
     for (const i in results.loans) {
       for (let j = 0; j < results.loans[i].rows.length; j++) {
-        if (maxVal < parseFloat(results.loans[i].rows[j].balance_remaining)) {
-          maxVal = parseFloat(results.loans[i].rows[j].balance_remaining);
+        if (maxVal < parseFloat(String(results.loans[i].rows[j].balance_remaining))) {
+          maxVal = parseFloat(String(results.loans[i].rows[j].balance_remaining));
         }
       }
     }
     return Math.round(maxVal / steps);
   },
 
-  getData(results) {
+  getData(results: LoanResults): ChartData {
     let maxRowLength = 0;
-    let maxRowIndex = 0;
+    let maxRowIndex = '';
     const numLabels = 20;
-    let stepSize;
-    const datasets = [];
+    let stepSize: number;
+    const datasets: Dataset[] = [];
     const keys = Object.keys(results.loans);
     keys.sort(function (a, b) {
       return results.loans[b].starting_balance - results.loans[a].starting_balance;
     });
 
-    const labels = [];
+    const labels: string[] = [];
     for (let i = 0; i < keys.length; i++) {
       const loanKey = keys[i];
       if (results.loans[loanKey].rows.length > maxRowLength) {
@@ -57,9 +75,8 @@ export const GraphController = {
 
     for (let i = 0; i < keys.length; i++) {
       const loanKey = keys[i];
-      datasets[i] = this.getColorHash(loanKey);
-      datasets[i].data = [];
-      for (let j = 0; j < maxRowLength; j += stepSize) {
+      datasets[i] = { ...this.getColorHash(parseInt(loanKey)), data: [] };
+      for (let j = 0; j < maxRowLength; j += stepSize!) {
         if (results.loans[loanKey].rows[j]) {
           datasets[i].data.push(results.loans[loanKey].rows[j].balance_remaining);
         } else {
@@ -68,7 +85,7 @@ export const GraphController = {
       }
     }
 
-    for (let i = 0; i < results.loans[maxRowIndex].rows.length; i += stepSize) {
+    for (let i = 0; i < results.loans[maxRowIndex].rows.length; i += stepSize!) {
       labels.push(results.loans[maxRowIndex].rows[i].date);
     }
 
@@ -78,9 +95,8 @@ export const GraphController = {
     };
   },
 
-  getColorHash(i) {
-    i = parseInt(i);
-    let colorHash = {};
+  getColorHash(i: number): ColorHash {
+    let colorHash: ColorHash = {};
     switch (i % 5) {
       case 0:
         colorHash = {

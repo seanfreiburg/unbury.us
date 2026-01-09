@@ -1,6 +1,26 @@
 // Loan class - represents a single loan
+
+
+export type LoanFieldName =
+  | 'loan-name'
+  | 'current-balance'
+  | 'minimum-payment'
+  | 'interest-rate';
+
 export class Loan {
-  constructor(id, loanName, currentBalance, minimumPayment, interestRate) {
+  id: number;
+  loanName: string;
+  currentBalance: number;
+  minimumPayment: number;
+  interestRate: number;
+
+  constructor(
+    id: number,
+    loanName: string,
+    currentBalance: number,
+    minimumPayment: number,
+    interestRate: number
+  ) {
     this.id = id;
     this.loanName = loanName;
     this.currentBalance = currentBalance;
@@ -8,7 +28,7 @@ export class Loan {
     this.interestRate = interestRate;
   }
 
-  setLoanField(fieldName, newValue) {
+  setLoanField(fieldName: LoanFieldName, newValue: string): void {
     switch (fieldName) {
       case 'loan-name':
         this.loanName = newValue;
@@ -25,7 +45,7 @@ export class Loan {
     }
   }
 
-  static validateField(fieldName, newValue) {
+  static validateField(fieldName: LoanFieldName, newValue: string): boolean {
     switch (fieldName) {
       case 'loan-name':
         return newValue.length > 0;

@@ -1,15 +1,27 @@
 // FI Calculator - Main entry point
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
+interface FIWindowState {
+  current_assets: number;
+  savings_rate: number;
+  current_salary: number;
+  return_rate: number;
+  years_of_savings: number;
+  inflation_rate: number;
+  [key: string]: number;
+}
 
 // Polyfills
 if (!String.prototype.contains) {
-  String.prototype.contains = function (it) {
-    return this.indexOf(it) !== -1;
+  String.prototype.contains = function (searchString: string): boolean {
+    return this.indexOf(searchString) !== -1;
   };
 }
 
 Math.sign =
   Math.sign ||
-  function sign(x) {
+  function sign(x: number): number {
     x = +x;
     if (x === 0 || isNaN(x)) {
       return x;
@@ -18,7 +30,7 @@ Math.sign =
   };
 
 // Utility functions
-function preciseRound(num, decimals) {
+function preciseRound(num: number, decimals: number): number {
   const t = Math.pow(10, decimals);
   return parseFloat(
     (
@@ -30,19 +42,20 @@ function preciseRound(num, decimals) {
 
 // Application Controller
 const ApplicationController = {
-  autoCalculate() {
+  autoCalculate(): void {
     this.calculate();
   },
 
-  calculate() {
+  calculate(): void {
+    const win = window as unknown as FIWindowState;
     let yearsToFi = 0;
-    let assets = window.current_assets;
-    const salaryInRetirement = (1 - window.savings_rate / 100) * window.current_salary;
+    let assets = win.current_assets;
+    const salaryInRetirement = (1 - win.savings_rate / 100) * win.current_salary;
 
-    while (assets < window.years_of_savings * salaryInRetirement) {
+    while (assets < win.years_of_savings * salaryInRetirement) {
       yearsToFi += 1;
-      assets += (window.return_rate - window.inflation_rate) * assets;
-      assets += window.current_salary * (window.savings_rate / 100);
+      assets += (win.return_rate - win.inflation_rate) * assets;
+      assets += win.current_salary * (win.savings_rate / 100);
       if (yearsToFi > 122) {
         $('#years_to_fi').text('You may never reach FI with current savings rate');
         return;
@@ -51,57 +64,58 @@ const ApplicationController = {
     $('#years_to_fi').text(yearsToFi + ' years to financial independence');
   },
 
-  currentSalaryInputChange() {
+  currentSalaryInputChange(): void {
     this.inputChange('#current_salary');
   },
 
-  savingsRateInputChange() {
+  savingsRateInputChange(): void {
     this.inputChange('#savings_rate');
   },
 
-  currentAssetsInputChange() {
+  currentAssetsInputChange(): void {
     this.inputChange('#current_assets');
   },
 
-  inputChange(str) {
+  inputChange(str: string): void {
     const selector = $(str);
-    let value = selector.val();
-    value = preciseRound(value, 2);
-    window[str.substr(1, str.length)] = Number(value);
+    const value = selector.val() as string;
+    const numValue = preciseRound(Number(value), 2);
+    const win = window as unknown as FIWindowState;
+    win[str.substr(1, str.length)] = numValue;
   },
 };
 
 // Router
 const Router = {
-  init() {
+  init(): void {
     this.addCurrentAssetsListener();
     this.addSavingsRateListener();
     this.addCurrentSalaryListener();
     this.addCalculateListener();
   },
 
-  addCurrentSalaryListener() {
+  addCurrentSalaryListener(): void {
     $('#current_salary').change(function () {
       ApplicationController.currentSalaryInputChange();
       ApplicationController.autoCalculate();
     });
   },
 
-  addSavingsRateListener() {
+  addSavingsRateListener(): void {
     $('#savings_rate').change(function () {
       ApplicationController.savingsRateInputChange();
       ApplicationController.autoCalculate();
     });
   },
 
-  addCurrentAssetsListener() {
+  addCurrentAssetsListener(): void {
     $('#current_assets').change(function () {
       ApplicationController.currentAssetsInputChange();
       ApplicationController.autoCalculate();
     });
   },
 
-  addCalculateListener() {
+  addCalculateListener(): void {
     $('#calculate').click(function () {
       ApplicationController.calculate();
     });
@@ -109,13 +123,14 @@ const Router = {
 };
 
 // Initialize
-function init() {
-  window.current_assets = 0;
-  window.savings_rate = 0;
-  window.current_salary = 0;
-  window.return_rate = 0.07;
-  window.years_of_savings = 25;
-  window.inflation_rate = 0.02;
+function init(): void {
+  const win = window as unknown as FIWindowState;
+  win.current_assets = 0;
+  win.savings_rate = 0;
+  win.current_salary = 0;
+  win.return_rate = 0.07;
+  win.years_of_savings = 25;
+  win.inflation_rate = 0.02;
   Router.init();
 }
 

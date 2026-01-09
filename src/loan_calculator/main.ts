@@ -1,19 +1,24 @@
 // Main entry point for loan calculator
-import { Loan } from './loan.js';
-import { Router } from './router.js';
-import { ApplicationController } from './application-controller.js';
+import { Loan } from './loan';
+import { Router } from './router';
+import { ApplicationController } from './application-controller';
+
+declare const Handlebars: {
+  compile: (template: string) => (context: unknown) => string;
+  registerPartial: (name: string, partial: string) => void;
+};
 
 // Polyfill for String.contains if not present
 if (!String.prototype.contains) {
-  String.prototype.contains = function (it) {
-    return this.indexOf(it) !== -1;
+  String.prototype.contains = function (searchString: string): boolean {
+    return this.indexOf(searchString) !== -1;
   };
 }
 
 // Math.sign polyfill
 Math.sign =
   Math.sign ||
-  function sign(x) {
+  function sign(x: number): number {
     x = +x;
     if (x === 0 || isNaN(x)) {
       return x;
@@ -22,16 +27,16 @@ Math.sign =
   };
 
 // Make Router available globally for callbacks
-window.Router = Router;
+(window as Window & { Router: typeof Router }).Router = Router;
 
 // URL parameter parsing
-function getSearchParameters() {
+function getSearchParameters(): Record<string, string> {
   const prmstr = window.location.hash;
   return prmstr != null && prmstr != '' ? transformToAssocArray(prmstr) : {};
 }
 
-function transformToAssocArray(prmstr) {
-  const params = {};
+function transformToAssocArray(prmstr: string): Record<string, string> {
+  const params: Record<string, string> = {};
   const prmarr = prmstr.substr(1).split('&');
   for (let i = 0; i < prmarr.length; i++) {
     const tmparr = prmarr[i].split('=');
@@ -40,8 +45,8 @@ function transformToAssocArray(prmstr) {
   return params;
 }
 
-function urlLoansValid(params) {
-  const loanKeys = [];
+function urlLoansValid(params: Record<string, string>): boolean {
+  const loanKeys: string[] = [];
   Object.keys(params).forEach(function (key) {
     if (key.contains('name')) {
       loanKeys.push(key);
@@ -63,13 +68,13 @@ function urlLoansValid(params) {
   return true;
 }
 
-function loadUrlLoans(params) {
-  window.loans = {};
-  window.auto_increment = -1;
-  window.monthly_payment = 0;
+function loadUrlLoans(params: Record<string, string>): void {
+  (window as Window & { loans: Record<string, Loan> }).loans = {};
+  (window as Window & { auto_increment: number }).auto_increment = -1;
+  (window as Window & { monthly_payment: number }).monthly_payment = 0;
   ApplicationController.monthlyPaymentInputChange();
 
-  window.payment_type = 'avalanche';
+  (window as Window & { payment_type: string }).payment_type = 'avalanche';
 
   Router.init();
   Router.addMonthlyPaymentListener();
@@ -82,7 +87,7 @@ function loadUrlLoans(params) {
       $('#monthly-payment').val(params['monthly_payment']);
     }
 
-    const loanKeys = [];
+    const loanKeys: string[] = [];
     Object.keys(params).forEach(function (key) {
       if (key.contains('name')) {
         loanKeys.push(key);
@@ -91,7 +96,8 @@ function loadUrlLoans(params) {
 
     for (let i = 0; i < loanKeys.length; i++) {
       const loanId = loanKeys[i].split('_')[1];
-      window.auto_increment = loanId;
+      const loanIdNum = parseInt(loanId, 10);
+      (window as Window & { auto_increment: number }).auto_increment = loanIdNum;
       const id = loanId;
       const source = $('#loan-input-template').html();
       const template = Handlebars.compile(source);
@@ -101,9 +107,15 @@ function loadUrlLoans(params) {
       $('#loan' + id)
         .hide()
         .fadeIn('500');
-      window.loans[id] = new Loan(id, 0, 0, 0, 0);
-      Router.addLoanDestroyListener(id);
-      Router.addLoanInputListeners(id);
+      (window as Window & { loans: Record<string, Loan> }).loans[id] = new Loan(
+        parseInt(id),
+        '',
+        0,
+        0,
+        0
+      );
+      Router.addLoanDestroyListener(parseInt(id));
+      Router.addLoanInputListeners(parseInt(id));
       $('#loan-name-' + id).val(unescape(params['name_' + loanId]));
       $('#current-balance-' + id).val(params['balance_' + loanId]);
       $('#minimum-payment-' + id).val(params['payment_' + loanId]);

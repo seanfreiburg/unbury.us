@@ -7,8 +7,8 @@ export default defineConfig({
     emptyDirOnBuild: true,
     rollupOptions: {
       input: {
-        loan_calculator: resolve(__dirname, 'src/loan_calculator/main.js'),
-        fi_calculator: resolve(__dirname, 'src/fi_calculator/main.js'),
+        loan_calculator: resolve(__dirname, 'src/loan_calculator/main.ts'),
+        fi_calculator: resolve(__dirname, 'src/fi_calculator/main.ts'),
       },
       output: {
         entryFileNames: '[name].js',
