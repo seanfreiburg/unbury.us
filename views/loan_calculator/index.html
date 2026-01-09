@@ -11,22 +11,25 @@
     <link rel="shortcut icon" href="assets/src/img/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (replaces Glyphicons) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-sm-offset-3">
+        <div class="col-sm-3 offset-sm-3">
             <h1 id="title"><a class="title" href="/">unbury.us</a></h1>
         </div>
         <div class="col-sm-4">
             <h3>get unburied from debt</h3>
         </div>
         <div class="col-sm-2">
-            <a data-toggle="modal" data-target="#helpModal" href="#">help</a> \
-            <a data-toggle="modal" data-target="#aboutModal" href="#">about</a> \
+            <a data-bs-toggle="modal" data-bs-target="#helpModal" href="#">help</a> \
+            <a data-bs-toggle="modal" data-bs-target="#aboutModal" href="#">about</a> \
             <a  href="/fi_calculator">fi_calculator</a>
         </div>
     </div>
@@ -46,8 +49,8 @@
 
 
     <div class="row">
-        <div class="col-sm-3 col-sm-offset-0">
-            <button class="btn btn-success btn-block" id="add-loan">+ add loan</button>
+        <div class="col-sm-3">
+            <button class="btn btn-success w-100" id="add-loan">+ add loan</button>
         </div>
 
     </div>
@@ -58,26 +61,26 @@
             <h4>monthly payment</h4>
             <input class="form-control" id="monthly-payment" placeholder="0">
         </div>
-        <div class="col-sm-4 col-sm-offset-1">
+        <div class="col-sm-4 offset-sm-1">
             <h4>payment type
-                <a data-toggle="modal" data-target="#paymentTypeHelpModal" href="#">
+                <a data-bs-toggle="modal" data-bs-target="#paymentTypeHelpModal" href="#">
                     <span class="question">?</span>
                 </a>
             </h4>
 
             <div class="row">
                 <div class="col-sm-6">
-                    <button id="avalanche-btn" class="btn btn-primary  btn-block">avalanche</button>
+                    <button id="avalanche-btn" class="btn btn-primary w-100">avalanche</button>
                 </div>
                 <div class="col-sm-6">
-                    <button id="snowball-btn" class="btn btn-default btn-block">snowball</button>
+                    <button id="snowball-btn" class="btn btn-secondary w-100">snowball</button>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-2 col-sm-offset-1">
+        <div class="col-sm-2 offset-sm-1">
             <h4>&nbsp;</h4>
-            <button id="calculate" class="btn btn-default btn-block">calculate</button>
+            <button id="calculate" class="btn btn-primary w-100">calculate</button>
 
         </div>
     </div>
@@ -104,7 +107,7 @@
         <div class="col-sm-3">
             <a href="http://seanfreiburg.com">seanfreiburg.com </a>
         </div>
-        <div class="col-sm-3 col-sm-offset-5">
+        <div class="col-sm-3 offset-sm-5">
             <a href='https://github.com/seanfreiburg/unbury.us/issues' title='Report bugs'>Report a Bug</a> \
             <a href='http://github.com/seanfreiburg/unbury.us' title='Unbury.me on GitHub'>GitHub</a> \
             <a href='https://github.com/seanfreiburg/unbury.us/blob/master/LICENSE' title='License'>MIT License</a>
@@ -121,8 +124,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Payment Type</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
@@ -141,8 +144,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Help</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>
@@ -171,8 +174,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">About</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
@@ -247,7 +250,7 @@
     <div id="loan-results-{{id}}" class="loan-results">
         <div class="row text-center" id="loan-head-{{id}}">
             <div class="col-sm-1">
-                <a><span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span></a>
+                <a><span class="bi bi-chevron-right arrow" aria-hidden="true"></span></a>
             </div>
             <div class="col-sm-4">
                 <h4>{{loan_name}}</h4>
@@ -302,18 +305,15 @@
 </script>
 
 
-<!-- Libraries -->
-<script src="javascripts/lib/jquery-2.1.1.min.js"></script>
-<script src="javascripts/lib/bootstrap_3.1.1.js"></script>
-<script src="javascripts/lib/handlebars.js_2.0.0-alpha.2.js"></script>
-<script src="javascripts/lib/amplifyjs_1.1.0.js"></script>
-<script src="javascripts/lib/Chart.js_0.2.0.js"></script>
+<!-- Libraries (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.8/dist/handlebars.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
 
 <!-- My Javascript -->
-
 <script src="javascripts/loan_calculator/application_controller.js"></script>
-
-<script src="javascripts/lib/moment.js"></script>
 <script src="javascripts/loan_calculator/graph_controller.js"></script>
 <script src="javascripts/loan_calculator/loan.js"></script>
 <script src="javascripts/loan_calculator/loan_controller.js"></script>

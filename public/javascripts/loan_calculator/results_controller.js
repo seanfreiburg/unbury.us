@@ -82,7 +82,7 @@ ResultsController.calculate = function (loans, payment_type, monthly_payment) {
     var current_principal = {};
     var current_interest = {};
     var minimum_payments = {};
-    var month = moment().startOf('month');
+    var month = dayjs().startOf('month');
 
     for (var loan_key in loans) {
         ResultsController.loan_results.loans[loan_key] = {"rows": [], "loan_name": loans[loan_key].loanName,
@@ -104,7 +104,7 @@ ResultsController.calculate = function (loans, payment_type, monthly_payment) {
         if (counter > 12*122){
             return null;
         }
-        month.add(1, 'months');
+        month = month.add(1, 'month');
         var extra_payment = monthly_payment;
         for (var loan_key in remaining_loans) {
             minimum_payments[loan_key] = remaining_loans[loan_key].minimumPayment;

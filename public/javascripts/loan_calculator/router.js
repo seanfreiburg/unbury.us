@@ -68,12 +68,12 @@ Router.add_calculate_listener = function () {
 Router.add_loan_table_result_listener = function (id) {
     $("#loan-head-" + id).click(function () {
         $(this).next().next().toggle();
-        if ($(this).find(".glyphicon-chevron-right").length > 0)
+        if ($(this).find(".bi-chevron-right").length > 0)
         {
-            $(this).find(".arrow").removeClass("glyphicon-chevron-right").addClass("glyphicon-chevron-down");
+            $(this).find(".arrow").removeClass("bi-chevron-right").addClass("bi-chevron-down");
         }
         else {
-            $(this).find(".arrow").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");   
+            $(this).find(".arrow").removeClass("bi-chevron-down").addClass("bi-chevron-right");
         }
     });
 };
