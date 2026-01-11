@@ -1,5 +1,6 @@
 // Pure calculation functions for loan payoff - framework agnostic
 import dayjs from 'dayjs';
+import { Money, money, calculateMonthlyInterest } from './money';
 
 export interface LoanData {
   id: number;
@@ -38,15 +39,12 @@ export interface LoanResults {
 
 export type PaymentType = 'avalanche' | 'snowball';
 
+/**
+ * Round a number to specified decimal places using Money class for precision
+ * @deprecated Use Money class directly for new code
+ */
 export function preciseRound(num: number, decimals: number): number {
-  const t = Math.pow(10, decimals);
-  return parseFloat(
-    (
-      Math.round(
-        num * t + (decimals > 0 ? 1 : 0) * (Math.sign(num) * (10 / Math.pow(100, decimals)))
-      ) / t
-    ).toFixed(decimals)
-  );
+  return money(num).round(decimals).toNumberWithDecimals(decimals);
 }
 
 function sortLoans(
@@ -232,10 +230,9 @@ function addInterest(
   currentInterest: Record<string, number>
 ): void {
   for (const loanKey in remainingLoans) {
-    const currentBalance = currentPrincipal[loanKey] + currentInterest[loanKey];
-    const interestGenerated = currentBalance * (remainingLoans[loanKey].interestRate / 100 / 12);
-    currentInterest[loanKey] =
-      currentInterest[loanKey] + preciseRound(interestGenerated, 2);
+    const currentBalance = money(currentPrincipal[loanKey]).add(currentInterest[loanKey]);
+    const interestGenerated = calculateMonthlyInterest(currentBalance, remainingLoans[loanKey].interestRate);
+    currentInterest[loanKey] = money(currentInterest[loanKey]).add(interestGenerated).toNumber();
   }
 }
 
