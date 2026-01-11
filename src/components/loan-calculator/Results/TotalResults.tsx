@@ -11,7 +11,7 @@ export function TotalResults({ totals }: TotalResultsProps) {
   }
 
   return (
-    <div className="total-results card mb-4">
+    <div id="total-results" className="total-results card mb-4">
       <div className="card-body">
         <h3 className="card-title">Debt Free!</h3>
         <p className="card-text">

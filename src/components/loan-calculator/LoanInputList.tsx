@@ -29,23 +29,25 @@ export function LoanInputList() {
 
   return (
     <div className="loan-input-list">
-      {loanIds.map((id) => {
-        const loan = state.loans[id];
-        return (
-          <LoanInputRow
-            key={id}
-            id={id}
-            loanName={loan.loanName}
-            currentBalance={loan.currentBalance}
-            minimumPayment={loan.minimumPayment}
-            interestRate={loan.interestRate}
-            onFieldChange={handleFieldChange}
-            onRemove={handleRemove}
-          />
-        );
-      })}
+      <div id="loan-inputs">
+        {loanIds.map((id) => {
+          const loan = state.loans[id];
+          return (
+            <LoanInputRow
+              key={id}
+              id={id}
+              loanName={loan.loanName}
+              currentBalance={loan.currentBalance}
+              minimumPayment={loan.minimumPayment}
+              interestRate={loan.interestRate}
+              onFieldChange={handleFieldChange}
+              onRemove={handleRemove}
+            />
+          );
+        })}
+      </div>
       <div className="mt-3">
-        <Button variant="primary" onClick={handleAddLoan}>
+        <Button id="add-loan" variant="primary" onClick={handleAddLoan}>
           Add Another Loan
         </Button>
       </div>

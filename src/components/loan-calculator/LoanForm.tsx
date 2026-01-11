@@ -43,6 +43,7 @@ export function LoanForm() {
         </div>
         <div className="col-sm-4">
           <Button
+            id="calculate"
             variant="success"
             size="lg"
             onClick={handleCalculate}

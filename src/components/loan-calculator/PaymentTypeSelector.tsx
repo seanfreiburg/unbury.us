@@ -10,6 +10,7 @@ export function PaymentTypeSelector({ value, onChange }: PaymentTypeSelectorProp
     <div className="payment-type-selector btn-group" role="group" aria-label="Payment strategy">
       <button
         type="button"
+        id="avalanche-btn"
         className={`btn ${value === 'avalanche' ? 'btn-primary active' : 'btn-secondary'}`}
         onClick={() => onChange('avalanche')}
         aria-pressed={value === 'avalanche'}
@@ -18,6 +19,7 @@ export function PaymentTypeSelector({ value, onChange }: PaymentTypeSelectorProp
       </button>
       <button
         type="button"
+        id="snowball-btn"
         className={`btn ${value === 'snowball' ? 'btn-primary active' : 'btn-secondary'}`}
         onClick={() => onChange('snowball')}
         aria-pressed={value === 'snowball'}

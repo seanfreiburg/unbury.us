@@ -2,12 +2,12 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { LoanCalculator } from '../../components/loan-calculator/LoanCalculator';
 
-// Check for React feature flag
+// Check for jQuery fallback flag - React is now the default
 const params = new URLSearchParams(window.location.search);
-const useReact = params.get('react') === 'true';
+const useJQuery = params.get('jquery') === 'true';
 
-if (useReact) {
-  // Hide jQuery content
+if (!useJQuery) {
+  // Hide jQuery content (React is default)
   const jqueryContent = document.getElementById('jquery-content');
   if (jqueryContent) {
     jqueryContent.style.display = 'none';

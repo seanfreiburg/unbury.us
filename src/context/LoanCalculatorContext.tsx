@@ -32,16 +32,10 @@ type LoanCalculatorAction =
 function getInitialState(): LoanCalculatorState {
   const hashState = getInitialStateFromHash();
 
-  const defaultLoan: LoanData = {
-    id: 0,
-    loanName: '',
-    currentBalance: 0,
-    minimumPayment: 0,
-    interestRate: 0,
-  };
-
-  const loans = hashState.loans || { 0: defaultLoan };
-  const autoIncrement = Math.max(...Object.keys(loans).map(Number), 0) + 1;
+  // Don't create a default loan - match jQuery behavior where user must click "add loan"
+  const loans = hashState.loans || {};
+  const loanKeys = Object.keys(loans).map(Number);
+  const autoIncrement = loanKeys.length > 0 ? Math.max(...loanKeys) + 1 : 0;
 
   return {
     loans,
@@ -192,6 +186,13 @@ export function LoanCalculatorProvider({
 
   const setPaymentType = useCallback((type: PaymentType) => {
     dispatch({ type: 'SET_PAYMENT_TYPE', value: type });
+    // Set window.payment_type for backwards compatibility with tests and jQuery version
+    (window as Window & { payment_type: string }).payment_type = type;
+  }, []);
+
+  // Initialize window.payment_type on mount
+  useEffect(() => {
+    (window as Window & { payment_type: string }).payment_type = state.paymentType;
   }, []);
 
   const calculate = useCallback(() => {

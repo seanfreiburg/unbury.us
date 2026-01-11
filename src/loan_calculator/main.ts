@@ -130,8 +130,14 @@ function loadUrlLoans(params: Record<string, string>): void {
   }
 }
 
-// Initialize on DOM ready
+// Initialize on DOM ready - only if jQuery fallback is enabled
 $(function () {
-  const params = getSearchParameters();
-  loadUrlLoans(params);
+  const queryParams = new URLSearchParams(window.location.search);
+  const useJQuery = queryParams.get('jquery') === 'true';
+
+  // Only run jQuery version if explicitly enabled (React is now default)
+  if (useJQuery) {
+    const params = getSearchParameters();
+    loadUrlLoans(params);
+  }
 });

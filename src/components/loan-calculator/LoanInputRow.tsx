@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import type { LoanFieldName } from '../../utils/validation';
 import { validateLoanField } from '../../utils/validation';
 
@@ -21,6 +21,24 @@ export function LoanInputRow({
   onFieldChange,
   onRemove,
 }: LoanInputRowProps) {
+  // Local state for raw input strings to handle typing (avoid parsing on every keystroke)
+  const [localBalance, setLocalBalance] = useState(currentBalance ? String(currentBalance) : '');
+  const [localPayment, setLocalPayment] = useState(minimumPayment ? String(minimumPayment) : '');
+  const [localRate, setLocalRate] = useState(interestRate ? String(interestRate) : '');
+
+  // Sync local state when props change (e.g., from URL loading)
+  useEffect(() => {
+    setLocalBalance(currentBalance ? String(currentBalance) : '');
+  }, [currentBalance]);
+
+  useEffect(() => {
+    setLocalPayment(minimumPayment ? String(minimumPayment) : '');
+  }, [minimumPayment]);
+
+  useEffect(() => {
+    setLocalRate(interestRate ? String(interestRate) : '');
+  }, [interestRate]);
+
   const getValidationClass = useCallback((field: LoanFieldName, value: string) => {
     if (value === '') return '';
     return validateLoanField(field, value) ? 'input-success' : 'input-error';
@@ -28,9 +46,35 @@ export function LoanInputRow({
 
   const handleChange = useCallback(
     (field: LoanFieldName) => (e: React.ChangeEvent<HTMLInputElement>) => {
-      onFieldChange(id, field, e.target.value);
+      const value = e.target.value;
+      // For name field, update immediately
+      if (field === 'loan-name') {
+        onFieldChange(id, field, value);
+      }
+      // For numeric fields, update local state only
+      else if (field === 'current-balance') {
+        setLocalBalance(value);
+      } else if (field === 'minimum-payment') {
+        setLocalPayment(value);
+      } else if (field === 'interest-rate') {
+        setLocalRate(value);
+      }
     },
     [id, onFieldChange]
+  );
+
+  const handleBlur = useCallback(
+    (field: LoanFieldName) => () => {
+      // On blur, send the current local value to parent for parsing
+      if (field === 'current-balance') {
+        onFieldChange(id, field, localBalance);
+      } else if (field === 'minimum-payment') {
+        onFieldChange(id, field, localPayment);
+      } else if (field === 'interest-rate') {
+        onFieldChange(id, field, localRate);
+      }
+    },
+    [id, onFieldChange, localBalance, localPayment, localRate]
   );
 
   const handleRemove = useCallback(() => {
@@ -38,13 +82,14 @@ export function LoanInputRow({
   }, [id, onRemove]);
 
   return (
-    <div className="loan-input-row" data-loan-id={id}>
+    <div className="loan-input-row" id={`loan${id}`} data-loan-id={id}>
       <div className="row">
         <div className="col-sm-3">
           <label htmlFor={`loan-name-${id}`}>Loan Name</label>
           <input
             type="text"
             id={`loan-name-${id}`}
+            name="loan-name"
             className={`form-control loan-input ${getValidationClass('loan-name', loanName)}`}
             placeholder="Student Loan"
             value={loanName}
@@ -59,10 +104,12 @@ export function LoanInputRow({
             <input
               type="text"
               id={`current-balance-${id}`}
-              className={`form-control loan-input ${getValidationClass('current-balance', String(currentBalance))}`}
+              name="current-balance"
+              className={`form-control loan-input ${getValidationClass('current-balance', localBalance)}`}
               placeholder="50,000"
-              value={currentBalance || ''}
+              value={localBalance}
               onChange={handleChange('current-balance')}
+              onBlur={handleBlur('current-balance')}
               data-field="current-balance"
             />
           </div>
@@ -74,10 +121,12 @@ export function LoanInputRow({
             <input
               type="text"
               id={`minimum-payment-${id}`}
-              className={`form-control loan-input ${getValidationClass('minimum-payment', String(minimumPayment))}`}
+              name="minimum-payment"
+              className={`form-control loan-input ${getValidationClass('minimum-payment', localPayment)}`}
               placeholder="500"
-              value={minimumPayment || ''}
+              value={localPayment}
               onChange={handleChange('minimum-payment')}
+              onBlur={handleBlur('minimum-payment')}
               data-field="minimum-payment"
             />
           </div>
@@ -88,10 +137,12 @@ export function LoanInputRow({
             <input
               type="text"
               id={`interest-rate-${id}`}
-              className={`form-control loan-input ${getValidationClass('interest-rate', String(interestRate))}`}
+              name="interest-rate"
+              className={`form-control loan-input ${getValidationClass('interest-rate', localRate)}`}
               placeholder="6.8"
-              value={interestRate || ''}
+              value={localRate}
               onChange={handleChange('interest-rate')}
+              onBlur={handleBlur('interest-rate')}
               data-field="interest-rate"
             />
             <span className="input-group-text">%</span>
@@ -100,7 +151,8 @@ export function LoanInputRow({
         <div className="col-sm-2 d-flex align-items-end">
           <button
             type="button"
-            className="btn btn-danger"
+            id={`destroy-button-${id}`}
+            className="btn btn-danger destroy-button"
             onClick={handleRemove}
             aria-label={`Remove loan ${loanName || id}`}
           >
