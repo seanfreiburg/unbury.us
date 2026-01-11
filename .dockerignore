@@ -9,3 +9,7 @@ test
 .DS_Store
 coverage
 .nyc_output
+src
+vite.config.js
+tsconfig.json
+eslint.config.js

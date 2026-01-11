@@ -1,36 +1,17 @@
-# Build stage
-FROM node:20-alpine AS builder
+# Production image - uses pre-built frontend
+FROM node:20-slim
 
 WORKDIR /app
 
-# Copy package files
+# Copy package files and install dependencies
 COPY package*.json ./
+RUN npm install --omit=dev --no-audit && npm cache clean --force
 
-# Install all dependencies (including dev for build)
-RUN npm ci
-
-# Copy source files
-COPY . .
-
-# Build the frontend
-RUN npm run build
-
-# Production stage
-FROM node:20-alpine
-
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install only production dependencies
-RUN npm ci --only=production
-
-# Copy built files from builder
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/views ./views
-COPY --from=builder /app/routes ./routes
-COPY --from=builder /app/app.js ./
+# Copy app files
+COPY public ./public
+COPY views ./views
+COPY routes ./routes
+COPY app.js ./
 
 # Expose port
 EXPOSE 3000
