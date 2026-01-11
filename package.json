@@ -41,8 +41,6 @@
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
-    "@types/handlebars": "^4.0.40",
-    "@types/jquery": "^3.5.33",
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",

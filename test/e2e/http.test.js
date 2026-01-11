@@ -73,36 +73,26 @@ describe('HTTP Integration Tests', () => {
       expect(res.headers['content-type']).toMatch(/text\/html/);
     });
 
-    test('GET / contains loan calculator elements', async () => {
+    test('GET / contains React mount point', async () => {
       const res = await httpGet('/');
-      expect(res.body).toContain('loan');
-      expect(res.body).toContain('calculate');
+      expect(res.body).toContain('react-root');
     });
 
-    test('GET / contains required form inputs', async () => {
+    test('GET / contains page title', async () => {
       const res = await httpGet('/');
-      expect(res.body).toContain('loan-name');
-      expect(res.body).toContain('current-balance');
-      expect(res.body).toContain('minimum-payment');
-      expect(res.body).toContain('interest-rate');
-    });
-
-    test('GET / contains payment type options', async () => {
-      const res = await httpGet('/');
-      expect(res.body).toContain('avalanche');
-      expect(res.body).toContain('snowball');
+      expect(res.body.toLowerCase()).toContain('loan');
+      expect(res.body.toLowerCase()).toContain('calculator');
     });
 
     test('GET / includes required JavaScript files', async () => {
       const res = await httpGet('/');
-      // App is now bundled into dist/loan_calculator.js
+      // App is bundled into dist/loan_calculator.js
       expect(res.body).toContain('dist/loan_calculator.js');
     });
 
-    test('GET / includes Chart.js', async () => {
+    test('GET / includes Bootstrap CSS', async () => {
       const res = await httpGet('/');
-      // Chart.js CDN uses lowercase 'chart.js'
-      expect(res.body.toLowerCase()).toContain('chart');
+      expect(res.body).toContain('bootstrap');
     });
   });
 
