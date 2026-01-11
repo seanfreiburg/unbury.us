@@ -131,7 +131,7 @@ function loadUrlLoans(params: Record<string, string>): void {
 }
 
 // Initialize on DOM ready
-$().ready(function () {
+$(function () {
   const params = getSearchParameters();
   loadUrlLoans(params);
 });

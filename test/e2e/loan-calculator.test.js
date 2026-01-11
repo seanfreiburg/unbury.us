@@ -434,12 +434,6 @@ describe('Other Pages', () => {
     stopServer();
   });
 
-  test('should load FI calculator page', async () => {
-    await localPage.goto(`${BASE_URL}/fi_calculator`, { waitUntil: 'networkidle0' });
-    const body = await localPage.$('body');
-    expect(body).not.toBeNull();
-  });
-
   test('should load opportunity cost page', async () => {
     await localPage.goto(`${BASE_URL}/opportunity_cost`, { waitUntil: 'networkidle0' });
     const body = await localPage.$('body');

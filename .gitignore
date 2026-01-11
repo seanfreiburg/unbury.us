@@ -5,3 +5,4 @@ _sourceAssets
 deploy.sh
 node_modules/
 .sass-cache
+coverage/

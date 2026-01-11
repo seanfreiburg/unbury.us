@@ -106,18 +106,6 @@ describe('HTTP Integration Tests', () => {
     });
   });
 
-  describe('FI Calculator Page', () => {
-    test('GET /fi_calculator returns 200', async () => {
-      const res = await httpGet('/fi_calculator');
-      expect(res.status).toBe(200);
-    });
-
-    test('GET /fi_calculator returns HTML content', async () => {
-      const res = await httpGet('/fi_calculator');
-      expect(res.headers['content-type']).toMatch(/text\/html/);
-    });
-  });
-
   describe('Opportunity Cost Page', () => {
     test('GET /opportunity_cost returns 200', async () => {
       const res = await httpGet('/opportunity_cost');

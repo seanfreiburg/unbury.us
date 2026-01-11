@@ -19,7 +19,11 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<!-- React App Mount Point -->
+<div id="react-root"></div>
+
+<!-- jQuery/Handlebars Content (hidden when ?react=true) -->
+<div id="jquery-content" class="container-fluid">
     <div class="row">
         <div class="col-sm-3 offset-sm-3">
             <h1 id="title"><a class="title" href="/">unbury.us</a></h1>
@@ -29,8 +33,7 @@
         </div>
         <div class="col-sm-2">
             <a data-bs-toggle="modal" data-bs-target="#helpModal" href="#">help</a> \
-            <a data-bs-toggle="modal" data-bs-target="#aboutModal" href="#">about</a> \
-            <a  href="/fi_calculator">fi_calculator</a>
+            <a data-bs-toggle="modal" data-bs-target="#aboutModal" href="#">about</a>
         </div>
     </div>
     <hr>
@@ -40,7 +43,7 @@
         <div class="col-sm-12">
             <p class="center">To view your loans later, simply copy the link in the
                 address bar. You can paste it in to your address bar later to view your loans.</p>
-                <p class="center"><a href="https://www.reddit.com/message/compose/?to=frycicle"> Send a message to /u/frycicle on reddit for any questions or bugs.<a/> </p> 
+                <p class="center"><a href="https://www.reddit.com/message/compose/?to=frycicle"> Send a message to /u/frycicle on reddit for any questions or bugs.<a/> </p>
         </div>
     </div>
     <hr>
@@ -116,7 +119,7 @@
     </div>
 
 
-</div>
+</div><!-- end jquery-content -->
 
 <!-- Modals -->
 
@@ -313,7 +316,8 @@
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
 
 <!-- Bundled Application -->
-<script src="dist/loan_calculator.js"></script>
+<script type="module" src="dist/loan_calculator.js"></script>
+<script type="module" src="dist/loan_calculator_react.js"></script>
 <script src="javascripts/lib/google_analytics.js"></script>
 
 

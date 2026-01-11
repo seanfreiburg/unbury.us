@@ -1,11 +1,12 @@
 // Loan class - represents a single loan
+import {
+  type LoanFieldName,
+  validateLoanField,
+  parseCurrency,
+  parsePercentage,
+} from '../utils/validation';
 
-
-export type LoanFieldName =
-  | 'loan-name'
-  | 'current-balance'
-  | 'minimum-payment'
-  | 'interest-rate';
+export type { LoanFieldName };
 
 export class Loan {
   id: number;
@@ -34,30 +35,19 @@ export class Loan {
         this.loanName = newValue;
         break;
       case 'current-balance':
-        this.currentBalance = Number(newValue.replace(/[^0-9.]+/g, ''));
+        this.currentBalance = parseCurrency(newValue);
         break;
       case 'minimum-payment':
-        this.minimumPayment = Number(newValue.replace(/[^0-9.]+/g, ''));
+        this.minimumPayment = parseCurrency(newValue);
         break;
       case 'interest-rate':
-        this.interestRate = Number(newValue.replace(/[^0-9.-]+/g, ''));
+        this.interestRate = parsePercentage(newValue);
         break;
     }
   }
 
   static validateField(fieldName: LoanFieldName, newValue: string): boolean {
-    switch (fieldName) {
-      case 'loan-name':
-        return newValue.length > 0;
-      case 'current-balance':
-      case 'minimum-payment':
-        newValue = newValue.replace(/[$,]+/g, '');
-        return $.isNumeric(newValue) && Number(newValue) >= 0;
-      case 'interest-rate':
-        newValue = newValue.replace(/[$,%]+/g, '');
-        return $.isNumeric(newValue);
-    }
-    return false;
+    return validateLoanField(fieldName, newValue);
   }
 }
 

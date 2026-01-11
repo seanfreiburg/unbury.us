@@ -1,4 +1,9 @@
-app = 'unbury-us'
+# fly.toml app configuration file generated for unbury-us-crimson-paper-444 on 2026-01-10T00:18:26+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'unbury-us-crimson-paper-444'
 primary_region = 'sjc'
 
 [build]
@@ -15,3 +20,4 @@ primary_region = 'sjc'
   memory = '256mb'
   cpu_kind = 'shared'
   cpus = 1
+  memory_mb = 256
